@@ -1,0 +1,17 @@
+.main-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .project-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .project-card h3 {
+    margin-top: 0;
+  }
+  
