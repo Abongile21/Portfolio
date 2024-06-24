@@ -2,19 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { ResumeDataService } from '../../Services/resumedata.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css']
 })
-export class HeaderComponent implements OnInit {
-  name?: string;
-  title?: string;
+export class AboutComponent implements OnInit {
+  profile ?: string;
 
   constructor(private resumeDataService: ResumeDataService) { }
 
   ngOnInit(): void {
     const data = this.resumeDataService.getResumeData();
-    this.name = data.name;
-    this.title = data.title;
+    this.profile = data.profile;
   }
 }

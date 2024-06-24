@@ -1,17 +1,13 @@
-<section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>TypeScript</li>
-      <li>JavaScript</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Angular</li>
-      <li>Node.js</li>
-      <li>MongoDB</li>
-      <li>SQL</li>
-      <li>Git</li>
-      <li>GitHub</li>
-      <li>Visual Studio Code</li>
+<div class="card w-96 bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title">Tech Skills</h2>
+    <ul class="list-disc list-inside">
+      <li *ngFor="let skill of skills">
+        <svg class="w-4 h-4 text-gray-800 dark:text-white inline-block mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+        </svg>
+        {{skill}}
+      </li>
     </ul>
-  </section>
-  
+  </div>
+</div>

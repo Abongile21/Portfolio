@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ResumeDataService } from '../../Services/resumedata.service';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css'
+  styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent {
+export class SkillsComponent implements OnInit {
+  skills?: string[];
 
+  constructor(private resumeDataService: ResumeDataService) { }
+
+  ngOnInit(): void {
+    const data = this.resumeDataService.getResumeData();
+    this.skills = data.techSkills;
+  }
 }

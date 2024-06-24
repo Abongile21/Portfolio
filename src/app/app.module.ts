@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EducationComponent } from './components/education/education.component';
-import { TutoringExperienceComponent } from './components/tutoring-experience/tutoring-experience.component';
+import { ExperienceComponent } from './components/tutoring-experience/experience.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ThreejsBackgroundComponent } from './components/threejs-backround/threejs-backround.component';
@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import * as THREE from 'three';
+import { AboutComponent } from './components/about/about.component';
 
 
 
@@ -26,11 +27,12 @@ import * as THREE from 'three';
     HeaderComponent,
     ProfileComponent,
     EducationComponent,
-    TutoringExperienceComponent,
+    ExperienceComponent,
     SkillsComponent,
     ContactComponent,
     ThreejsBackgroundComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
