@@ -18,7 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import * as THREE from 'three';
 import { AboutComponent } from './components/about/about.component';
-
+import { TerminalComponent } from './components/terminal/terminal.component';
+import { NgModel } from '@angular/forms';
 
 
 @NgModule({
@@ -33,13 +34,15 @@ import { AboutComponent } from './components/about/about.component';
     ThreejsBackgroundComponent,
     ProjectsComponent,
     AboutComponent,
+    TerminalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    NgModel
   ],
   providers: [
     provideAnimationsAsync()

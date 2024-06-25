@@ -1,0 +1,15 @@
+<div class="terminal bg-black text-green-500 p-4 font-mono">
+    <div *ngFor="let line of commandHistory" class="mb-1">
+      {{ line }}
+    </div>
+    <div class="flex">
+      <span class="mr-2">$</span>
+      <input 
+        type="text" 
+        [(ngModel)]="currentCommand" 
+        (keyup.enter)="onEnter()"
+        class="bg-transparent outline-none flex-grow"
+        autofocus
+      >
+    </div>
+  </div>
