@@ -30,7 +30,7 @@ export class TerminalComponent {
         case '':
       case 'experience':
       case 'education':
-      case 'contact':
+      case 'contacts':
         this.router.navigate([`/${command.toLowerCase()}`]);
         break;
       case 'clear':
