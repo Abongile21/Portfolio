@@ -19,7 +19,9 @@ import { MatIconModule } from '@angular/material/icon';
 import * as THREE from 'three';
 import { AboutComponent } from './components/about/about.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
-import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { LandingComponent } from './components/landing/landing.component';
+
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { NgModel } from '@angular/forms';
     ProjectsComponent,
     AboutComponent,
     TerminalComponent,
+    LandingComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ import { NgModel } from '@angular/forms';
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    NgModel
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync()
