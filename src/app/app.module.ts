@@ -21,6 +21,8 @@ import { AboutComponent } from './components/about/about.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
 import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './components/landing/landing.component';
+import { ContactMeComponent } from './components/contact-me/contact-me.component';
+import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
 
 
 
@@ -38,6 +40,8 @@ import { LandingComponent } from './components/landing/landing.component';
     AboutComponent,
     TerminalComponent,
     LandingComponent,
+    ContactMeComponent,
+    DeveloperModeComponent,
 
   ],
   imports: [

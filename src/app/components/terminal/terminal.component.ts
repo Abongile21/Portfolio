@@ -25,6 +25,9 @@ export class TerminalComponent {
         break;
       case 'about':
       case 'skills':
+      case 'contact-me':
+      case 'projects':
+        case '':
       case 'experience':
       case 'education':
       case 'contact':

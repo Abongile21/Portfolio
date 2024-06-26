@@ -1,0 +1,28 @@
+<!-- contact-me.component.html -->
+<div class="container mx-auto p-6">
+    <div class="card bg-base-200 shadow-xl p-6">
+      <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+      <form (submit)="sendEmail()">
+        <div class="form-control mb-4">
+          <label class="label" for="name">
+            <span class="label-text">Name</span>
+          </label>
+          <input id="name" type="text" class="input input-bordered w-full" [(ngModel)]="contactForm.name" name="name" required>
+        </div>
+        <div class="form-control mb-4">
+          <label class="label" for="email">
+            <span class="label-text">Email</span>
+          </label>
+          <input id="email" type="email" class="input input-bordered w-full" [(ngModel)]="contactForm.email" name="email" required>
+        </div>
+        <div class="form-control mb-4">
+          <label class="label" for="message">
+            <span class="label-text">Message</span>
+          </label>
+          <textarea id="message" class="textarea textarea-bordered w-full" [(ngModel)]="contactForm.message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-full">Send Message</button>
+      </form>
+    </div>
+  </div>
+  
