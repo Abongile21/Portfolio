@@ -1,27 +1,13 @@
-<div class="card w-96 bg-base-100 shadow-xl">
-  <div class="card-body">
-    <h2 class="card-title">Contact Information</h2>
-    <ul>
-      <li>
-        <svg class="w-6 h-6 text-gray-800 dark:text-white inline-block mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 19 18">
-          <path d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"/>
-        </svg>
-        {{contact?.phone}}
-      </li>
-      <li>
-        <svg class="w-6 h-6 text-gray-800 dark:text-white inline-block mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
-          <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
-          <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
-        </svg>
-        {{contact?.email }}
-      </li>
-      <li>
-        <svg class="w-6 h-6 text-gray-800 dark:text-white inline-block mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
-          <path d="M8 0a7.992 7.992 0 0 0-8 8c0 3.858 2.875 7.512 7.521 9.895.526.27 1.146.01 1.436-.472.29-.482.104-1.102-.386-1.372C5.071 14.297 2.5 11.213 2.5 8c0-3.037 2.463-5.5 5.5-5.5s5.5 2.463 5.5 5.5c0 3.213-2.571 6.297-6.071 8.051-.49.27-.676.89-.386 1.372.29.482.91.742 1.436.472C13.125 15.512 16 11.858 16 8a7.992 7.992 0 0 0-8-8Z"/>
-          <path d="M8 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
-        </svg>
-        {{contact?.address}}
-      </li>
-    </ul>
+<!-- contact.component.html -->
+<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-4 flex items-center justify-center">
+  <div class="card w-96 bg-gray-800 text-white shadow-xl border border-gray-700 rounded-xl">
+    <div class="card-body">
+      <h2 class="card-title font-bold text-2xl mb-2">Contact Information</h2>
+      <p class="mt-2"><strong>Phone:</strong> {{ contact.phone }}</p>
+      <p class="mt-2"><strong>Email:</strong> {{ contact.email }}</p>
+      <p class="mt-2"><strong>Address:</strong> {{ contact.address }}</p>
+      <p class="mt-2"><strong>GitHub:</strong> {{ contact.github }}</p>
+      <p class="mt-2"><strong>LinkedIn:</strong> {{ contact.linkedin }}</p>
+    </div>
   </div>
 </div>
