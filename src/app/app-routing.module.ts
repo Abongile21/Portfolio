@@ -12,7 +12,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
 
 const routes: Routes = [
-  { path: '', component: LandingComponent }, // Default path
+  { path: '', component: LandingComponent }, 
   { path: 'skills', component: SkillsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'experience', component: ExperienceComponent },
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'education', component: EducationComponent },
   { path: 'contact-me', component: ContactMeComponent },
   { path: 'landing', component: LandingComponent },
-  { path: 'develop-mode', component: DeveloperModeComponent },
+  { path: 'developer-mode', component: DeveloperModeComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: '**', component: LandingComponent },
   {path:'terminal',component:TerminalComponent} 
