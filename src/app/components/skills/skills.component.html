@@ -1,8 +1,8 @@
-<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black-900 to-grey p-4">
+<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-4">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
     <ng-container *ngFor="let skill of skills">
       <div class="bg-white bg-opacity-80 p-4 rounded-xl border border-gray-300 hover:bg-opacity-100 transition duration-300">
-        <img class="h-20 w-20 object-contain mx-auto transition-transform duration-300 transform hover:scale-110" [src]="skill" alt="Skill Image">
+        <img class="h-20 w-20 object-contain mx-auto transition-transform duration-300 transform hover:scale-110" [src]="skill" [alt]="skill">
       </div>
     </ng-container>
   </div>
