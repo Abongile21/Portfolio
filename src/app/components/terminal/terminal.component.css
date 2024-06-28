@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+@keyframes letterAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .terminal {
+    position: relative;
+    z-index: 20;
+  }
+  
+  .welcome-message {
+    display: inline-block;
+    font-size: 2rem;
+    margin: 20px;
+  }
+  
+  .word {
+    display: inline-block;
+    opacity: 0;
+    animation: letterAppear 0.5s forwards;
+  }
+  
+  .space {
+    display: inline-block;
+    width: 0.5rem; /* Adjust space between words */
+  }
+  
+  

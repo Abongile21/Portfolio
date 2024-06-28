@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ResumeDataService {
   private resumeData = {
-    name: 'ABONGILE NYAKATYA',
+    name: 'ABONGILE THEODORE NYAKATYA',
     title: 'JUNIOR SOFTWARE DEVELOPER',
     contact: {
       phone: '079-160-8432',
@@ -15,17 +15,22 @@ export class ResumeDataService {
       linkedin: 'Abongile Nyakatya'
     },
     profile: 'A student developer currently enrolling in a intense MEAN stack developer programme eager to implement my skills in the tech space. Also a mathematic tutor and ethusiast on the side, with experience in tutoring varsity maths.',
-    techSkills : [
-      'https://cdn.worldvectorlogo.com/logos/html-1.svg',
-      'https://cdn.worldvectorlogo.com/logos/javascript-1.svg',
-      'https://cdn.worldvectorlogo.com/logos/css-3.svg',
-      'https://cdn.worldvectorlogo.com/logos/java-4.svg',
-      'https://cdn.worldvectorlogo.com/logos/python-5.svg',
-      'https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg',
-      'https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg',
-      'https://cdn.worldvectorlogo.com/logos/express-109.svg',
-      'https://cdn.worldvectorlogo.com/logos/nodejs-2.svg'
+    techSkills:[
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+      
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg'
     ]
+  
     ,
     experience: [
       {

@@ -9,8 +9,16 @@ import { Router } from '@angular/router';
 export class TerminalComponent {
   commandHistory: string[] = [];
   currentCommand = '';
+  showWelcomeMessage = true;
+  welcomeMessage = ['Welcome', 'to', 'Developer', 'Mode']
+  
 
   constructor(private router: Router) {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.showWelcomeMessage = false;
+    }, this.welcomeMessage.length *500);
+  }
 
   onEnter() {
     this.commandHistory.push('$ ' + this.currentCommand);

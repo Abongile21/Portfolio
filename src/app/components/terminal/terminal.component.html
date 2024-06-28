@@ -1,15 +1,27 @@
-<div class="terminal bg-black text-green-500 p-4 font-mono">
-    <div *ngFor="let line of commandHistory" class="mb-1">
-      {{ line }}
-    </div>
-    <div class="flex">
-      <span class="mr-2">$</span>
-      <input 
-        type="text" 
-        [(ngModel)]="currentCommand" 
-        (keyup.enter)="onEnter()"
-        class="bg-transparent outline-none flex-grow"
-        autofocus
-      >
+<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-4 relative">
+  <div class="fixed top-0 left-0 right-0 z-10 text-center">
+    <div class="welcome-message text-white">
+      <ng-container *ngFor="let word of welcomeMessage; let wIndex = index">
+        <span class="word" *ngFor="let letter of word.split(''); let lIndex = index" [style.animation-delay]="(wIndex * 0.5 + lIndex * 0.1) + 's'">
+          {{ letter }}
+        </span>
+        <span class="space" *ngIf="wIndex < welcomeMessage.length - 1"> </span>
+      </ng-container>
     </div>
   </div>
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+    <div class="terminal bg-black text-green-500 p-4 font-mono rounded-lg shadow-xl">
+      <div *ngIf="!showWelcomeMessage" class="flex items-center">
+        <span class="mr-2 text-white">$</span>
+        <input 
+          type="text" 
+          [(ngModel)]="currentCommand" 
+          (keyup.enter)="onEnter()"
+          class="bg-transparent outline-none flex-grow text-white"
+          placeholder="Enter your command..."
+          autofocus
+        >
+      </div>
+    </div>
+  </div>
+</div>
