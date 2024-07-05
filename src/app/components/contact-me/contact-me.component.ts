@@ -10,13 +10,11 @@ export class ContactMeComponent {
   showModal: boolean = false;
 
   submitForm(form: NgForm) {
-    // You can handle the actual form submission logic here if needed
     setTimeout(() => {
       this.showModal = true;
       form.resetForm();
     }, 1000);
   }
-
   closeModal() {
     this.showModal = false;
   }
