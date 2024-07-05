@@ -1,24 +1,24 @@
 <div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-6 flex items-center justify-center">
   <div class="card bg-gray-800 text-white shadow-xl p-6 w-full max-w-md">
     <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
-    <form action="https://formspree.io/f/xdknopkz" method="POST">
+    <form #contactForm="ngForm" action="https://formspree.io/f/xdknopkz" method="POST" (ngSubmit)="submitForm(contactForm)">
       <div class="form-control mb-4">
         <label class="label" for="name">
           <span class="label-text text-gray-300">Name</span>
         </label>
-        <input id="name" type="text" class="input input-bordered w-full bg-gray-700 text-white" name="name" required>
+        <input type="text" class="input input-bordered w-full bg-gray-700 text-white" name="name" ngModel required>
       </div>
       <div class="form-control mb-4">
         <label class="label" for="email">
           <span class="label-text text-gray-300">Email</span>
         </label>
-        <input id="email" type="email" class="input input-bordered w-full bg-gray-700 text-white" name="email" required>
+        <input type="email" class="input input-bordered w-full bg-gray-700 text-white" name="email" ngModel required>
       </div>
       <div class="form-control mb-4">
         <label class="label" for="message">
           <span class="label-text text-gray-300">Message</span>
         </label>
-        <textarea id="message" class="textarea textarea-bordered w-full bg-gray-700 text-white" name="message" required></textarea>
+        <textarea class="textarea textarea-bordered w-full bg-gray-700 text-white" name="message" ngModel required></textarea>
       </div>
       <button type="submit" class="btn btn-primary w-full">
         <svg class="w-6 h-6 text-white inline-block mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -27,5 +27,14 @@
         Send Message
       </button>
     </form>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed top-0 left-0 right-0 bottom-0 bg-gray-900 bg-opacity-50 flex items-center justify-center" [ngClass]="{ 'hidden': !showModal }">
+    <div class="bg-white p-6 rounded shadow-lg max-w-md">
+      <h2 class="text-2xl font-bold mb-4">Message Sent!</h2>
+      <p>Your message has been successfully sent.</p>
+      <button class="btn btn-primary mt-4" (click)="closeModal()">Close</button>
+    </div>
   </div>
 </div>
