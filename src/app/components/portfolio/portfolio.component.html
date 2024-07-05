@@ -1,9 +1,26 @@
-
-
-<app-profile id="profile"></app-profile>
-<app-about id="about"></app-about>
-<app-education id="education"></app-education>
-<app-experience id="experience"></app-experience>
-<app-skills id="skills"></app-skills>
-<app-contact id="contacts"></app-contact>
-<app-contact-me id="contact-me"></app-contact-me>
+<nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-links">
+        <a routerLink="/" class="nav-link" (click)="setActiveLink($event)">Home</a>
+        <a (click)="scrollToElement('skills', $event)" class="nav-link">Skills</a>
+        <a (click)="scrollToElement('about', $event)" class="nav-link">About</a>
+        <a (click)="scrollToElement('experience', $event)" class="nav-link">Experience</a>
+        <a (click)="scrollToElement('contacts', $event)" class="nav-link">Contact</a>
+        <a (click)="scrollToElement('education', $event)" class="nav-link">Education</a>
+        <a (click)="scrollToElement('contact-me', $event)" class="nav-link">Contact Me</a>
+        <a (click)="scrollToElement('landing', $event)" class="nav-link">Landing</a>
+        <a routerLink="/developer-mode" class="nav-link" (click)="setActiveLink($event)">Developer Mode</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Page sections with IDs for scrolling -->
+  <app-profile id="profile"></app-profile>
+  <app-about id="about"></app-about>
+  <app-education id="education"></app-education>
+  <app-experience id="experience"></app-experience>
+  <app-skills id="skills"></app-skills>
+  <app-contact id="contacts"></app-contact>
+  <app-contact-me id="contact-me"></app-contact-me>
+  <app-landing id="landing"></app-landing>
+  
