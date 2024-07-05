@@ -14,7 +14,7 @@ export class PortfolioComponent implements OnInit {
   constructor(private router: Router) {
     
     this.audio = new Audio('assets/sound1.mp3');
-    this.audio.volume = 0.01
+    this.audio.volume = 0.04
   }
 
   ngOnInit() {
