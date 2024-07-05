@@ -41,5 +41,6 @@
   
   .active-link {
     text-decoration: underline;
+    scale: 1.2;
   }
   
