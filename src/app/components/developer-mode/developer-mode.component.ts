@@ -45,8 +45,8 @@ export class DeveloperModeComponent {
         this.output.push('Displaying Contact Me...');
         this.scrollToElement('contact-me');
         break;
-      case 'non-developer-mode':
-        this.router.navigate(['/portfolio']);
+      case 'developer mode':
+        this.output.push('Already in Developer Mode.');
         break;
       case 'help':
         this.displayHelp();
@@ -56,6 +56,7 @@ export class DeveloperModeComponent {
         break;
       default:
         this.output.push(`Unknown command: ${this.command}`);
+        this.displayHelp(); // Display help for unknown commands
     }
 
     this.command = '';
@@ -77,7 +78,7 @@ export class DeveloperModeComponent {
     this.output.push('contacts - Display Contacts');
     this.output.push('education - Display Education');
     this.output.push('contact me - Display Contact Me');
-    this.output.push('no-developer-mode - Go to non-Developer Mode');
+    this.output.push('developer mode - Stay in Developer Mode');
     this.output.push('clear - Clear the terminal');
     this.output.push('help - Display this help message');
   }
