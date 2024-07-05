@@ -12,7 +12,9 @@ export class PortfolioComponent implements OnInit {
   private activeLink: HTMLElement | null = null;
 
   constructor(private router: Router) {
+    
     this.audio = new Audio('assets/sound1.mp3');
+    this.audio.volume = 0.01
   }
 
   ngOnInit() {
