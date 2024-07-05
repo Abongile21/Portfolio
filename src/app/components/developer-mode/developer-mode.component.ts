@@ -1,3 +1,4 @@
+// developer-mode.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -48,7 +49,8 @@ export class DeveloperModeComponent {
         this.clearTerminal();
         break;
       default:
-        this.handleUnknownCommand(command);
+        this.output.push(`Unknown command: ${this.command}`);
+        this.suggestCommand();
     }
 
     this.command = '';
@@ -72,8 +74,7 @@ export class DeveloperModeComponent {
     this.output = [];
   }
 
-  handleUnknownCommand(command: string) {
-    this.output.push(`Unknown command: ${command}`);
-    this.output.push('Type "help" for a list of available commands.');
+  suggestCommand() {
+    this.output.push('Did you mean something like: home, skills, about, experience, contacts, education, contact me, developer mode, clear, or help?');
   }
 }

@@ -1,8 +1,14 @@
+*{
+
+    gap:1rem
+}
+
 .min-h-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 
 .terminal-content {
   position: fixed;
