@@ -23,24 +23,30 @@ export class DeveloperModeComponent {
         break;
       case 'skills':
         this.output.push('Displaying Skills...');
+        this.scrollToElement('skills');
         break;
       case 'about':
         this.output.push('Displaying About...');
+        this.scrollToElement('about');
         break;
       case 'experience':
         this.output.push('Displaying Experience...');
+        this.scrollToElement('experience');
         break;
       case 'contacts':
         this.output.push('Displaying Contacts...');
+        this.scrollToElement('contacts');
         break;
       case 'education':
         this.output.push('Displaying Education...');
+        this.scrollToElement('education');
         break;
       case 'contact me':
         this.output.push('Displaying Contact Me...');
+        this.scrollToElement('contact-me');
         break;
-      case 'developer mode':
-        this.output.push('Already in Developer Mode.');
+      case 'non-developer-mode':
+        this.router.navigate(['/portfolio']);
         break;
       case 'help':
         this.displayHelp();
@@ -50,10 +56,16 @@ export class DeveloperModeComponent {
         break;
       default:
         this.output.push(`Unknown command: ${this.command}`);
-        this.suggestCommand();
     }
 
     this.command = '';
+  }
+
+  scrollToElement(elementId: string) {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   displayHelp() {
@@ -65,16 +77,12 @@ export class DeveloperModeComponent {
     this.output.push('contacts - Display Contacts');
     this.output.push('education - Display Education');
     this.output.push('contact me - Display Contact Me');
-    this.output.push('developer mode - Stay in Developer Mode');
+    this.output.push('no-developer-mode - Go to non-Developer Mode');
     this.output.push('clear - Clear the terminal');
     this.output.push('help - Display this help message');
   }
 
   clearTerminal() {
     this.output = [];
-  }
-
-  suggestCommand() {
-    this.output.push('Did you mean something like: home, skills, about, experience, contacts, education, contact me, developer mode, clear, or help?');
   }
 }
