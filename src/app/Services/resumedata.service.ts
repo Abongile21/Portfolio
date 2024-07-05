@@ -38,7 +38,7 @@ export class ResumeDataService {
         company: 'UCT GSB Solution Space',
         period: 'March 2024 - Present',
         responsibilities: [
-          'Building webstites and web app for portifolio enhancement',
+          'Building websites and web app for portifolio enhancement',
           'Learn web development through thE MEAN Stack.',
           'It is a 4 months intense training'
         ]
