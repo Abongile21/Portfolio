@@ -1,24 +1,24 @@
 <div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-6 flex items-center justify-center">
   <div class="card bg-gray-800 text-white shadow-xl p-6 w-full max-w-md">
     <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
-    <form (submit)="sendEmail()">
+    <form action="https://formspree.io/f/xdknopkz" method="POST">
       <div class="form-control mb-4">
         <label class="label" for="name">
           <span class="label-text text-gray-300">Name</span>
         </label>
-        <input id="name" type="text" class="input input-bordered w-full bg-gray-700 text-white" [(ngModel)]="contactForm.name" name="name" required>
+        <input id="name" type="text" class="input input-bordered w-full bg-gray-700 text-white" name="name" required>
       </div>
       <div class="form-control mb-4">
         <label class="label" for="email">
           <span class="label-text text-gray-300">Email</span>
         </label>
-        <input id="email" type="email" class="input input-bordered w-full bg-gray-700 text-white" [(ngModel)]="contactForm.email" name="email" required>
+        <input id="email" type="email" class="input input-bordered w-full bg-gray-700 text-white" name="email" required>
       </div>
       <div class="form-control mb-4">
         <label class="label" for="message">
           <span class="label-text text-gray-300">Message</span>
         </label>
-        <textarea id="message" class="textarea textarea-bordered w-full bg-gray-700 text-white" [(ngModel)]="contactForm.message" name="message" required></textarea>
+        <textarea id="message" class="textarea textarea-bordered w-full bg-gray-700 text-white" name="message" required></textarea>
       </div>
       <button type="submit" class="btn btn-primary w-full">
         <svg class="w-6 h-6 text-white inline-block mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
