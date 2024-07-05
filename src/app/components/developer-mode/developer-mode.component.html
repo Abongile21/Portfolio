@@ -1,1 +1,19 @@
+<!-- developer-mode.component.html -->
 <app-terminal></app-terminal>
+
+<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-6 flex items-center justify-center" id="terminal-content">
+  <div class="terminal bg-gray-800 text-white shadow-xl p-6 w-full max-w-md">
+    <div class="output mb-4">
+      <p *ngFor="let line of output">{{ line }}</p>
+    </div>
+    <input type="text" [(ngModel)]="command" (keydown.enter)="executeCommand()" placeholder="Enter command..." class="input input-bordered w-full bg-gray-700 text-white">
+  </div>
+</div>
+
+<app-profile id="profile"></app-profile>
+<app-about id="about"></app-about>
+<app-education id="education"></app-education>
+<app-experience id="experience"></app-experience>
+<app-skills id="skills"></app-skills>
+<app-contact id="contacts"></app-contact>
+<app-contact-me id="contact-me"></app-contact-me>

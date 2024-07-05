@@ -24,7 +24,6 @@ import { LandingComponent } from './components/landing/landing.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -45,7 +44,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ContactMeComponent,
     DeveloperModeComponent,
     PortfolioComponent,
-    NavbarComponent,
+    
 
   ],
   imports: [
