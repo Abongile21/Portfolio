@@ -10,13 +10,13 @@ export class ResumeDataService {
     contact: {
       phone: '079-160-8432',
       email: 'abongiletheo00@gmail.com',
-      address: '4601 Lillian Ngoyi Str, Samora Machel',
       github: 'Abongile21',
       linkedin: 'Abongile Nyakatya'
     },
     profile: 'A student developer currently enrolling in a intense MEAN stack developer programme eager to implement my skills in the tech space. Also a mathematic tutor and ethusiast on the side, with experience in tutoring varsity maths.',
     techSkills:[
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+      
+
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
@@ -42,26 +42,6 @@ export class ResumeDataService {
           'Learn web development through thE MEAN Stack.',
           'It is a 4 months intense training'
         ]
-      },
-      {
-        title: 'MATHEMATICS TUTOR',
-        company: 'University of Cape Town',
-        period: '2022 - 2023',
-        responsibilities: [
-          'Simplify and explain first year maths to students',
-          'Invigilated term tests',
-          'Marked tutorial test'
-        ]
-      },
-      {
-        title: 'CYCLE COUNT CLERK',
-        company: 'Shoprite DC (Blu Corp)',
-        period: '1 Feb 2021 - 1 Mar 2021',
-        responsibilities: [
-          'Aligning inventory audit with warehouse\'s time frame.',
-          'Identify theft, damage, obselence and incorrect counting.',
-          'Complete inventory report including missing and extra inventory lists.'
-        ]
       }
     ],
     education: [
@@ -76,7 +56,18 @@ export class ResumeDataService {
         period: '2019-2023',
         status: '(incomplete)'
       }
-    ]
+    ],
+    projects:[{
+      image:'',
+      title:'To-do List',
+      github:'',
+      description:'A to-do list site build with tailwind css, html and javascript for DOM manipulation'
+
+    },
+    { image:'',
+      title:'ZamiKhaya',
+      github:'https://github.com/SivuyileMtwetwe/ZamikhayaClient', 
+      description:'ZamiKhaya is a property listing built with angular and has a RESTful API.'}]
   };
 
   getResumeData() {
