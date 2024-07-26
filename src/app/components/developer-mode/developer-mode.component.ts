@@ -29,17 +29,17 @@ export class DeveloperModeComponent {
         this.output.push('Displaying About...');
         this.scrollToElement('about');
         break;
-      case 'experience':
-        this.output.push('Displaying Experience...');
-        this.scrollToElement('experience');
+      case 'projects':
+        this.output.push('Dispalying projects...')
+        this.scrollToElement('projects')
+        break;
+      case 'resume':
+        this.output.push('Dispalying resume...')
+        this.router.navigate(['/resume']);
         break;
       case 'contacts':
         this.output.push('Displaying Contacts...');
         this.scrollToElement('contacts');
-        break;
-      case 'education':
-        this.output.push('Displaying Education...');
-        this.scrollToElement('education');
         break;
       case 'contact me':
         this.output.push('Displaying Contact Me...');
@@ -72,13 +72,12 @@ export class DeveloperModeComponent {
   displayHelp() {
     this.output.push('Available commands:');
     this.output.push('home - Navigate to Home');
+    this.output.push('projecs- view projects');
+    this.output.push('resume- view/download resume');
     this.output.push('skills - Display Skills');
     this.output.push('about - Display About');
-    this.output.push('experience - Display Experience');
     this.output.push('contacts - Display Contacts');
-    this.output.push('education - Display Education');
     this.output.push('contact me - Display Contact Me');
-    this.output.push('developer mode - Stay in Developer Mode');
     this.output.push('clear - Clear the terminal');
     this.output.push('help - Display this help message');
   }
