@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent{
   projects: any[] = [];
 
   constructor(private http: HttpClient) {}

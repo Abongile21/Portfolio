@@ -10,6 +10,8 @@ import { ContactMeComponent } from './components/contact-me/contact-me.component
 import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
+import { ResumeViewComponent } from './components/resume-view/resume-view.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent }, 
@@ -23,7 +25,9 @@ const routes: Routes = [
   { path: 'developer-mode', component: DeveloperModeComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: '**', component: LandingComponent },
-  {path:'terminal',component:TerminalComponent} 
+  {path:'terminal',component:TerminalComponent},
+  {path:'resume', component:ResumeViewComponent},
+  {path:'project',component:ProjectsComponent}
 ];
 
 @NgModule({
