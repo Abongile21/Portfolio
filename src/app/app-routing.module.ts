@@ -16,6 +16,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 const routes: Routes = [
   { path: '', component: LandingComponent }, 
   { path: 'skills', component: SkillsComponent },
+  { path:'resume-view', component: ResumeViewComponent},
   { path: 'about', component: AboutComponent },
   { path: 'experience', component: ExperienceComponent },
   { path: 'contacts', component: ContactComponent },
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },
   { path: '**', component: LandingComponent },
   { path:'terminal',component:TerminalComponent},
-  { path:'resume-view', component: ResumeViewComponent},
+  
   { path:'project',component:ProjectsComponent}
 ];
 
