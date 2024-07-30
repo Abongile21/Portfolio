@@ -25,6 +25,7 @@ import { ContactMeComponent } from './components/contact-me/contact-me.component
 import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ResumeViewComponent } from './components/resume-view/resume-view.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 
@@ -55,7 +56,9 @@ import { ResumeViewComponent } from './components/resume-view/resume-view.compon
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    PdfViewerModule
+
   ],
   providers: [
     provideAnimationsAsync()

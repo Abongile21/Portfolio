@@ -12,7 +12,7 @@ export class ProjectsComponent{
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('https://vercel.com/abongiles-projects')
+    this.http.get<any[]>('https://api.vercel.com/v6/deployments?teamId=team_5vUfwePYduTyPLe2bhl0kbpw')
       .subscribe((data) => {
         this.projects = data;
       });

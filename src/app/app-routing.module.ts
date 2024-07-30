@@ -25,9 +25,9 @@ const routes: Routes = [
   { path: 'developer-mode', component: DeveloperModeComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: '**', component: LandingComponent },
-  {path:'terminal',component:TerminalComponent},
-  {path:'resume', component:ResumeViewComponent},
-  {path:'project',component:ProjectsComponent}
+  { path:'terminal',component:TerminalComponent},
+  { path:'resume-view', component: ResumeViewComponent},
+  { path:'project',component:ProjectsComponent}
 ];
 
 @NgModule({
