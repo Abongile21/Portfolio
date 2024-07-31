@@ -1,24 +1,40 @@
-<nav class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-links">
-        <a routerLink="/" class="nav-link" (click)="setActiveLink($event)">Home</a>
-        <a (click)="scrollToElement('skills', $event)" class="nav-link">Skills</a>
-        <a (click)="scrollToElement('about', $event)" class="nav-link">About</a>
-        <!-- <a (click)="scrollToElement('projects', $event)" class="nav-link">Projects</a> -->
-        <a routerLink="/resume-view" class="nav-link" (click)="setActiveLink($event)" >Resume</a>
-        <a (click)="scrollToElement('contact-me', $event)" class="nav-link">Contact Me</a>
-        <a routerLink="/developer-mode" class="nav-link" (click)="setActiveLink($event)" >Developer Mode</a>
+<div class="gradient-bg">
+  <nav class="fixed-nav">
+    <div class="nav-container">
+      <button #hamburger class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div #navLinks class="nav-links">
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">
+          <i class="fas fa-home"></i> Home
+        </a>
+        <a (click)="scrollToElement('skills')">
+          <i class="fas fa-cogs"></i> Skills
+        </a>
+        <a (click)="scrollToElement('about')">
+          <i class="fas fa-user"></i> About
+        </a>
+        <a routerLink="/resume-view" routerLinkActive="active-link" (click)="closeMenu()">
+          <i class="fas fa-file-alt"></i> Resume
+        </a>
+        <a (click)="scrollToElement('contact-me')">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+        <a routerLink="/developer-mode" routerLinkActive="active-link" (click)="closeMenu()">
+          <i class="fas fa-code"></i> Dev Mode
+        </a>
       </div>
     </div>
   </nav>
-  
-  
-  <app-profile id="profile"></app-profile>
-  <app-about id="about"></app-about>
-  <app-experience id="experience"></app-experience>
-  <!-- <app-projects id="projects"></app-projects> -->
-  <app-skills id="skills"></app-skills>
-  <app-contact id="contacts"></app-contact>
-  <app-contact-me id="contact-me"></app-contact-me>
 
-  
+  <main class="main-content">
+    <app-profile id="profile"></app-profile>
+    <app-about id="about"></app-about>
+    <app-experience id="experience"></app-experience>
+    <app-skills id="skills"></app-skills>
+    <app-contact id="contacts"></app-contact>
+    <app-contact-me id="contact-me"></app-contact-me>
+  </main>
+</div>
