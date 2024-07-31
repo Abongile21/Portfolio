@@ -10,12 +10,14 @@
         <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">
           <i class="fas fa-home"></i> Home
         </a>
-        <a (click)="scrollToElement('skills')">
-          <i class="fas fa-cogs"></i> Skills
-        </a>
+
         <a (click)="scrollToElement('about')">
           <i class="fas fa-user"></i> About
         </a>
+        <a (click)="scrollToElement('skills')">
+          <i class="fas fa-cogs"></i> Skills
+        </a>
+        
         <a routerLink="/resume-view" routerLinkActive="active-link" (click)="closeMenu()">
           <i class="fas fa-file-alt"></i> Resume
         </a>
