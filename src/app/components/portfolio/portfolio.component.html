@@ -1,23 +1,16 @@
 <div class="gradient-bg">
   <nav class="fixed-nav">
     <div class="nav-container">
-      <button #hamburger class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div #navLinks class="nav-links">
+      <div class="nav-links" #navLinks>
         <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">
           <i class="fas fa-home"></i> Home
         </a>
-
         <a (click)="scrollToElement('about')">
           <i class="fas fa-user"></i> About
         </a>
         <a (click)="scrollToElement('skills')">
           <i class="fas fa-cogs"></i> Skills
         </a>
-        
         <a routerLink="/resume-view" routerLinkActive="active-link" (click)="closeMenu()">
           <i class="fas fa-file-alt"></i> Resume
         </a>
@@ -28,15 +21,32 @@
           <i class="fas fa-code"></i> Dev Mode
         </a>
       </div>
+      <button #hamburger class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
   <main class="main-content">
-    <app-profile id="profile"></app-profile>
-    <app-about id="about"></app-about>
-    <app-experience id="experience"></app-experience>
-    <app-skills id="skills"></app-skills>
-    <app-contact id="contacts"></app-contact>
-    <app-contact-me id="contact-me"></app-contact-me>
+    <section id="profile">
+      <app-profile></app-profile>
+    </section>
+    <section id="about">
+      <app-about></app-about>
+    </section>
+    <section id="experience">
+      <app-experience></app-experience>
+    </section>
+    <section id="skills">
+      <app-skills></app-skills>
+    </section>
+    <section id="contact">
+      <app-contact></app-contact>
+    </section>
+    <section id="contact-me">
+      <app-contact-me></app-contact-me>
+    </section>
   </main>
 </div>

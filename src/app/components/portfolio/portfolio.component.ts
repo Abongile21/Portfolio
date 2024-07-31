@@ -47,21 +47,17 @@ export class PortfolioComponent implements OnInit {
       this.renderer.addClass(this.navLinks.nativeElement, 'active');
       this.renderer.addClass(this.hamburger.nativeElement, 'active');
     } else {
-      this.renderer.removeClass(this.navLinks.nativeElement, 'active');
-      this.renderer.removeClass(this.hamburger.nativeElement, 'active');
+      this.closeMenu();
     }
   }
 
   closeMenu(): void {
-    if (this.isMenuOpen) {
-      this.isMenuOpen = false;
-      this.renderer.removeClass(this.navLinks.nativeElement, 'active');
-      this.renderer.removeClass(this.hamburger.nativeElement, 'active');
-    }
+    this.isMenuOpen = false;
+    this.renderer.removeClass(this.navLinks.nativeElement, 'active');
+    this.renderer.removeClass(this.hamburger.nativeElement, 'active');
   }
 
-  private playSound(): void {
-    this.audio.currentTime = 0;
-    this.audio.play().catch(error => console.error('Audio playback failed', error));
+  playSound(): void {
+    this.audio.play();
   }
 }

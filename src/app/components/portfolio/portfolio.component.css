@@ -3,6 +3,8 @@
     --text: #ffffff;
     --bg: #111827;
     --nav-bg: #1f2937;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   body {
@@ -28,7 +30,9 @@
     right: 0;
     z-index: 50;
     background-color: var(--nav-bg);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
   }
   
   .nav-container {
@@ -36,26 +40,63 @@
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
   
   .hamburger {
-    display: none;
+    display: block;
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
+    position: absolute;
+    right: 1rem; /* Positioned on the right side */
+    top: 50%; /* Centered vertically */
+    transform: translateY(-50%); /* Centered vertically */
     z-index: 10;
   }
   
   .hamburger span {
     display: block;
-    width: 25px;
+    width: 30px;
     height: 3px;
-    margin: 5px 0;
+    margin: 6px 0;
+    background-color:white;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger span::before,
+  .hamburger span::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
     background-color: var(--text);
     transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger span::before {
+    top: -10px;
+    transform: translateY(0);
+  }
+  
+  .hamburger span::after {
+    bottom: -10px;
+    transform: translateY(0);
+  }
+  
+  .hamburger.active span {
+    background-color: transparent;
+  }
+  
+  .hamburger.active span::before {
+    transform: rotate(45deg);
+  }
+  
+  .hamburger.active span::after {
+    transform: rotate(-45deg);
   }
   
   .nav-links {
@@ -77,6 +118,11 @@
     align-items: center;
     gap: 0.5rem;
     position: relative;
+    border-radius: 4px;
+  }
+  
+  .nav-links a:hover {
+    background-color: var(--hover-bg);
   }
   
   .nav-links a::after {
@@ -89,7 +135,6 @@
     right: 0;
     background: var(--primary);
     transition: width 0.4s ease;
-    -webkit-transition: width 0.4s ease;
   }
   
   .nav-links a:hover::after,
@@ -116,49 +161,37 @@
     align-items: center;
   }
   
-  app-profile,
-  app-about,
-  app-experience,
-  app-skills,
-  app-contact,
-  app-contact-me {
+  section {
     width: 100%;
     max-width: 800px;
     margin: 2rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow);
+    background-color: var(--nav-bg);
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
   
-  app-profile:hover,
-  app-about:hover,
-  app-experience:hover,
-  app-skills:hover,
-  app-contact:hover,
-  app-contact-me:hover {
+  section:hover {
     transform: translateY(-10px);
+    background-color: var(--hover-bg);
   }
   
   @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-  
     .nav-links {
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 100%;
-      left: 0;
+      top: 60px; /* Adjusted to ensure it displays below the navbar */
       right: 0;
       background-color: var(--nav-bg);
       padding: 1rem;
-      z-index: 9;
+      width: 250px; /* Width of the dropdown menu */
+      border-radius: 8px;
+      box-shadow: var(--shadow);
     }
   
     .nav-links.active {
@@ -171,30 +204,13 @@
       text-align: center;
     }
   
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-  
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-  
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
-    }
-  
     .main-content {
       padding-top: 5rem;
     }
   
-    app-profile,
-    app-about,
-    app-experience,
-    app-skills,
-    app-contact,
-    app-contact-me {
+    section {
       max-width: 100%;
-      padding: 0 1rem;
+      padding: 1rem;
     }
   }
   
@@ -213,12 +229,7 @@
       padding: 7rem 2rem 2rem;
     }
   
-    app-profile,
-    app-about,
-    app-experience,
-    app-skills,
-    app-contact,
-    app-contact-me {
+    section {
       margin: 3rem auto;
     }
   }
