@@ -23,12 +23,13 @@ const routes: Routes = [
   { path: 'education', component: EducationComponent },
   { path: 'contact-me', component: ContactMeComponent },
   { path: 'landing', component: LandingComponent },
+  { path:'project', component:ProjectsComponent},
   { path: 'developer-mode', component: DeveloperModeComponent },
   { path: 'portfolio', component: PortfolioComponent },
   { path: '**', component: LandingComponent },
   { path:'terminal',component:TerminalComponent},
   
-  { path:'project',component:ProjectsComponent}
+  
 ];
 
 @NgModule({
