@@ -60,17 +60,24 @@ export class ResumeDataService {
         status: '(incomplete)'
       }
     ],
-    projects:[{
-      image:'',
-      title:'To-do List',
-      github:'https://github.com/Abongile21/To-Do.git',
-      description:'A to-do list site build with tailwind css, html and javascript for DOM manipulation'
-
-    },
-    { image:'',
-      title:'ZamiKhaya',
-      github:'https://github.com/SivuyileMtwetwe/ZamikhayaClient', 
-      description:'ZamiKhaya is a property listing app built with angular and has a RESTful API.'}]
+    projects: [
+      {
+        image: '../../assets/to-do.jpg',
+        title: 'To-do List',
+        github: 'https://github.com/Abongile21/To-Do.git',
+        description: 'A to-do list site built with Tailwind CSS, HTML, and JavaScript for DOM manipulation',
+        link: 'https://to-49cxwu5dy-abongiles-projects.vercel.app/',
+        technologies: ['HTML', 'JavaScript', 'CSS', 'Tailwind']
+      },
+      {
+        image: '../../assets/zamikhaya.jpg',
+        title: 'ZamiKhaya',
+        github: 'https://github.com/SivuyileMtwetwe/ZamikhayaClient',
+        description: 'ZamiKhaya is a property listing app built with Angular and has a RESTful API.',
+        link: 'https://zamikhaya.vercel.app/',
+        technologies: ['MongoDB', 'ExpressJs', 'Angular', 'Tailwind', 'NodeJS']
+      }
+    ]
   };
 
   getResumeData() {

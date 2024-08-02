@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ResumeDataService } from '../../Services/resumedata.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,12 +9,11 @@ import { HttpClient } from '@angular/common/http';
 export class ProjectsComponent{
   projects: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private resumeDataService: ResumeDataService) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('https://api.vercel.com/v6/deployments?teamId=team_5vUfwePYduTyPLe2bhl0kbpw')
-      .subscribe((data) => {
-        this.projects = data;
-      });
+    const data = this.resumeDataService.getResumeData();
+    this.projects= data.projects;
   }
 }
+

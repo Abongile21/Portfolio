@@ -11,6 +11,10 @@
         <a (click)="scrollToElement('skills')">
           <i class="fas fa-cogs"></i> Skills
         </a>
+        <a (click)="scrollToElement('projects')">
+          <i class="fas fa-cogs"></i> Projects
+        </a>
+        
         <a routerLink="/resume-view" routerLinkActive="active-link" (click)="closeMenu()">
           <i class="fas fa-file-alt"></i> Resume
         </a>
@@ -36,11 +40,11 @@
     <section id="about">
       <app-about></app-about>
     </section>
-    <section id="experience">
-      <app-experience></app-experience>
-    </section>
     <section id="skills">
       <app-skills></app-skills>
+    </section>
+    <section id="projects">
+      <app-projects></app-projects>
     </section>
     <section id="contact">
       <app-contact></app-contact>
@@ -48,5 +52,6 @@
     <section id="contact-me">
       <app-contact-me></app-contact-me>
     </section>
+    
   </main>
 </div>
