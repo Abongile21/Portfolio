@@ -1,22 +1,41 @@
-<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-6 flex flex-col items-center justify-center">
-    <div class="terminal bg-gray-800 text-white shadow-xl p-6 w-full max-w-md">
-      <div class="output mb-4 h-48 w-full overflow-y-auto">
-        <p *ngFor="let line of output" class="text-green-300">{{ line }}</p>
-      </div>
-      <div class="flex items-center">
-        <span class="text-green-300">$</span>
-        <input type="text" [(ngModel)]="command" (keydown.enter)="executeCommand()" placeholder="Enter command..." class="ml-2 flex-1 bg-transparent text-white outline-none">
-      </div>
+<body>
+  <div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-6 flex flex-col items-center justify-center">
+  <div class="terminal bg-gray-800 text-white shadow-xl p-6 w-full max-w-md">
+    <div class="output mb-4 h-48 w-full overflow-y-auto">
+      <p *ngFor="let line of output" class="text-green-300">{{ line }}</p>
     </div>
+    <div class="flex items-center">
+      <span class="text-green-300">$</span>
+      <input type="text" [(ngModel)]="command" (keydown.enter)="executeCommand()" placeholder="Enter command..." class="ml-2 flex-1 bg-transparent text-white outline-none">
+    </div>
+  </div>
 </div>
-    
-    
-<app-profile id="profile"></app-profile>
 
-<app-about id="about"></app-about>
-<app-skills id="skills"></app-skills>
-<!-- <app-projects id="projects"></app-projects> -->
-<app-contact id="contacts"></app-contact>
-<app-contact-me id="contact-me"></app-contact-me>
- 
-  
+<!-- Go Up button -->
+<button (click)="goUp()" class="fixed bottom-4 right-4 p-3 rounded-full bg-gray-800 text-white shadow-lg hover:bg-gray-700 focus:outline-none">
+  ↑
+</button>
+
+
+<main class="main-content">
+  <section id="profile">
+    <app-profile></app-profile>
+  </section>
+  <section id="about">
+    <app-about></app-about>
+  </section>
+  <section id="skills">
+    <app-skills></app-skills>
+  </section>
+  <section id="projects">
+    <app-projects></app-projects>
+  </section>
+  <section id="contact">
+    <app-contact></app-contact>
+  </section>
+  <section id="contact-me">
+    <app-contact-me></app-contact-me>
+  </section>
+</main>
+
+</body>

@@ -30,11 +30,11 @@ export class DeveloperModeComponent {
         this.scrollToElement('about');
         break;
       case 'projects':
-        this.output.push('Dispalying projects...')
-        this.scrollToElement('projects')
+        this.output.push('Displaying Projects...');
+        this.scrollToElement('projects');
         break;
       case 'resume':
-        this.output.push('Dispalying resume...')
+        this.output.push('Displaying Resume...');
         this.router.navigate(['/resume']);
         break;
       case 'contacts':
@@ -72,8 +72,8 @@ export class DeveloperModeComponent {
   displayHelp() {
     this.output.push('Available commands:');
     this.output.push('home - Navigate to Home');
-    this.output.push('projecs- view projects');
-    this.output.push('resume- view/download resume');
+    this.output.push('projects - View Projects');
+    this.output.push('resume - View/Download Resume');
     this.output.push('skills - Display Skills');
     this.output.push('about - Display About');
     this.output.push('contacts - Display Contacts');
@@ -84,5 +84,9 @@ export class DeveloperModeComponent {
 
   clearTerminal() {
     this.output = [];
+  }
+
+  goUp() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
