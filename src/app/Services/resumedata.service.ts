@@ -28,7 +28,11 @@ export class ResumeDataService {
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
       
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg'
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg',
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg'
+
     ]
   
     ,
@@ -59,14 +63,14 @@ export class ResumeDataService {
     projects:[{
       image:'',
       title:'To-do List',
-      github:'',
+      github:'https://github.com/Abongile21/To-Do.git',
       description:'A to-do list site build with tailwind css, html and javascript for DOM manipulation'
 
     },
     { image:'',
       title:'ZamiKhaya',
       github:'https://github.com/SivuyileMtwetwe/ZamikhayaClient', 
-      description:'ZamiKhaya is a property listing built with angular and has a RESTful API.'}]
+      description:'ZamiKhaya is a property listing app built with angular and has a RESTful API.'}]
   };
 
   getResumeData() {
