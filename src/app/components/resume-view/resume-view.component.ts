@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./resume-view.component.css']
 })
 export class ResumeViewComponent implements OnInit {
-  pdfSrc = 'assets/resume.pdf'; // Path to your PDF file in assets
+  pdfSrc = 'assets/resume.pdf'; 
   zoom = 1.0;
 
   constructor(private router: Router) {}
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // Implement any initialization logic here if needed
   }
 
   zoomIn() {
@@ -28,5 +29,9 @@ export class ResumeViewComponent implements OnInit {
     link.href = this.pdfSrc;
     link.download = 'resume.pdf';
     link.click();
+  }
+
+  goBack() {
+    this.router.navigate(['/portfolio']);
   }
 }

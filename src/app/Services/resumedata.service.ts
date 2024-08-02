@@ -13,10 +13,8 @@ export class ResumeDataService {
       github: 'Abongile21',
       linkedin: 'Abongile Nyakatya'
     },
-    profile: 'A student developer currently enrolling in a intense MEAN stack developer programme eager to implement my skills in the tech space. Also a mathematic tutor and ethusiast on the side, with experience in tutoring varsity maths.',
-    techSkills:[
-      
-
+    profile: 'A student developer currently enrolled in an intense MEAN stack developer program, eager to implement my skills in the tech space. Also a mathematics tutor and enthusiast on the side, with experience in tutoring varsity maths.',
+    techSkills: [
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
@@ -27,23 +25,19 @@ export class ResumeDataService {
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-      
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
       'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
       'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg'
-
-    ]
-  
-    ,
+    ],
     experience: [
       {
-        title: 'FULLSTACK DEVELOPMENT PROGRAMME',
+        title: 'FULLSTACK DEVELOPMENT PROGRAM',
         company: 'UCT GSB Solution Space',
         period: 'March 2024 - Present',
         responsibilities: [
-          'Building websites and web app for portifolio enhancement',
-          'Learn web development through thE MEAN Stack.'
+          'Building websites and web apps for portfolio enhancement',
+          'Learning web development through the MEAN Stack.'
         ]
       }
     ],
@@ -56,7 +50,7 @@ export class ResumeDataService {
       {
         school: 'University of Cape Town',
         degree: 'BSC COMPUTER SCIENCE',
-        period: '2019-2023',
+        period: '2019 - 2023',
         status: '(incomplete)'
       }
     ],
@@ -65,7 +59,7 @@ export class ResumeDataService {
         image: '../../assets/to-do.jpg',
         title: 'To-do List',
         github: 'https://github.com/Abongile21/To-Do.git',
-        description: 'A to-do list site built with Tailwind CSS, HTML, and JavaScript for DOM manipulation',
+        description: 'A to-do list site built with Tailwind CSS, HTML, and JavaScript for DOM manipulation.',
         link: 'https://to-49cxwu5dy-abongiles-projects.vercel.app/',
         technologies: ['HTML', 'JavaScript', 'CSS', 'Tailwind']
       },
@@ -75,7 +69,7 @@ export class ResumeDataService {
         github: 'https://github.com/SivuyileMtwetwe/ZamikhayaClient',
         description: 'ZamiKhaya is a property listing app built with Angular and has a RESTful API.',
         link: 'https://zamikhaya.vercel.app/',
-        technologies: ['MongoDB', 'ExpressJs', 'Angular', 'Tailwind', 'NodeJS']
+        technologies: ['MongoDB', 'ExpressJS', 'Angular', 'Tailwind', 'NodeJS']
       }
     ]
   };
