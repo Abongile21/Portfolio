@@ -69,8 +69,24 @@ export class ResumeDataService {
         github: 'https://github.com/SivuyileMtwetwe/ZamikhayaClient',
         description: 'ZamiKhaya is a property listing app built with Angular and has a RESTful API.',
         link: 'https://zamikhaya.vercel.app/',
-        technologies: ['MongoDB', 'ExpressJS', 'Angular', 'Tailwind', 'NodeJS']
-      }
+        technologies: ['MongoDB', 'ExpressJS', 'Angular', 'Tailwind', 'NodeJS','AWS-S3']
+      },
+      {
+        image: '../../assets/StuManSys.png',
+        title: 'Stu Management Sys',
+        github: 'https://github.com/Abongile21/Student_Management-_Sys',
+        description: 'Student management system is a Full CRUD App,has grade chart, calculator and  uses local storage.',
+        link: 'https://student-management-sys-sigma.vercel.app/',
+        technologies: ['HTML', 'JavaScript', 'CSS', 'Tailwind']
+      },
+      {
+        image: '../../assets/Gush.png',
+        title: 'GushLife Rides',
+        github: 'https://github.com/SivuyileMtwetwe/ZamikhayaClient',
+        description: 'GushLifeRides a catalog of BMW 325i vehicles that available for hire.',
+        link: 'https://gushliferides.netlify.app/',
+        technologies: ['HTML', 'JavaScript', 'CSS', 'Tailwind','Formspree']
+      },
     ]
   };
 
