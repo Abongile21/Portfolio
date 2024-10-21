@@ -1,41 +1,43 @@
 <div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-6 flex flex-col items-center justify-center">
-  <div class="flex w-full max-w-6xl">
-    <div class="terminal bg-gray-900 text-white shadow-2xl rounded-lg p-6 w-full max-w-md border-2 border-gray-800 mr-4">
+  <div class="flex flex-col w-full max-w-6xl space-y-4 md:flex-row md:space-y-0 md:space-x-4">
+    
+    <!-- Terminal Component -->
+    <div class="terminal bg-gray-900 text-white shadow-2xl rounded-lg p-6 w-full max-w-md border-2 border-gray-800">
       <div class="output mb-4 h-64 w-full overflow-y-auto border-b-2 border-gray-800 pb-4 custom-scrollbar">
         <p *ngFor="let line of output" class="text-green-300 font-mono tracking-wide animate-fade-in">{{ line }}</p>
       </div>
       <div class="flex items-center mt-2">
         <span class="text-green-400 font-mono">$</span>
-        <input type="text" [(ngModel)]="command" (keydown.enter)="executeCommand()" 
-          placeholder="Enter command..." 
-          class="ml-2 flex-1 bg-transparent text-white font-mono text-lg tracking-wider placeholder-gray-600 outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300">
+        <input type="text" 
+               [(ngModel)]="command" 
+               (keydown.enter)="executeCommand()" 
+               placeholder="Enter command..." 
+               class="ml-2 flex-1 bg-transparent text-white font-mono text-lg tracking-wider placeholder-gray-600 outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300">
       </div>
     </div>
 
+    <!-- Result Container -->
     <div class="result-container bg-gray-900 text-white shadow-2xl rounded-lg p-6 border-2 border-gray-800 transition-all duration-500 ease-in-out flex-1"
-         [ngClass]="{
-           'h-48': !activeTab,
-           'h-auto': activeTab
-         }">
+         [ngClass]="{'h-48': !activeTab, 'h-auto': activeTab}">
       <ng-container [ngSwitch]="activeTab">
-        <div *ngSwitchCase="'skills'" class="p-4 animate-fade-in transition-transform duration-500 ease-in-out">
-          <app-skills class="w-full h-full"></app-skills>
-        </div>
-        <div *ngSwitchCase="'about'" class="p-4 animate-fade-in transition-transform duration-500 ease-in-out">
-          <app-about class="w-full h-full"></app-about>
-        </div>
-        <div *ngSwitchCase="'projects'" class="p-4 animate-fade-in transition-transform duration-500 ease-in-out">
-          <app-projects class="w-full h-full"></app-projects>
-        </div>
-        <div *ngSwitchCase="'contacts'" class="p-4 animate-fade-in transition-transform duration-500 ease-in-out">
-          <app-contact class="w-full h-full"></app-contact>
-        </div>
-        <div *ngSwitchCase="'contact-me'" class="p-4 animate-fade-in transition-transform duration-500 ease-in-out">
-          <app-contact-me class="w-full h-full"></app-contact-me>
-        </div>
-        <div *ngSwitchDefault class="p-4 text-gray-500">
-          <p class="text-lg font-mono tracking-wide">Awaiting command...</p>
-        </div>
+        <ng-container *ngSwitchCase="'skills'">
+          <app-skills class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-skills>
+        </ng-container>
+        <ng-container *ngSwitchCase="'about'">
+          <app-about class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-about>
+        </ng-container>
+        <ng-container *ngSwitchCase="'projects'">
+          <app-projects class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-projects>
+        </ng-container>
+        <ng-container *ngSwitchCase="'contacts'">
+          <app-contact class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-contact>
+        </ng-container>
+        <ng-container *ngSwitchCase="'contact-me'">
+          <app-contact-me class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-contact-me>
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          <p class="p-4 text-lg font-mono tracking-wide text-gray-500">Awaiting command...</p>
+        </ng-container>
       </ng-container>
     </div>
   </div>

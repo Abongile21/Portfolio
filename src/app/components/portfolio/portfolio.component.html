@@ -1,34 +1,35 @@
 <div class="gradient-bg">
-  <nav class="fixed-nav">
-    <div class="nav-container flex justify-between items-center p-4">
-      <div class="nav-links space-x-4" #navLinks>
-        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()" class="nav-item">
-          <i class="fas fa-home"></i> Home
-        </a>
-        <a (click)="scrollToElement('about')" class="nav-item">
-          <i class="fas fa-user"></i> About
-        </a>
-        <a (click)="scrollToElement('skills')" class="nav-item">
-          <i class="fas fa-cogs"></i> Skills
-        </a>
-        <a (click)="scrollToElement('projects')" class="nav-item">
-          <i class="fas fa-briefcase"></i> Projects
-        </a>
-        <a routerLink="/resume-view" routerLinkActive="active-link" (click)="closeMenu()" class="nav-item">
-          <i class="fas fa-file-alt"></i> Resume
-        </a>
-        <a (click)="scrollToElement('contact-me')" class="nav-item">
-          <i class="fas fa-envelope"></i> Contact
-        </a>
-        <a routerLink="/developer-mode" routerLinkActive="active-link" (click)="closeMenu()" class="nav-item">
-          <i class="fas fa-code"></i> Dev Mode
-        </a>
+  <nav class="fixed top-0 left-0 w-full bg-gray-800 shadow-lg z-50 transition-all duration-300" [ngClass]="{'bg-opacity-90': isMenuOpen, 'bg-opacity-100': !isMenuOpen}">
+    <div class="flex justify-between items-center p-4">
+      <div class="hidden md:flex space-x-6" #navLinks>
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()" class="text-white hover:text-green-400 transition duration-300">Home</a>
+        <a (click)="scrollToElement('about')" class="text-white hover:text-green-400 transition duration-300">About</a>
+        <a (click)="scrollToElement('skills')" class="text-white hover:text-green-400 transition duration-300">Skills</a>
+        <a (click)="scrollToElement('projects')" class="text-white hover:text-green-400 transition duration-300">Projects</a>
+        <a routerLink="/resume-view" routerLinkActive="active-link" (click)="closeMenu()" class="text-white hover:text-green-400 transition duration-300">Resume</a>
+        <a (click)="scrollToElement('contact-me')" class="text-white hover:text-green-400 transition duration-300">Contact</a>
+        <a routerLink="/developer-mode" routerLinkActive="active-link" (click)="closeMenu()" class="text-white hover:text-green-400 transition duration-300">Dev Mode</a>
       </div>
-      <button #hamburger class="hamburger lg:hidden" (click)="toggleMenu()" aria-label="Toggle menu">
-        <span class="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
-        <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-      </button>
+
+      <!-- Hamburger SVG Icon -->
+      <div #hamburger class="md:hidden cursor-pointer" (click)="toggleMenu()" aria-label="Toggle menu">
+        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden" [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}">
+      <div class="flex flex-col space-y-2 p-4 bg-gray-800 bg-opacity-90 transition-all duration-300">
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()" class="text-white hover:text-green-400 transition duration-300">Home</a>
+        <a (click)="scrollToElement('about')" class="text-white hover:text-green-400 transition duration-300">About</a>
+        <a (click)="scrollToElement('skills')" class="text-white hover:text-green-400 transition duration-300">Skills</a>
+        <a (click)="scrollToElement('projects')" class="text-white hover:text-green-400 transition duration-300">Projects</a>
+        <a routerLink="/resume-view" routerLinkActive="active-link" (click)="closeMenu()" class="text-white hover:text-green-400 transition duration-300">Resume</a>
+        <a (click)="scrollToElement('contact-me')" class="text-white hover:text-green-400 transition duration-300">Contact</a>
+        <a routerLink="/developer-mode" routerLinkActive="active-link" (click)="closeMenu()" class="text-white hover:text-green-400 transition duration-300">Dev Mode</a>
+      </div>
     </div>
   </nav>
 
@@ -45,12 +46,8 @@
     <section id="projects" class="section">
       <app-projects></app-projects>
     </section>
-    <section id ="contact" class="section">
-      <app-contact></app-contact>
-    </section>
     <section id="contact-me" class="section">
       <app-contact-me></app-contact-me>
     </section>
-    
   </main>
 </div>

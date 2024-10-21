@@ -15,7 +15,6 @@
     background-color: var(--bg);
     line-height: 1.6;
   }
-  
   .gradient-bg {
     background: linear-gradient(135deg, #1e3a8a, #000000, #111827);
     min-height: 100vh;
@@ -231,6 +230,9 @@
   
     section {
       margin: 3rem auto;
+    }
+    .hamburger{
+      display: none;
     }
   }
   
