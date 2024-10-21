@@ -7,15 +7,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./contact-me.component.css']
 })
 export class ContactMeComponent {
-  showModal: boolean = false;
+  showModal = false;
 
-  submitForm(form: NgForm) {
-    setTimeout(() => {
+  submitForm(form: any): void {
+    if (form.valid) {
       this.showModal = true;
-      form.resetForm();
-    }, 1000);
+      form.reset();
+    }
   }
-  closeModal() {
+
+  closeModal(): void {
     this.showModal = false;
   }
 }
