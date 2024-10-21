@@ -1,55 +1,54 @@
 <div class="gradient-bg">
   <nav class="fixed-nav">
-    <div class="nav-container">
-      <div class="nav-links" #navLinks>
-        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">
+    <div class="nav-container flex justify-between items-center p-4">
+      <div class="nav-links space-x-4" #navLinks>
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()" class="nav-item">
           <i class="fas fa-home"></i> Home
         </a>
-        <a (click)="scrollToElement('about')">
+        <a (click)="scrollToElement('about')" class="nav-item">
           <i class="fas fa-user"></i> About
         </a>
-        <a (click)="scrollToElement('skills')">
+        <a (click)="scrollToElement('skills')" class="nav-item">
           <i class="fas fa-cogs"></i> Skills
         </a>
-        <a (click)="scrollToElement('projects')">
-          <i class="fas fa-cogs"></i> Projects
+        <a (click)="scrollToElement('projects')" class="nav-item">
+          <i class="fas fa-briefcase"></i> Projects
         </a>
-        
-        <a routerLink="/resume-view" routerLinkActive="active-link" (click)="closeMenu()">
+        <a routerLink="/resume-view" routerLinkActive="active-link" (click)="closeMenu()" class="nav-item">
           <i class="fas fa-file-alt"></i> Resume
         </a>
-        <a (click)="scrollToElement('contact-me')">
+        <a (click)="scrollToElement('contact-me')" class="nav-item">
           <i class="fas fa-envelope"></i> Contact
         </a>
-        <a routerLink="/developer-mode" routerLinkActive="active-link" (click)="closeMenu()">
+        <a routerLink="/developer-mode" routerLinkActive="active-link" (click)="closeMenu()" class="nav-item">
           <i class="fas fa-code"></i> Dev Mode
         </a>
       </div>
-      <button #hamburger class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button #hamburger class="hamburger lg:hidden" (click)="toggleMenu()" aria-label="Toggle menu">
+        <span class="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-white mb-1 transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
       </button>
     </div>
   </nav>
 
-  <main class="main-content">
-    <section id="profile">
+  <main class="main-content pt-20">
+    <section id="profile" class="section">
       <app-profile></app-profile>
     </section>
-    <section id="about">
+    <section id="about" class="section">
       <app-about></app-about>
     </section>
-    <section id="skills">
+    <section id="skills" class="section">
       <app-skills></app-skills>
     </section>
-    <section id="projects">
+    <section id="projects" class="section">
       <app-projects></app-projects>
     </section>
-    <section id="contact">
+    <section id ="contact" class="section">
       <app-contact></app-contact>
     </section>
-    <section id="contact-me">
+    <section id="contact-me" class="section">
       <app-contact-me></app-contact-me>
     </section>
     
