@@ -13,7 +13,7 @@ export class ResumeDataService {
       github: 'Abongile21',
       linkedin: 'Abongile Nyakatya'
     },
-    profile: 'As a passionate and versatile software developer, I specialize in full-stack web development, with a strong foundation in HTML, CSS, JavaScript, Node.js, Angular, and Tailwind CSS. My expertise spans across backend API creation, responsive UI/UX design, and seamless integrations. I thrive on building innovative solutions that solve real-world problems, with a focus on clean, efficient code and user-centered design. Having honed my skills through hands-on projects and professional collaborations, I’m always eager to learn and apply the latest technologies to create impactful, high-quality applications.',
+    profile: 'I am a passionate and versatile full-stack developer with expertise in HTML, CSS, JavaScript, Node.js, Angular, and Tailwind CSS. I specialize in backend API creation, responsive UI/UX design, and seamless integrations, focusing on clean, efficient code and user-centered solutions. With hands-on experience in innovative projects, I continuously seek to learn and apply the latest technologies to deliver impactful, high-quality applications.',
     techSkills: [
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
