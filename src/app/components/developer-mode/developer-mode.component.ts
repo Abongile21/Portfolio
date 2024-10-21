@@ -1,4 +1,3 @@
-// developer-mode.component.ts
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,6 +9,7 @@ import { Router } from '@angular/router';
 export class DeveloperModeComponent {
   command: string = '';
   output: string[] = [];
+  activeTab: string = '';
 
   constructor(private router: Router) {}
 
@@ -23,15 +23,15 @@ export class DeveloperModeComponent {
         break;
       case 'skills':
         this.output.push('Displaying Skills...');
-        this.scrollToElement('skills');
+        this.activeTab = 'skills';
         break;
       case 'about':
         this.output.push('Displaying About...');
-        this.scrollToElement('about');
+        this.activeTab = 'about';
         break;
       case 'projects':
         this.output.push('Displaying Projects...');
-        this.scrollToElement('projects');
+        this.activeTab = 'projects';
         break;
       case 'resume':
         this.output.push('Displaying Resume...');
@@ -39,11 +39,11 @@ export class DeveloperModeComponent {
         break;
       case 'contacts':
         this.output.push('Displaying Contacts...');
-        this.scrollToElement('contacts');
+        this.activeTab = 'contacts';
         break;
       case 'contact me':
         this.output.push('Displaying Contact Me...');
-        this.scrollToElement('contact-me');
+        this.activeTab = 'contact-me';
         break;
       case 'developer mode':
         this.output.push('Already in Developer Mode.');
@@ -56,17 +56,10 @@ export class DeveloperModeComponent {
         break;
       default:
         this.output.push(`Unknown command: ${this.command}`);
-        this.displayHelp(); // Display help for unknown commands
+        this.displayHelp();
     }
 
     this.command = '';
-  }
-
-  scrollToElement(elementId: string) {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   }
 
   displayHelp() {
@@ -84,9 +77,6 @@ export class DeveloperModeComponent {
 
   clearTerminal() {
     this.output = [];
-  }
-
-  goUp() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.activeTab = '';
   }
 }
