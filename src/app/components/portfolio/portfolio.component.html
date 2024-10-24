@@ -1,6 +1,6 @@
 <div class="gradient-bg">
   <nav class="fixed top-0 left-0 w-full bg-gray-800 shadow-lg z-50 transition-all duration-300" [ngClass]="{'bg-opacity-90': isMenuOpen, 'bg-opacity-100': !isMenuOpen}">
-    <div class="flex justify-between items-center p-4">
+    <div class="flex justify-between justify-center p-4">
       <div class="hidden md:flex space-x-6" #navLinks>
         <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()" class="text-white hover:text-green-400 transition duration-300">Home</a>
         <a (click)="scrollToElement('about')" class="text-white hover:text-green-400 transition duration-300">About</a>
