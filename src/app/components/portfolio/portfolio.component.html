@@ -3,9 +3,31 @@
     class="fixed top-0 left-0 w-full bg-gray-800 shadow-lg z-50 transition-all duration-300"
     [ngClass]="{'bg-opacity-90': isMenuOpen, 'bg-opacity-100': !isMenuOpen}"
   >
-    <div class="flex justify-center p-4">
+    <div class="flex items-center justify-between p-4">
+      <!-- Hamburger Icon for Mobile -->
+      <div
+        #hamburger
+        class="md:hidden cursor-pointer"
+        (click)="toggleMenu()"
+        aria-label="Toggle menu"
+      >
+        <svg
+          class="h-6 w-6 text-white"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
+        </svg>
+      </div>
+
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex space-x-6" #navLinks>
+      <div class="hidden md:flex flex-1 justify-center space-x-6" #navLinks>
         <a
           routerLink="/"
           routerLinkActive="active-link"
@@ -48,28 +70,6 @@
           class="text-white hover:text-green-400 transition duration-300"
           >Dev Mode</a
         >
-      </div>
-
-      <!-- Mobile Hamburger Icon -->
-      <div
-        #hamburger
-        class="md:hidden cursor-pointer"
-        (click)="toggleMenu()"
-        aria-label="Toggle menu"
-      >
-        <svg
-          class="h-6 w-6 text-white"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          />
-        </svg>
       </div>
     </div>
 
