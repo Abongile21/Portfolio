@@ -1,4 +1,11 @@
 /* Keyframes for Animations */
+
+.gradient-bg .min-h-screen{
+  background: linear-gradient(to right, #0a0f14, #1c2833, #34495e);
+
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
