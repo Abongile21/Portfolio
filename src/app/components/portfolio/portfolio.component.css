@@ -1,9 +1,35 @@
-/* Keyframes for Animations */
 
-.gradient-bg .min-h-screen{
+
+.gradient-bg .min-h-screen {
   background: linear-gradient(to right, #0a0f14, #1c2833, #34495e);
-
+  background-size: 200% 200%;
+  animation: gradientMove 15s ease-in-out infinite;
+  transition: background-position 1s ease;
 }
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+    
+  }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+
+  }
+  75% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+
+
 
 
 @keyframes fadeIn {
