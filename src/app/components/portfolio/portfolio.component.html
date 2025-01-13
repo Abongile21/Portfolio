@@ -1,18 +1,22 @@
-<div class="gradient-bg">
+<div class="gradient-bg min-h-screen flex flex-col">
   <nav
-    class="fixed top-0 left-0 w-full bg-gray-800 shadow-lg z-50 transition-all duration-300"
-    [ngClass]="{'bg-opacity-90': isMenuOpen, 'bg-opacity-100': !isMenuOpen}"
+    class="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-90 shadow-md z-50 transition duration-300"
   >
-    <div class="flex items-center justify-between p-4">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <!-- Logo -->
+      <div class="text-white text-xl font-semibold tracking-wider animate-fade-in">
+        MyPortfolio
+      </div>
+
       <!-- Hamburger Icon for Mobile -->
       <div
         #hamburger
-        class="md:hidden cursor-pointer"
+        class="md:hidden cursor-pointer hamburger-icon"
         (click)="toggleMenu()"
         aria-label="Toggle menu"
       >
         <svg
-          class="h-6 w-6 text-white"
+          class="h-8 w-8 text-white"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -27,113 +31,52 @@
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex flex-1 justify-center space-x-6" #navLinks>
-        <a
-          routerLink="/"
-          routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{exact: true}"
-          (click)="closeMenu()"
-          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
-        >Home</a>
-      
-        <a
-          (click)="scrollToElement('about')"
-          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
-        >About</a>
-      
-        <a
-          (click)="scrollToElement('skills')"
-          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
-        >Skills</a>
-      
-        <a
-          (click)="scrollToElement('projects')"
-          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
-        >Projects</a>
-      
-        <a
-          routerLink="/resume-view"
-          routerLinkActive="active-link"
-          (click)="closeMenu()"
-          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
-        >Resume</a>
-      
-        <a
-          (click)="scrollToElement('contact-me')"
-          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
-        >Contact</a>
-      
-        <a
-          routerLink="/developer-mode"
-          routerLinkActive="active-link"
-          (click)="closeMenu()"
-          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
-        >Dev Mode</a>
-      </div>
-      
-    <!-- Mobile Menu -->
-    <div class="md:hidden" [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}">
-      <div class="flex flex-col space-y-2 p-4 bg-gray-800 bg-opacity-90 transition-all duration-300">
-        <a
-          routerLink="/"
-          routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{exact: true}"
-          (click)="closeMenu()"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Home</a
-        >
-        <a
-          (click)="scrollToElement('about')"
-          class="text-white hover:text-green-400 transition duration-300"
-          >About</a
-        >
-        <a
-          (click)="scrollToElement('skills')"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Skills</a
-        >
-        <a
-          (click)="scrollToElement('projects')"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Projects</a
-        >
-        <a
-          routerLink="/resume-view"
-          routerLinkActive="active-link"
-          (click)="closeMenu()"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Resume</a
-        >
-        <a
-          (click)="scrollToElement('contact-me')"
-          class="text-white hover:text-green-400 transition duration-300"
+      <div
+        class="hidden md:flex items-center space-x-8 text-sm font-medium animate-slide-in"
+      >
+        <a routerLink="/" class="nav-link text-gray-300">Home</a>
+        <a (click)="scrollToElement('about')" class="nav-link text-gray-300">About</a>
+        <a (click)="scrollToElement('skills')" class="nav-link text-gray-300">Skills</a>
+        <a (click)="scrollToElement('projects')" class="nav-link text-gray-300">Projects</a>
+        <a routerLink="/resume-view" class="nav-link text-gray-300">Resume</a>
+        <a (click)="scrollToElement('contact-me')" class="nav-link text-gray-300"
           >Contact</a
         >
-        <a
-          routerLink="/developer-mode"
-          routerLinkActive="active-link"
-          (click)="closeMenu()"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Dev Mode</a
-        >
+        <a routerLink="/developer-mode" class="nav-link text-gray-300">Dev Mode</a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      class="md:hidden mobile-menu"
+      [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}"
+    >
+      <div class="flex flex-col space-y-4 p-6 bg-gray-900 bg-opacity-90 text-center text-gray-300">
+        <a routerLink="/" class="hover:text-green-400">Home</a>
+        <a (click)="scrollToElement('about')" class="hover:text-green-400">About</a>
+        <a (click)="scrollToElement('skills')" class="hover:text-green-400">Skills</a>
+        <a (click)="scrollToElement('projects')" class="hover:text-green-400">Projects</a>
+        <a routerLink="/resume-view" class="hover:text-green-400">Resume</a>
+        <a (click)="scrollToElement('contact-me')" class="hover:text-green-400">Contact</a>
+        <a routerLink="/developer-mode" class="hover:text-green-400">Dev Mode</a>
       </div>
     </div>
   </nav>
 
-  <main class="pt-20">
-    <section id="profile" class="section">
+  <main class="pt-24">
+    <section id="profile" class="section animate-fade-in">
       <app-profile></app-profile>
     </section>
-    <section id="about" class="section">
+    <section id="about" class="section animate-slide-in">
       <app-about></app-about>
     </section>
-    <section id="skills" class="section">
+    <section id="skills" class="section animate-slide-in">
       <app-skills></app-skills>
     </section>
-    <section id="projects" class="section">
+    <section id="projects" class="section animate-slide-in">
       <app-projects></app-projects>
     </section>
-    <section id="contact-me" class="section">
+    <section id="contact-me" class="section animate-fade-in">
       <app-contact-me></app-contact-me>
     </section>
   </main>
