@@ -1,97 +1,36 @@
-/* Profile Container Animation */
-.profile-container {
-  animation: fadeInUp 1s ease-out;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Custom fade-in animation class */
+.animate-fadeIn {
+  animation: fadeIn 1s forwards;
 }
 
-
-.profile-image-container {
-  overflow: hidden;
+/* Delay for each element's appearance */
+.text-center lg\:text-left {
+  animation: fadeIn 1s forwards;
 }
 
-.profile-image {
-  animation: rotateAndScale 1s ease-out infinite alternate;
-  transition: transform 0.3s ease, filter 0.3s ease;
+.text-center lg\:text-left:nth-child(1) {
+  animation-delay: 1s;
 }
 
-@keyframes rotateAndScale {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.05) rotate(10deg);
-  }
-  100% {
-    transform: scale(1) rotate(0deg);
-  }
+.text-center lg\:text-left:nth-child(2) {
+  animation-delay: 1.5s;
 }
 
-.profile-image img:hover  {
-  transform: scale(1.15) rotate(15deg);
-  filter: brightness(1.2);
+/* Hover effect for profile image */
+.profile-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Profile Text Hover and Fade-in */
-.profile-container h2 {
-  animation: textFadeIn 1s ease-out;
-  color: #edf2f7;
+/* Ensure that the image fades in */
+img {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 2s;
 }
-
-@keyframes textFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.profile-container h2:hover {
-  color: #6366f1; /* Hover effect: Indigo */
-}
-
-.profile-container p {
-  animation: textFadeIn 1.2s ease-out;
-  color: #cbd5e0;
-}
-
-.profile-container p:hover {
-  color: #e2e8f0; /* Lighter text on hover */
-}
-
-/* Hover Effects for Profile Container */
-
-/* Smooth Gradient Hover Effect */
-
-/* Optional: Glowing Effect for Image */
-.profile-image-container:hover {
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
-}
-
-/* Text Adjustments */
-.profile-container h3 {
-  font-weight: 400;
-}
-
-.profile-container p {
-  line-height: 1.8;
-  font-size: 1.1rem;
-}
-
-/* Gradient Background for Profile Section */

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ResumeDataService {
   private resumeData = {
-    name: 'ABONGILE THEODORE NYAKATYA',
+    name: 'ABONGILE',
     title: 'JUNIOR SOFTWARE DEVELOPER',
     contact: {
       phone: '079-160-8432',
