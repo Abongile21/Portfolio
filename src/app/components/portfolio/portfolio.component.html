@@ -4,7 +4,7 @@
   >
     <div class="container mx-auto flex items-center justify-between p-4">
       <!-- Logo -->
-      <div class="text-white text-xl font-semibold tracking-wider animate-fade-in">
+      <div class="text-white text-2xl font-bold tracking-wide animate-bounce-in">
         MyPortfolio
       </div>
 
@@ -32,7 +32,7 @@
 
       <!-- Desktop Navigation -->
       <div
-        class="hidden md:flex items-center space-x-8 text-sm font-medium animate-slide-in"
+        class="hidden md:flex items-center space-x-8 text-sm font-medium animate-slide-in-left"
       >
         <a routerLink="/" class="nav-link text-gray-300">Home</a>
         <a (click)="scrollToElement('about')" class="nav-link text-gray-300">About</a>
@@ -51,7 +51,7 @@
       class="md:hidden mobile-menu"
       [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}"
     >
-      <div class="flex flex-col space-y-4 p-6 bg-gray-900 bg-opacity-90 text-center text-gray-300">
+      <div class="flex flex-col space-y-4 p-6 bg-gray-900 bg-opacity-90 text-center text-gray-300 animate-fade-in">
         <a routerLink="/" class="hover:text-green-400">Home</a>
         <a (click)="scrollToElement('about')" class="hover:text-green-400">About</a>
         <a (click)="scrollToElement('skills')" class="hover:text-green-400">Skills</a>
@@ -67,13 +67,13 @@
     <section id="profile" class="section animate-fade-in">
       <app-profile></app-profile>
     </section>
-    <section id="about" class="section animate-slide-in">
+    <section id="about" class="section animate-slide-in-right">
       <app-about></app-about>
     </section>
-    <section id="skills" class="section animate-slide-in">
+    <section id="skills" class="section animate-slide-in-left">
       <app-skills></app-skills>
     </section>
-    <section id="projects" class="section animate-slide-in">
+    <section id="projects" class="section animate-scale-in">
       <app-projects></app-projects>
     </section>
     <section id="contact-me" class="section animate-fade-in">
