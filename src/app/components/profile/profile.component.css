@@ -40,7 +40,7 @@
   }
 }
 
-.profile-image:hover {
+.profile-image img:hover  {
   transform: scale(1.15) rotate(15deg);
   filter: brightness(1.2);
 }
@@ -76,16 +76,8 @@
 }
 
 /* Hover Effects for Profile Container */
-.profile-container:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 25px 45px rgba(99, 102, 241, 0.2);
-}
 
 /* Smooth Gradient Hover Effect */
-.profile-container:hover {
-  background: linear-gradient(135deg, #4c9f70, #2d3748);
-  box-shadow: 0 25px 45px rgba(99, 102, 241, 0.3);
-}
 
 /* Optional: Glowing Effect for Image */
 .profile-image-container:hover {
@@ -103,8 +95,3 @@
 }
 
 /* Gradient Background for Profile Section */
-.profile-container {
-  background: linear-gradient(45deg, #1f2937, #2d3748);
-  border-radius: 20px;
-  padding: 30px;
-}
