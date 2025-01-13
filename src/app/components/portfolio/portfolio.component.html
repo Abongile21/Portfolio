@@ -1,8 +1,9 @@
-<div class="gradient-bg min-h-screen flex ">
+<div class="gradient-bg min-h-screen flex flex-col">
   <!-- Navigation Bar -->
-  <nav class="fixed top-0 w-full bg-gray-900 bg-opacity-90 shadow-lg z-50 justify-items-center">
+  <nav class="fixed top-0 w-full bg-gray-900 bg-opacity-90 shadow-lg z-50">
     <div class="container mx-auto flex items-center justify-between py-4 px-6">
       <!-- Logo -->
+      
 
       <!-- Hamburger Menu for Mobile -->
       <div class="md:hidden cursor-pointer" (click)="toggleMenu()">
@@ -22,7 +23,7 @@
       </div>
 
       <!-- Navigation Links -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden md:flex items-center justify-center space-x-8 w-full">
         <a
           routerLink="/"
           class="text-white text-sm font-medium hover:text-green-400 hover:underline transition duration-300"
