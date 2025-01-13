@@ -26,6 +26,7 @@ import { DeveloperModeComponent } from './components/developer-mode/developer-mo
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ResumeViewComponent } from './components/resume-view/resume-view.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -57,7 +58,8 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    PdfViewerModule
+    PdfViewerModule,
+    HttpClientModule
 
   ],
   providers: [

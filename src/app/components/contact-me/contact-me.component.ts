@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-me',
@@ -9,13 +10,27 @@ import { NgForm } from '@angular/forms';
 export class ContactMeComponent {
   showModal = false;
 
-  submitForm(form: any): void {
+  
+  constructor(private http: HttpClient) {}
+
+  submitForm(form: NgForm): void {
     if (form.valid) {
-      this.showModal = true;
-      form.reset();
+      const url = 'https://getform.io/f/YOUR_GETFORM_ENDPOINT';
+      const formData = form.value;
+  
+      this.http.post(url, formData, { responseType: 'text' }).subscribe({
+        next: () => {
+          this.showModal = true; // Show success modal
+          form.reset(); // Reset the form
+        },
+        error: (err) => {
+          console.error('Error submitting form:', err);
+          alert('Something went wrong. Please try again later.');
+        }
+      });
     }
   }
-
+  
   closeModal(): void {
     this.showModal = false;
   }
