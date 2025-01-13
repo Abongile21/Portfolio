@@ -33,46 +33,44 @@
           routerLinkActive="active-link"
           [routerLinkActiveOptions]="{exact: true}"
           (click)="closeMenu()"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Home</a
-        >
+          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
+        >Home</a>
+      
         <a
           (click)="scrollToElement('about')"
-          class="text-white hover:text-green-400 transition duration-300"
-          >About</a
-        >
+          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
+        >About</a>
+      
         <a
           (click)="scrollToElement('skills')"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Skills</a
-        >
+          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
+        >Skills</a>
+      
         <a
           (click)="scrollToElement('projects')"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Projects</a
-        >
+          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
+        >Projects</a>
+      
         <a
           routerLink="/resume-view"
           routerLinkActive="active-link"
           (click)="closeMenu()"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Resume</a
-        >
+          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
+        >Resume</a>
+      
         <a
           (click)="scrollToElement('contact-me')"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Contact</a
-        >
+          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
+        >Contact</a>
+      
         <a
           routerLink="/developer-mode"
           routerLinkActive="active-link"
           (click)="closeMenu()"
-          class="text-white hover:text-green-400 transition duration-300"
-          >Dev Mode</a
-        >
+          class="text-white hover:text-green-400 transition-all duration-300 ease-in-out transform hover:scale-105 nav-link"
+        >Dev Mode</a>
       </div>
-    </div>
-
+      
     <!-- Mobile Menu -->
     <div class="md:hidden" [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}">
       <div class="flex flex-col space-y-2 p-4 bg-gray-800 bg-opacity-90 transition-all duration-300">
