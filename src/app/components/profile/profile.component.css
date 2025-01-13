@@ -1,3 +1,86 @@
-img:hover{
-  scale:1.35
+/* Smooth fade-in animation for the entire profile section */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+/* Apply fadeIn animation to the profile section */
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s; /* Delay for smooth entrance */
+}
+
+/* Scale and rotate effect for the profile image */
+@keyframes scaleRotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(6deg);
+  }
+}
+
+/* Apply scaleRotate animation on hover */
+.scale-rotate:hover {
+  animation: scaleRotate 0.3s ease-out forwards;
+}
+
+/* Scale effect for profile name */
+@keyframes textScale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* Apply textScale animation to profile name */
+.profile-name:hover {
+  animation: textScale 0.3s ease-in-out forwards;
+}
+
+/* Translate effect on profile description hover */
+@keyframes textTranslate {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(8px);
+  }
+}
+
+/* Apply translate animation to profile description */
+.profile-description:hover {
+  animation: textTranslate 0.3s ease-in-out forwards;
+}
+
+/* Hover effect on the description button-like interaction */
+.profile-description:hover {
+  cursor: pointer;
+  transform: translateX(8px);
+}
+
+/* Enhanced shadow effect on hover for the profile container */
+.profile-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Add transition to make the profile hover state smoother */
+.profile-container {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Clean hover effect on the "Read More" text */
+.profile-description div:hover {
+  transform: scale(1.05);
+  color: #68D391; /* Green text on hover */
+  cursor: pointer;
+}
+
