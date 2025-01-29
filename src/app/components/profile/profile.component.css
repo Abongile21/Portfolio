@@ -57,6 +57,9 @@ img {
   height: 120%;
   border-radius: 50%;
   border: 3px solid rgba(52, 144, 220, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   animation: spin 3s linear infinite;
 }
 
@@ -66,20 +69,14 @@ img {
   height: 12px;
   background-color: #3490dc;
   border-radius: 50%;
-  animation: orbit 3s linear infinite;
 }
 
-.p1 { animation-delay: 0s; }
-.p2 { animation-delay: 0.75s; }
-.p3 { animation-delay: 1.5s; }
-.p4 { animation-delay: 2.25s; }
+.p1 { transform: rotate(0deg) translateX(9rem); }
+.p2 { transform: rotate(90deg) translateX(9rem); }
+.p3 { transform: rotate(180deg) translateX(9rem); }
+.p4 { transform: rotate(270deg) translateX(9rem); }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-@keyframes orbit {
-  0% { transform: rotate(0deg) translateX(9rem) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(9rem) rotate(-360deg); }
 }
