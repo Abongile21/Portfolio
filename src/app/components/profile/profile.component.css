@@ -35,37 +35,37 @@ img {
   animation-delay: 2s;
 }
 .rotating-border-container {
-  display: inline-block;
-  padding: 10px;
-  width: fit-content;
-  height: fit-content;
-  border: 4px solid transparent;
-  border-radius: 50%;
-  animation: rotate-border 5s linear infinite;
   position: relative;
+  width: 18rem;
+  height: 18rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .profile-image {
-  display: block;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
+  position: relative;
   z-index: 1;
-  /* Ensure the image is not affected by the rotation */
-  transform: rotate(0deg);
 }
 
-@keyframes rotate-border {
-  0% {
-    transform: rotate(0deg);
-    border-color: transparent;
-  }
-  50% {
-    border-color: #3490dc;
-  }
-  100% {
-    transform: rotate(360deg);
-    border-color: transparent;
-  }
+.particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #3490dc;
+  border-radius: 50%;
+  animation: orbit 3s linear infinite;
+}
+
+.p1 { animation-delay: 0s; }
+.p2 { animation-delay: 0.75s; }
+.p3 { animation-delay: 1.5s; }
+.p4 { animation-delay: 2.25s; }
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(10rem) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(10rem) rotate(-360deg); }
 }
