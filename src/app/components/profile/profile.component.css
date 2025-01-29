@@ -51,6 +51,7 @@ img {
 .profile-image {
   display: block;
   border-radius: 50%;
+  z-index: 1;
   /* Ensure the image is not affected by the rotation */
   transform: rotate(0deg);
 }
