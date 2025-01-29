@@ -51,6 +51,15 @@ img {
   z-index: 1;
 }
 
+.rotating-belt {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  border: 3px solid rgba(52, 144, 220, 0.8);
+  animation: spin 3s linear infinite;
+}
+
 .particle {
   position: absolute;
   width: 12px;
@@ -65,7 +74,12 @@ img {
 .p3 { animation-delay: 1.5s; }
 .p4 { animation-delay: 2.25s; }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @keyframes orbit {
-  0% { transform: rotate(0deg) translateX(10rem) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(10rem) rotate(-360deg); }
+  0% { transform: rotate(0deg) translateX(9rem) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(9rem) rotate(-360deg); }
 }
