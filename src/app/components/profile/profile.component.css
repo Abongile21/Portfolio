@@ -41,6 +41,9 @@ img {
   border-radius: 50%;
   animation: rotate-border 5s linear infinite;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-image {
