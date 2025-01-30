@@ -90,10 +90,10 @@
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+    box-shadow: 0 0 10px #1350c2, 0 0 20px #22c55e;
   }
   50% {
-    box-shadow: 0 0 15px #34d399, 0 0 30px #34d399;
+    box-shadow: 0 0 15px #29a2da, 0 0 30px #34d399;
   }
 }
 
@@ -123,9 +123,9 @@
 
 .nav-link:hover {
   transform: scale(1.1) rotate(1deg);
-  color: #22c55e; /* Highlight Green */
+  color: #5558eb;
   transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
-  text-shadow: 0 0 5px #22c55e, 0 0 10px #34d399;
+  text-shadow: 0 0 5px #75d7e983, 0 0 10px #34d399;
 }
 
 .nav-link {
@@ -139,7 +139,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #22c55e;
+  background-color: #6d84e7;
   transition: width 0.3s ease;
 }
 
