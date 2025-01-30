@@ -6,7 +6,7 @@
       <div class="output mb-4 h-64 w-full overflow-y-auto border-b-2 border-gray-800 pb-4 custom-scrollbar">
         <p *ngFor="let line of output" class="text-green-300 font-mono tracking-wide animate-fade-in">{{ line }}</p>
       </div>
-      <div class="flex items-center mt-2">
+      <div class="flex  items-center mt-2">
         <span class="text-green-400 font-mono">$</span>
         <input type="text" 
                [(ngModel)]="command" 
@@ -18,7 +18,7 @@
 
     <!-- Result Container -->
     <div class="result-container bg-gray-900 text-white shadow-2xl rounded-lg p-6 border-2 border-gray-800 transition-all duration-500 ease-in-out flex-1"
-         [ngClass]="{'h-48': !activeTab, 'h-auto': activeTab}">
+        [ngClass]="{'h-48': !activeTab, 'h-96 overflow-y-auto': activeTab}">
       <ng-container [ngSwitch]="activeTab">
         <ng-container *ngSwitchCase="'skills'">
           <app-skills class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-skills>
