@@ -14,7 +14,7 @@ import { ResumeViewComponent } from './components/resume-view/resume-view.compon
 import { ProjectsComponent } from './components/projects/projects.component';
 
 const routes: Routes = [
-  { path: '', component: LandingComponent }, 
+  { path: '', component: PortfolioComponent }, 
   { path: 'skills', component: SkillsComponent },
   { path:'resume-view', component: ResumeViewComponent},
   { path: 'about', component: AboutComponent },
@@ -26,7 +26,7 @@ const routes: Routes = [
   { path:'project', component:ProjectsComponent},
   { path: 'developer-mode', component: DeveloperModeComponent },
   { path: 'portfolio', component: PortfolioComponent },
-  { path: '**', component: LandingComponent },
+  { path: '**', component: PortfolioComponent },
   { path:'terminal',component:TerminalComponent},
   
   
