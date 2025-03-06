@@ -25,3 +25,8 @@
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
+.btn{
+  border: 2px solid white;
+
+  
+}
