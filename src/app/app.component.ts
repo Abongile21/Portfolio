@@ -16,7 +16,12 @@ export class AppComponent {
   ) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.gaService.pageView(event.urlAfterRedirects);
+        const path = event.urlAfterRedirects.includes('#')
+          ? event.urlAfterRedirects.split('#')[1]
+          : event.urlAfterRedirects;
+
+        console.log('GA Tracking:', path); // Debugging Log
+        this.gaService.pageView(path);
       }
     });
   }
