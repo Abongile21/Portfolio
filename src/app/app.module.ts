@@ -27,8 +27,10 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ResumeViewComponent } from './components/resume-view/resume-view.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-
+import {
+  NgxGoogleAnalyticsModule,
+  NgxGoogleAnalyticsRouterModule,
+} from 'ngx-google-analytics';
 
 @NgModule({
   declarations: [
@@ -48,8 +50,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     DeveloperModeComponent,
     PortfolioComponent,
     ResumeViewComponent,
-    
-
   ],
   imports: [
     BrowserModule,
@@ -59,12 +59,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     FormsModule,
     PdfViewerModule,
-    HttpClientModule
-
+    HttpClientModule,
+    NgxGoogleAnalyticsModule.forRoot('G-TJGNJ88491'),
+    NgxGoogleAnalyticsRouterModule,
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
