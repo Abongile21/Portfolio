@@ -20,7 +20,7 @@ export class AppComponent {
           ? event.urlAfterRedirects.split('#')[1]
           : event.urlAfterRedirects;
 
-        console.log('GA Tracking:', path); // Debugging Log
+        console.log('GA Tracking:', path); //Log track
         this.gaService.pageView(path);
       }
     });
