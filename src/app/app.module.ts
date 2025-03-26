@@ -60,7 +60,7 @@ import {
     FormsModule,
     PdfViewerModule,
     HttpClientModule,
-    NgxGoogleAnalyticsModule.forRoot('G-TJGNJ88491'),
+    NgxGoogleAnalyticsModule.forRoot('G-TF4KZ1V904'),
     NgxGoogleAnalyticsRouterModule,
   ],
   providers: [provideAnimationsAsync()],
