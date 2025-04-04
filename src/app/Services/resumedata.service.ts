@@ -55,14 +55,7 @@ export class ResumeDataService {
       }
     ],
     projects: [
-      {
-        image: '../../assets/to-do.jpg',
-        title: 'To-do List',
-        github: 'https://github.com/Abongile21/To-Do.git',
-        description: 'A to-do list site built with Tailwind CSS, HTML, and JavaScript for DOM manipulation.',
-        link: 'https://to-49cxwu5dy-abongiles-projects.vercel.app/',
-        technologies: ['HTML', 'JavaScript', 'CSS', 'Tailwind']
-      },
+     
       {
         image: '../../assets/zamikhaya.jpg',
         title: 'ZamiKhaya',
@@ -70,14 +63,6 @@ export class ResumeDataService {
         description: 'ZamiKhaya is a property listing app built with Angular and has a RESTful API.',
         link: 'https://zamikhaya.vercel.app/',
         technologies: ['MongoDB', 'ExpressJS', 'Angular', 'Tailwind', 'NodeJS','AWS-S3']
-      },
-      {
-        image: '../../assets/StuManSys.png',
-        title: 'Stu Management Sys',
-        github: 'https://github.com/Abongile21/Student_Management-_Sys',
-        description: 'Student management system is a Full CRUD App,has grade chart, calculator and  uses local storage.',
-        link: 'https://student-management-sys-sigma.vercel.app/',
-        technologies: ['HTML', 'JavaScript', 'CSS', 'Tailwind']
       },
       {
         image: '../../assets/Gush.png',
