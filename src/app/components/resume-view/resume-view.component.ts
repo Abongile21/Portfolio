@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./resume-view.component.css']
 })
 export class ResumeViewComponent implements OnInit {
-  pdfSrc = 'assets/resume_A_Nyakatya.pdf'; 
+  pdfSrc = 'assets/Resume_ANyakatya.pdf'; 
   zoom = 1.0;
 
   constructor(private router: Router) {}
