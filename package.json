@@ -28,7 +28,7 @@
     "ng2-pdf-viewer": "^10.2.2",
     "ngx-google-analytics": "^14.0.1",
     "rxjs": "~7.8.0",
-    "tailwind": "^4.0.0",
+    "tailwind": "^2.3.1",
     "three": "^0.164.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
