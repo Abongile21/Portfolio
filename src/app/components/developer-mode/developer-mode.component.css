@@ -30,3 +30,19 @@
 
   
 }
+.terminal {
+ 
+ 
+  box-shadow:
+    -18px -10px 20px #0c0c0c80,     
+    0 20px 40px rgba(0, 0, 0, 0.6);  
+   
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.terminal:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    -20px -12px 25px #0c0c0c99,
+    0 25px 60px rgba(0, 0, 0, 0.7);
+}
