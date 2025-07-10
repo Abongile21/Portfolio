@@ -42,6 +42,7 @@
 
 .terminal:hover  {
   transform: translateY(-10px);
+  
   box-shadow:
     -20px -12px 25px #0c0c0c99,
     0 25px 60px rgba(0, 0, 0, 0.7);
