@@ -10,9 +10,17 @@ export class DeveloperModeComponent {
   command: string = '';
   output: string[] = [];
   activeTab: string = '';
+  private audio: HTMLAudioElement;
 
-  constructor(private router: Router) {}
+  private plays: number = 1; // Track number of plays
+  constructor(private router: Router) {
+        this.audio = new Audio('assets/me.mp3');
+    this.audio.volume = 0.5;
+  }
 
+  playSound(): void {
+    this.audio.play();
+  }
   executeCommand() {
     const command = this.command.trim().toLowerCase();
     this.output.push(`> ${this.command}`);
@@ -56,6 +64,10 @@ export class DeveloperModeComponent {
         break;
       default:
         this.output.push(`Unknown command: ${this.command}`);
+        if (this.plays === 1) {
+          this.playSound();
+          this.plays++;
+        }
         this.displayHelp();
     }
 
