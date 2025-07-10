@@ -1,45 +1,54 @@
-<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-6 flex flex-col items-center justify-center">
-  <button routerLink="/portfolio" class="btn mb-8 justify-self-start">Close</button>
-  <div class="flex flex-col w-full max-w-6xl space-y-4 md:flex-row md:space-y-0 md:space-x-4">
-    
-    <!-- Terminal Component -->
-    <div class="terminal bg-gray-900 text-white shadow-2xl rounded-lg p-6 w-full max-w-md border-2 border-gray-800 left-shadow-4xl">
-      <div class="output mb-4 h-64 w-full overflow-y-auto border-b-2 border-gray-800 pb-4 custom-scrollbar">
-        <p *ngFor="let line of output" class="text-green-300 font-mono tracking-wide animate-fade-in">{{ line }}</p>
-      </div>
-      <div class="flex  items-center mt-2">
-        <span class="text-green-400 font-mono">$</span>
-        <input type="text" 
-               [(ngModel)]="command" 
-               (keydown.enter)="executeCommand()" 
-               placeholder="Enter command..." 
-               class="ml-2 flex-1 bg-transparent text-white font-mono text-lg tracking-wider placeholder-gray-600 outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300">
+<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 flex items-center justify-center p-4">
+
+  <div class="w-full max-w-6xl bg-[#1e1e1e] text-white rounded-md shadow-2xl border border-gray-700 overflow-hidden">
+
+    <div class="flex items-center justify-between bg-[#2d2d2d] px-4 py-2 border-b border-gray-700">
+      <div class="text-sm text-white font-semibold">Terminal Interface</div>
+      <div class="flex space-x-2">
+        <button routerLink="/portfolio" title="Close" class="w-8 h-6 flex items-center justify-center hover:bg-red-600">&times;</button>
       </div>
     </div>
 
-    <!-- Result Container -->
-    <div class="result-container bg-gray-900 text-white shadow-2xl rounded-lg p-6 border-2 border-gray-800 transition-all duration-500 ease-in-out flex-1"
-        [ngClass]="{'h-48': !activeTab, 'h-96 overflow-y-auto': activeTab}">
-      <ng-container [ngSwitch]="activeTab">
-        <ng-container *ngSwitchCase="'skills'">
-          <app-skills class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-skills>
+    <div class="flex flex-col md:flex-row p-4 gap-4 bg-[#1e1e1e]">
+      
+      <div class="bg-black rounded-md p-4 w-full md:w-1/2 border border-gray-700">
+        <div class="h-64 overflow-y-auto border-b border-gray-800 pb-4 custom-scrollbar">
+          <p *ngFor="let line of output" class="text-green-400 font-mono tracking-wide">{{ line }}</p>
+        </div>
+        <div class="flex items-center mt-4">
+          <span class="text-green-500 font-mono">$</span>
+          <input type="text"
+                 [(ngModel)]="command"
+                 (keydown.enter)="executeCommand()"
+                 placeholder="Type command..."
+                 class="ml-2 flex-1 bg-transparent text-white font-mono placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-green-500">
+        </div>
+      </div>
+
+      <div class="bg-[#2a2a2a] rounded-md p-4 w-full md:w-1/2 border border-gray-700 transition-all duration-300"
+           [ngClass]="{'h-48': !activeTab, 'h-96 overflow-y-auto': activeTab}">
+        <ng-container [ngSwitch]="activeTab">
+          <ng-container *ngSwitchCase="'skills'">
+            <app-skills class="w-full h-full animate-fade-in"></app-skills>
+          </ng-container>
+          <ng-container *ngSwitchCase="'about'">
+            <app-about class="w-full h-full animate-fade-in"></app-about>
+          </ng-container>
+          <ng-container *ngSwitchCase="'projects'">
+            <app-projects class="w-full h-full animate-fade-in"></app-projects>
+          </ng-container>
+          <ng-container *ngSwitchCase="'contacts'">
+            <app-contact class="w-full h-full animate-fade-in"></app-contact>
+          </ng-container>
+          <ng-container *ngSwitchCase="'contact-me'">
+            <app-contact-me class="w-full h-full animate-fade-in"></app-contact-me>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            <p class="text-gray-400 font-mono text-sm">Awaiting command...</p>
+          </ng-container>
         </ng-container>
-        <ng-container *ngSwitchCase="'about'">
-          <app-about class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-about>
-        </ng-container>
-        <ng-container *ngSwitchCase="'projects'">
-          <app-projects class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-projects>
-        </ng-container>
-        <ng-container *ngSwitchCase="'contacts'">
-          <app-contact class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-contact>
-        </ng-container>
-        <ng-container *ngSwitchCase="'contact-me'">
-          <app-contact-me class="w-full h-full p-4 animate-fade-in transition-transform duration-500 ease-in-out"></app-contact-me>
-        </ng-container>
-        <ng-container *ngSwitchDefault>
-          <p class="p-4 text-lg font-mono tracking-wide text-gray-500">Awaiting command...</p>
-        </ng-container>
-      </ng-container>
+      </div>
+
     </div>
   </div>
 </div>
