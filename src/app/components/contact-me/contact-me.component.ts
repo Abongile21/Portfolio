@@ -10,14 +10,14 @@ import { HttpClient } from '@angular/common/http';
 export class ContactMeComponent {
   showModal = false;
 
-  
+
   constructor(private http: HttpClient) {}
 
   submitForm(form: NgForm): void {
     if (form.valid) {
       const url = 'https://getform.io/f/YOUR_GETFORM_ENDPOINT';
       const formData = form.value;
-  
+
       this.http.post(url, formData, { responseType: 'text' }).subscribe({
         next: () => {
           this.showModal = true; // Show success modal
@@ -30,7 +30,7 @@ export class ContactMeComponent {
       });
     }
   }
-  
+
   closeModal(): void {
     this.showModal = false;
   }
