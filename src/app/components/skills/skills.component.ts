@@ -3,6 +3,7 @@ import { ResumeDataService } from '../../Services/resumedata.service';
 
 @Component({
   selector: 'app-skills',
+  standalone: false,
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })

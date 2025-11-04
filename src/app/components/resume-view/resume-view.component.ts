@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resume-view',
+  standalone: false,
   templateUrl: './resume-view.component.html',
   styleUrls: ['./resume-view.component.css']
 })

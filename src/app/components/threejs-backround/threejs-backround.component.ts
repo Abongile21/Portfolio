@@ -3,6 +3,7 @@ import * as THREE from 'three';
 
 @Component({
   selector: 'app-threejs-background',
+  standalone: false,
   templateUrl: './threejs-backround.component.html',
   styleUrls: ['./threejs-backround.component.css']
 })

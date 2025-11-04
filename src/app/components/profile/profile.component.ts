@@ -4,6 +4,7 @@ import { ResumeDataService } from '../../Services/resumedata.service';
 
 @Component({
   selector: 'app-profile',
+  standalone: false,
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })

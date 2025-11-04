@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-me',
+  standalone: false,
   templateUrl: './contact-me.component.html',
   styleUrls: ['./contact-me.component.css']
 })

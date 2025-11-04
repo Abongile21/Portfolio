@@ -4,6 +4,7 @@ import { ResumeDataService } from '../../Services/resumedata.service';
 
 @Component({
   selector: 'app-education',
+  standalone: false,
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.css']
 })

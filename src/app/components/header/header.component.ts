@@ -3,6 +3,7 @@ import { ResumeDataService } from '../../Services/resumedata.service';
 
 @Component({
   selector: 'app-header',
+  standalone: false,
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })

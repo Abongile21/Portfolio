@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-developer-mode',
+  standalone: false,
   templateUrl: './developer-mode.component.html',
   styleUrls: ['./developer-mode.component.css']
 })

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-terminal',
+  standalone: false,
   templateUrl: './terminal.component.html',
   styleUrls: ['./terminal.component.css']
 })
