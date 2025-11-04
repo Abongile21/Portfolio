@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,31 +8,74 @@ import { Router } from '@angular/router';
   styleUrls: ['./resume-view.component.css']
 })
 export class ResumeViewComponent implements OnInit {
-  pdfSrc = 'assets/Resume_ANyakatya.pdf'; 
+  pdfSrc = 'assets/Resume_ANyakatya.pdf';
   zoom = 1.0;
+
+  readonly minZoom = 0.6;
+  readonly maxZoom = 2.2;
+  readonly zoomStep = 0.1;
+
+  isFullscreen = false;
+  zoomDisplay = '100%';
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    // Implement any initialization logic here if needed
+    this.updateZoomDisplay();
   }
 
-  zoomIn() {
-    this.zoom += 0.1;
+  zoomIn(): void {
+    if (this.zoom < this.maxZoom) {
+      this.zoom = parseFloat((this.zoom + this.zoomStep).toFixed(1));
+      this.updateZoomDisplay();
+    }
   }
 
-  zoomOut() {
-    this.zoom -= 0.1;
+  zoomOut(): void {
+    if (this.zoom > this.minZoom) {
+      this.zoom = parseFloat((this.zoom - this.zoomStep).toFixed(1));
+      this.updateZoomDisplay();
+    }
   }
 
-  downloadResume() {
+  onZoomChange(event: Event): void {
+    const value = (event.target as HTMLInputElement).value;
+    this.zoom = parseFloat(value);
+    this.updateZoomDisplay();
+  }
+
+  private updateZoomDisplay(): void {
+    this.zoomDisplay = `${Math.round(this.zoom * 100)}%`;
+  }
+
+  downloadResume(): void {
     const link = document.createElement('a');
     link.href = this.pdfSrc;
-    link.download = 'resume.pdf';
+    link.download = 'Theo_Nyakatya_Resume.pdf';
     link.click();
   }
 
-  goBack() {
+  goBack(): void {
     this.router.navigate(['/portfolio']);
+  }
+
+  toggleFullscreen(): void {
+    this.isFullscreen = !this.isFullscreen;
+    const elem = document.documentElement;
+    if (this.isFullscreen) {
+      if (elem.requestFullscreen) elem.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) document.exitFullscreen();
+    }
+  }
+
+  // Smooth reset zoom shortcut
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboard(event: KeyboardEvent): void {
+    if (event.ctrlKey && event.key === '0') {
+      this.zoom = 1.0;
+      this.updateZoomDisplay();
+      event.preventDefault();
+    }
   }
 }

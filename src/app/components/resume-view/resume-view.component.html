@@ -1,23 +1,51 @@
-<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 p-4 flex flex-col items-center">
-    <div class="w-full flex justify-between items-center mb-4 bg-gray-800 p-4 rounded">
-      <span class="text-white text-xl font-bold">Resume</span>
-      <div class="flex space-x-2">
-        <button (click)="zoomIn()" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-700">
-          Zoom In
+<div class="min-h-screen bg-gradient-to-br from-blue-950 via-black to-gray-900 p-6 flex flex-col items-center text-white">
+
+  <!-- Header -->
+  <div class="w-full max-w-5xl flex flex-col sm:flex-row justify-between items-center mb-8 bg-gray-900/80 backdrop-blur-lg p-5 rounded-2xl shadow-2xl border border-gray-800">
+   
+    <!-- Controls -->
+    <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+
+      <!-- Zoom Controls -->
+      <div class="flex items-center gap-3 bg-gray-800/80 px-4 py-2 rounded-xl shadow-inner w-full sm:w-auto">
+        <button (click)="zoomOut()" class="p-2 bg-blue-700 hover:bg-blue-800 rounded-full transition-all duration-200">
+         -
         </button>
-        <button (click)="zoomOut()" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-700">
-          Zoom Out
+
+        <input type="range" min="0.5" max="2" step="0.1" [(ngModel)]="zoom"
+               class="w-32 accent-blue-600 cursor-pointer">
+
+        <button (click)="zoomIn()" class="p-2 bg-blue-700 hover:bg-blue-800 rounded-full transition-all duration-200">
+          +</button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex gap-3">
+        <button (click)="downloadResume()" class="bg-green-600 hover:bg-green-700 px-5 py-2 rounded-xl font-medium shadow-md transition-all duration-200">
+          <i class="fas fa-download mr-2"></i> Download
         </button>
-        <button (click)="downloadResume()" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-700">
-          Download
-        </button>
-        <button (click)="goBack()" class="bg-red-500 text-white p-2 rounded hover:bg-red-700">
-          Exit
+        <button (click)="goBack()" class="bg-red-600 hover:bg-red-700 px-5 py-2 rounded-xl font-medium shadow-md transition-all duration-200">
+          <i class="fas fa-sign-out-alt mr-2"></i> Exit
         </button>
       </div>
-    </div>
-    <div class="max-w-7xl w-full flex-grow flex justify-center">
-      <pdf-viewer [src]="pdfSrc" [zoom]="zoom" style="display: block;" class="w-full"></pdf-viewer>
+
     </div>
   </div>
-  
+
+  <!-- PDF Viewer -->
+  <div class="w-full max-w-5xl flex-grow flex justify-center items-center bg-gray-800/70 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700 p-4">
+    <div class="w-full bg-gray-900/80 rounded-xl p-2 sm:p-4 shadow-inner">
+      <pdf-viewer
+        [src]="pdfSrc"
+        [zoom]="zoom || 1.0"
+        [original-size]="true"
+        [fit-to-page]="true"
+        [show-all]="true"
+        [render-text]="true"
+        style="width: 100%; height: 80vh; object-fit: contain;"
+        class="rounded-lg"
+      ></pdf-viewer>
+    </div>
+  </div>
+
+</div>
