@@ -16,7 +16,7 @@ export class ContactMeComponent {
 
   submitForm(form: NgForm): void {
     if (form.valid) {
-      const url = 'https://getform.io/f/YOUR_GETFORM_ENDPOINT';
+      const url = 'https://getform.io/f/azyyxexb';
       const formData = form.value;
 
       this.http.post(url, formData, { responseType: 'text' }).subscribe({
