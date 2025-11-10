@@ -19,7 +19,7 @@ export class ContactMeComponent {
       this.isSubmitting = true;
       
       // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
-      const url = 'https://formspree.io/f/YOUR_FORM_ID';
+      const url = 'https://formspree.io/f/xdknopkz';
       const formData = form.value;
       
       // Set headers to ensure proper content type
