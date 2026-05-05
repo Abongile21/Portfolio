@@ -38,7 +38,7 @@ export class ResumeDataService {
       {
         title: 'FULLSTACK DEVELOPMENT PROGRAM',
         company: 'UCT GSB Solution Space',
-        period: 'March 2024 - Present',
+        period: 'March 2024 - November 2024',
         responsibilities: [
           'Building websites and web apps for portfolio enhancement',
           'Learning web development through the MEAN Stack.'
@@ -56,6 +56,10 @@ export class ResumeDataService {
         degree: 'BSC COMPUTER SCIENCE',
         period: '2019 - 2023',
         status: '(incomplete)'
+      },{school: 'University of Western Cape',
+        degree: 'Certificate in Software Development',
+        period:  'March 2026 - December 2026',
+        status: 'complete'
       }
     ],
     projects: [
