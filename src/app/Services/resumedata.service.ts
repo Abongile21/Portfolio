@@ -31,7 +31,7 @@ export class ResumeDataService {
       'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
       'https://static.cdnlogo.com/logos/a/46/azure.svg',
       'https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg',
-      'https://logo.svgcdn.com/logos/react.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
       
     ],
     experience: [
