@@ -29,7 +29,7 @@ export class ResumeDataService {
       'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
       'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
-      'https://static.cdnlogo.com/logos/a/46/azure.svg',
+      'https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
       'https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg',
       'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
       
