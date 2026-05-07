@@ -8,9 +8,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { EducationComponent } from './components/education/education.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { PortfolioComponent } from './components/landing/portfolio/portfolio.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
-import { ResumeViewComponent } from './components/resume-view/resume-view.component';
+import { ResumeViewComponent } from './components/skills/resume-view/resume-view.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 
 const routes: Routes = [

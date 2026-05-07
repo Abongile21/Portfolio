@@ -23,8 +23,8 @@ import { FormsModule } from '@angular/forms';
 import { LandingComponent } from './components/landing/landing.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ResumeViewComponent } from './components/resume-view/resume-view.component';
+import { PortfolioComponent } from './components/landing/portfolio/portfolio.component';
+import { ResumeViewComponent } from './components/skills/resume-view/resume-view.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {
