@@ -9,10 +9,11 @@
 	}
 
 	body {
-		@apply bg-base-200 text-base-content;
+		background-color: hsl(var(--b2));
+		color: hsl(var(--bc));
 	}
 
 	::selection {
-		@apply bg-primary/30;
+		background-color: hsl(var(--p) / 0.3);
 	}
 }
