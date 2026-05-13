@@ -13,25 +13,25 @@
     bottom: 0;
     border-radius: 1rem;
     border: 3px solid transparent;
-    box-shadow: 0 0 12px rgba(59, 130, 246, 0.8); /* Blue glow */
+    box-shadow: 0 0 12px hsl(var(--p) / 0.35);
     animation: smooth-moving-border 4s ease-in-out infinite;
   }
   
   @keyframes smooth-moving-border {
     0% {
-      border-color: rgba(59, 130, 246, 1) transparent transparent transparent;
+      border-color: hsl(var(--p)) transparent transparent transparent;
     }
     25% {
-      border-color: transparent rgba(59, 130, 246, 1) transparent transparent;
+      border-color: transparent hsl(var(--p)) transparent transparent;
     }
     50% {
-      border-color: transparent transparent rgba(59, 130, 246, 1) transparent;
+      border-color: transparent transparent hsl(var(--p)) transparent;
     }
     75% {
-      border-color: transparent transparent transparent rgba(59, 130, 246, 1);
+      border-color: transparent transparent transparent hsl(var(--p));
     }
     100% {
-      border-color: rgba(59, 130, 246, 1) transparent transparent transparent;
+      border-color: hsl(var(--p)) transparent transparent transparent;
     }
   }
   

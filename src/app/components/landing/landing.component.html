@@ -1,10 +1,10 @@
-<div class="min-h-screen bg-gradient-to-r from-blue-900 via-black to-gray-900 flex items-center justify-center">
-  <div class="card bg-gray-800 text-white shadow-xl p-6 max-w-lg w-full animate-fade-in">
-    <h2 class="text-3xl font-bold mb-4 animate-bounce-in">ABONGILE THE DEV</h2>
-    <p class="text-gray-300 mb-8">Choose how you want to explore:</p>
-    <div class="flex flex-col sm:flex-row sm:justify-between">
-      <button routerLink="/developer-mode" class="btn btn-primary mb-4 sm:mb-0 sm:mr-4" (click)="viewAsDeveloper()">View as Developer</button>
-      <button routerLink="/portfolio" class="btn btn-primary w-full sm:w-auto" (click)="viewAsNonDeveloper()">View as Non-Developer</button>
+<div class="min-h-screen bg-gradient-to-r from-primary/20 via-base-300 to-secondary/20 flex items-center justify-center p-6">
+  <div class="card bg-base-100/80 backdrop-blur border border-base-300 shadow-xl p-8 max-w-lg w-full animate-fade-in">
+    <h2 class="text-3xl font-bold mb-3 animate-bounce-in">ABONGILE THE DEV</h2>
+    <p class="text-base-content/70 mb-8">Choose how you want to explore:</p>
+    <div class="flex flex-col sm:flex-row sm:justify-between gap-3">
+      <button routerLink="/developer-mode" class="btn btn-primary flex-1" (click)="viewAsDeveloper()">View as Developer</button>
+      <button routerLink="/portfolio" class="btn btn-outline btn-primary flex-1" (click)="viewAsNonDeveloper()">View as Non-Developer</button>
     </div>
   </div>
 </div>

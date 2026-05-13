@@ -1,14 +1,14 @@
-<div class="max-w-lg mx-auto p-8 bg-gray-900 text-white shadow-2xl lg:w-auto rounded-xl transition-transform transform hover:scale-105">
-  <h2 class="text-4xl font-extrabold mb-6 text-center text-blue-500">Contact Me</h2>
+<div class="max-w-lg mx-auto p-8 bg-base-100 border border-base-300 shadow-2xl lg:w-auto rounded-xl transition-transform transform hover:scale-105">
+  <h2 class="text-4xl font-extrabold mb-6 text-center text-primary">Contact Me</h2>
   
   <form (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm" novalidate>
     <div class="form-control mb-6">
       <label class="label" for="name">
-        <span class="label-text text-gray-400">Name</span>
+        <span class="label-text">Name</span>
       </label>
       <input type="text" 
              id="name"
-             class="input input-bordered w-full bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 transition-all duration-200" 
+             class="input input-bordered w-full" 
              name="name" 
              ngModel 
              required 
@@ -21,11 +21,11 @@
     
     <div class="form-control mb-6">
       <label class="label" for="email">
-        <span class="label-text text-gray-400">Email</span>
+        <span class="label-text">Email</span>
       </label>
       <input type="email" 
              id="email"
-             class="input input-bordered w-full bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 transition-all duration-200" 
+             class="input input-bordered w-full" 
              name="email" 
              ngModel 
              required 
@@ -40,9 +40,9 @@
     
     <div class="form-control mb-6">
       <label class="label" for="message">
-        <span class="label-text text-gray-400">Message</span>
+        <span class="label-text">Message</span>
       </label>
-      <textarea class="textarea textarea-bordered w-full bg-gray-800 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 transition-all duration-200" 
+      <textarea class="textarea textarea-bordered w-full" 
                 id="message"
                 name="message" 
                 ngModel 
@@ -57,7 +57,7 @@
     
     <button type="submit" 
             [disabled]="isSubmitting"
-            class="btn btn-primary w-full bg-blue-600 hover:bg-blue-500 text-white rounded-lg p-3 shadow-lg transform transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed">
+          class="btn btn-primary w-full shadow-lg transform transition-all duration-300 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed">
       <svg *ngIf="isSubmitting" class="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -72,19 +72,19 @@
 
 <!-- Success Modal -->
 <div id="modal" 
-     class="fixed inset-0 bg-gray-900 bg-opacity-70 flex items-center justify-center transition-opacity duration-300 z-50"
+  class="fixed inset-0 bg-base-300/70 flex items-center justify-center transition-opacity duration-300 z-50"
      [ngClass]="{ 'hidden': !showModal }"
      (click)="closeModal()">
-  <div class="bg-gray-800 text-white p-6 rounded-lg shadow-2xl max-w-md w-full transition-transform transform scale-95 hover:scale-100"
+  <div class="bg-base-100 p-6 rounded-lg shadow-2xl max-w-md w-full transition-transform transform scale-95 hover:scale-100"
        (click)="$event.stopPropagation()">
     <div class="flex justify-center mb-4">
-      <svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <svg class="w-16 h-16 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
     </div>
-    <h2 class="text-3xl font-bold mb-4 text-center text-blue-500">Message Sent!</h2>
+    <h2 class="text-3xl font-bold mb-4 text-center text-primary">Message Sent!</h2>
     <p class="text-center mb-4">Your message has been successfully sent. I'll get back to you soon!</p>
-    <button class="btn btn-primary mt-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg p-2 w-full"
+    <button class="btn btn-primary mt-4 w-full"
             (click)="closeModal()">Close</button>
   </div>
 </div>
