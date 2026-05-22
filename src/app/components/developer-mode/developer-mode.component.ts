@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+8import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -31,7 +31,7 @@ export class DeveloperModeComponent {
   }
 
   printStartup() {
-    this.output.push('NyakatyaOS v1.0.0 [Developer Terminal]');
+    this.output.push('Nyakatya v1.0.0 [Developer Terminal]');
     this.output.push('Type "help" to see available commands.');
     this.output.push('');
   }
