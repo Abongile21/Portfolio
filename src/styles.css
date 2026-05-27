@@ -21,3 +21,24 @@
 		background-color: hsl(var(--p) / 0.3);
 	}
 }
+
+@layer utilities {
+	.interactive {
+		@apply transition duration-200 ease-out;
+	}
+
+	.interactive-lift {
+		@apply interactive transform-gpu hover:-translate-y-0.5 hover:scale-[1.01];
+	}
+
+	.focus-ring {
+		@apply focus:outline-none focus-visible:ring-2 focus-visible:ring-info/40 focus-visible:ring-offset-2 focus-visible:ring-offset-base-200;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.interactive,
+		.interactive-lift {
+			transition: none !important;
+		}
+	}
+}

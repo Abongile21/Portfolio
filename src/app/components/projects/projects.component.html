@@ -1,5 +1,5 @@
 <div class="max-w-7xl mx-auto px-4 py-12">
-  <h1 class="text-5xl font-extrabold text-primary mb-12 text-center tracking-wide uppercase transform transition-all hover:scale-105">Featured Projects</h1>
+  <h1 class="text-5xl font-extrabold text-info mb-12 text-center tracking-wide uppercase interactive-lift">Featured Projects</h1>
   
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
     <div *ngFor="let project of projects" class="relative group card bg-base-100 border border-base-300 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-500 ease-in-out">
@@ -8,16 +8,16 @@
       <img [src]="project.image" alt="{{ project.title }}" class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110">
       
       <div class="p-6">
-        <h2 class="text-3xl font-bold mb-3 text-primary group-hover:text-primary/80 transition-colors duration-500">{{ project.title }}</h2>
+        <h2 class="text-3xl font-bold mb-3 text-info group-hover:text-info/80 transition-colors duration-500">{{ project.title }}</h2>
         
         <p class="text-base-content/70 mb-6 leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-500">{{ project.description }}</p>
         
         <div class="flex flex-wrap gap-2 mb-4">
-          <span *ngFor="let tech of project.technologies" class="badge badge-primary badge-outline">{{ tech }}</span>
+          <span *ngFor="let tech of project.technologies" class="badge badge-info badge-outline">{{ tech }}</span>
         </div>
 
         <div class="flex justify-between items-center mt-4">
-          <a [href]="project.link" target="_blank" class="btn btn-primary btn-sm">View Project</a>
+          <a [href]="project.link" target="_blank" class="btn btn-info btn-sm interactive-lift focus-ring">View Project</a>
         </div>
       </div>
     </div>

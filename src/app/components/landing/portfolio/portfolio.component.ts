@@ -45,8 +45,12 @@ export class PortfolioComponent implements OnInit {
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
     if (this.isMenuOpen) {
-      this.renderer.addClass(this.navLinks.nativeElement, 'active');
-      this.renderer.addClass(this.hamburger.nativeElement, 'active');
+      if (this.navLinks?.nativeElement) {
+        this.renderer.addClass(this.navLinks.nativeElement, 'active');
+      }
+      if (this.hamburger?.nativeElement) {
+        this.renderer.addClass(this.hamburger.nativeElement, 'active');
+      }
     } else {
       this.closeMenu();
     }
@@ -54,8 +58,12 @@ export class PortfolioComponent implements OnInit {
 
   closeMenu(): void {
     this.isMenuOpen = false;
-    this.renderer.removeClass(this.navLinks.nativeElement, 'active');
-    this.renderer.removeClass(this.hamburger.nativeElement, 'active');
+    if (this.navLinks?.nativeElement) {
+      this.renderer.removeClass(this.navLinks.nativeElement, 'active');
+    }
+    if (this.hamburger?.nativeElement) {
+      this.renderer.removeClass(this.hamburger.nativeElement, 'active');
+    }
   }
 
   playSound(): void {

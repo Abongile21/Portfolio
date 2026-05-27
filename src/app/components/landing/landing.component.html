@@ -1,10 +1,10 @@
-<div class="min-h-screen bg-gradient-to-r from-primary/20 via-base-300 to-secondary/20 flex items-center justify-center p-6">
-  <div class="card bg-base-100/80 backdrop-blur border border-base-300 shadow-xl p-8 max-w-lg w-full animate-fade-in">
-    <h2 class="text-3xl font-bold mb-3 animate-bounce-in">ABONGILE THE DEV</h2>
+<div class="min-h-screen bg-gradient-to-r from-info/20 via-base-300 to-info/10 flex items-center justify-center p-6">
+  <div class="card bg-base-100/80 backdrop-blur border border-base-300 shadow-xl p-8 max-w-lg w-full motion-safe:animate-fade-in">
+    <h2 class="text-3xl font-bold mb-3 text-info motion-safe:animate-bounce-in">ABONGILE THE DEV</h2>
     <p class="text-base-content/70 mb-8">Choose how you want to explore:</p>
     <div class="flex flex-col sm:flex-row sm:justify-between gap-3">
-      <button routerLink="/developer-mode" class="btn btn-primary flex-1" (click)="viewAsDeveloper()">View as Developer</button>
-      <button routerLink="/portfolio" class="btn btn-outline btn-primary flex-1" (click)="viewAsNonDeveloper()">View as Non-Developer</button>
+      <button routerLink="/developer-mode" class="btn btn-info flex-1 interactive-lift focus-ring" (click)="viewAsDeveloper()">View as Developer</button>
+      <button routerLink="/portfolio" class="btn btn-outline btn-info flex-1 interactive-lift focus-ring" (click)="viewAsNonDeveloper()">View as Non-Developer</button>
     </div>
   </div>
 </div>

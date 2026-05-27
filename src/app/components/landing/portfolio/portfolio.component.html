@@ -1,12 +1,12 @@
 <div class="min-h-screen flex flex-col bg-base-200">
   <!-- Navigation Bar -->
-  <nav class="fixed top-0 w-full bg-base-100/80 backdrop-blur border-b border-base-300 z-50 animate-slide-in-left">
+  <nav class="fixed top-0 w-full bg-base-100/80 backdrop-blur border-b border-base-300/70 z-50 motion-safe:animate-slide-in-left">
     <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4 sm:px-6">
       <!-- Logo -->
       
 
       <!-- Hamburger Menu for Mobile -->
-      <div class="md:hidden cursor-pointer" (click)="toggleMenu()" aria-label="Toggle navigation">
+      <div #hamburger class="md:hidden cursor-pointer interactive" (click)="toggleMenu()" aria-label="Toggle navigation">
         <svg
           class="h-8 w-8 text-base-content"
           fill="none"
@@ -26,43 +26,43 @@
       <div class="hidden md:flex items-center justify-center gap-2 w-full">
         <a
           routerLink="/"
-          class="btn btn-ghost btn-sm uppercase"
+          class="btn btn-ghost btn-sm uppercase interactive hover:bg-info/10 hover:text-info"
         >
           Home
         </a>
         <a
           (click)="scrollToElement('about')"
-          class="btn btn-ghost btn-sm uppercase"
+          class="btn btn-ghost btn-sm uppercase interactive hover:bg-info/10 hover:text-info"
         >
           About
         </a>
         <a
           (click)="scrollToElement('skills')"
-          class="btn btn-ghost btn-sm uppercase"
+          class="btn btn-ghost btn-sm uppercase interactive hover:bg-info/10 hover:text-info"
         >
           Skills
         </a>
         <a
           (click)="scrollToElement('projects')"
-          class="btn btn-ghost btn-sm uppercase"
+          class="btn btn-ghost btn-sm uppercase interactive hover:bg-info/10 hover:text-info"
         >
           Projects
         </a>
         <a
           routerLink="/resume-view"
-          class="btn btn-ghost btn-sm uppercase"
+          class="btn btn-ghost btn-sm uppercase interactive hover:bg-info/10 hover:text-info"
         >
           Resume
         </a>
         <a
           (click)="scrollToElement('contact-me')"
-          class="btn btn-ghost btn-sm uppercase"
+          class="btn btn-ghost btn-sm uppercase interactive hover:bg-info/10 hover:text-info"
         >
           Contact
         </a>
         <a
           routerLink="/developer-mode"
-          class="btn btn-primary btn-sm uppercase"
+          class="btn btn-info btn-sm uppercase interactive-lift focus-ring"
         >
           Dev Mode
         </a>
@@ -71,51 +71,52 @@
 
     <!-- Mobile Menu -->
     <div
+      #navLinks
       class="md:hidden bg-base-100/95 backdrop-blur transition duration-300"
       [ngClass]="{ hidden: !isMenuOpen, block: isMenuOpen }"
     >
       <div class="flex flex-col space-y-4 p-4">
         <a
           routerLink="/"
-          class="btn btn-ghost btn-sm justify-start uppercase"
+          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-info/10 hover:text-info"
           (click)="closeMenu()"
         >
           Home
         </a>
         <a
           (click)="scrollToElement('about')"
-          class="btn btn-ghost btn-sm justify-start uppercase"
+          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-info/10 hover:text-info"
         >
           About
         </a>
         <a
           (click)="scrollToElement('skills')"
-          class="btn btn-ghost btn-sm justify-start uppercase"
+          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-info/10 hover:text-info"
         >
           Skills
         </a>
         <a
           (click)="scrollToElement('projects')"
-          class="btn btn-ghost btn-sm justify-start uppercase"
+          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-info/10 hover:text-info"
         >
           Projects
         </a>
         <a
           routerLink="/resume-view"
-          class="btn btn-ghost btn-sm justify-start uppercase"
+          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-info/10 hover:text-info"
           (click)="closeMenu()"
         >
           Resume
         </a>
         <a
           (click)="scrollToElement('contact-me')"
-          class="btn btn-ghost btn-sm justify-start uppercase"
+          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-info/10 hover:text-info"
         >
           Contact
         </a>
         <a
           routerLink="/developer-mode"
-          class="btn btn-primary btn-sm justify-start uppercase"
+          class="btn btn-info btn-sm justify-start uppercase interactive-lift focus-ring"
           (click)="closeMenu()"
         >
           Dev Mode
@@ -127,35 +128,35 @@
   <!-- Main Content -->
   <main class="flex-grow pt-16">
     <!-- Profile Section -->
-    <section id="profile" class="min-h-screen flex items-center justify-center bg-base-200 animate-slide-in-right">
+    <section id="profile" class="min-h-screen flex items-center justify-center bg-base-200 scroll-mt-20 motion-safe:animate-slide-in-right">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <app-profile></app-profile>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="min-h-screen flex items-center justify-center bg-base-100">
+    <section id="about" class="min-h-screen flex items-center justify-center bg-base-100 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <app-about></app-about>
       </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="min-h-screen flex items-center justify-center bg-base-200">
+    <section id="skills" class="min-h-screen flex items-center justify-center bg-base-200 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <app-skills></app-skills>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="min-h-screen flex items-center justify-center bg-base-100">
+    <section id="projects" class="min-h-screen flex items-center justify-center bg-base-100 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <app-projects></app-projects>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact-me" class="min-h-screen flex items-center justify-center bg-base-200">
+    <section id="contact-me" class="min-h-screen flex items-center justify-center bg-base-200 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <app-contact-me></app-contact-me>
       </div>
