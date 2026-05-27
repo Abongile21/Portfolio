@@ -32,7 +32,7 @@
 	}
 
 	.focus-ring {
-		@apply focus:outline-none focus-visible:ring-2 focus-visible:ring-info/40 focus-visible:ring-offset-2 focus-visible:ring-offset-base-200;
+		@apply focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
