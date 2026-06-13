@@ -34,9 +34,8 @@ export class ResumeDataService {
 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Blazor.png',
       'https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg',
       'https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
-      'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
+      'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original'
 
-'https://share.google/j1XBFBnEGACJaZdrb'
       
     ],
     experience: [
