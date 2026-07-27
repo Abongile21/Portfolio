@@ -1,13 +1,28 @@
-<div class="card bg-base-100 border border-base-300 lg:shadow-lg rounded-xl p-6 mb-4 max-w-4xl mx-auto animated-border interactive-lift">
-  <h2 class="text-3xl font-extrabold mb-6 text-info text-center">ABOUT ME</h2>
-  <div class="grid lg:grid-cols-2 md:grid-cols-1 md:text-sm gap-6">
-    <div class="flex justify-center items-center">
-      <img src="../../../assets/453235651_1626461934808205_5193711099062310842_n.jpg" 
-           alt="Profile Picture" 
-           class="rounded-lg shadow-xl w-4/5 sm:w-3/4 md:w-2/3 interactive-lift ring-1 ring-sky-400/15">
-    </div>
-    <div class="flex flex-col justify-center space-y-4">
-      <p class="lg:text-lg leading-relaxed text-base-content/80">{{ profile }}</p>
+<div class="mx-auto w-full max-w-6xl py-4">
+  <div class="section-shell relative animate-fade-up">
+    <div class="accent-glow"></div>
+    <div class="relative grid items-center gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+      <div class="flex justify-center">
+        <img src="../../../assets/453235651_1626461934808205_5193711099062310842_n.jpg"
+             alt="Profile Picture"
+             class="w-full max-w-sm rounded-[1.75rem] border border-sky-400/20 object-cover shadow-[0_25px_60px_-25px_rgba(14,165,233,0.45)] interactive-lift">
+      </div>
+
+      <div class="space-y-4">
+        <span class="hero-pill">About me</span>
+        <h2 class="section-title mt-2">A thoughtful builder</h2>
+        <p class="text-base leading-relaxed text-base-content/80 sm:text-lg">{{ profile }}</p>
+        <div class="grid gap-3 pt-2 sm:grid-cols-2">
+          <div class="rounded-2xl border border-sky-400/20 bg-sky-400/10 p-4">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">Focus</p>
+            <p class="mt-2 text-sm text-base-content/70">Creating modern, high-impact interfaces and product experiences.</p>
+          </div>
+          <div class="rounded-2xl border border-sky-400/20 bg-sky-400/10 p-4">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">Style</p>
+            <p class="mt-2 text-sm text-base-content/70">Clean visuals, fluid motion, and thoughtful interactions that feel effortless.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

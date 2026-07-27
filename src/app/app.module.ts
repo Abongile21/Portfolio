@@ -14,8 +14,6 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import * as THREE from 'three';
 import { AboutComponent } from './components/about/about.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
@@ -25,7 +23,6 @@ import { ContactMeComponent } from './components/contact-me/contact-me.component
 import { DeveloperModeComponent } from './components/developer-mode/developer-mode.component';
 import { PortfolioComponent } from './components/landing/portfolio/portfolio.component';
 import { ResumeViewComponent } from './components/skills/resume-view/resume-view.component';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {
   NgxGoogleAnalyticsModule,
@@ -55,10 +52,7 @@ import {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule,
-    MatButtonModule,
     FormsModule,
-    PdfViewerModule,
     HttpClientModule,
     NgxGoogleAnalyticsModule.forRoot('G-TF4KZ1V904'),
     NgxGoogleAnalyticsRouterModule,

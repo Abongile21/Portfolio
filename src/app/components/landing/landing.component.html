@@ -1,8 +1,15 @@
-<div class="min-h-screen bg-gradient-to-r from-sky-500/20 via-base-300 to-sky-400/10 flex items-center justify-center p-6">
-  <div class="card bg-base-100/80 backdrop-blur border border-base-300 shadow-xl p-8 max-w-lg w-full motion-safe:animate-fade-in">
-    <h2 class="text-3xl font-bold mb-3 text-info motion-safe:animate-bounce-in">ABONGILE THE DEV</h2>
-    <p class="text-base-content/70 mb-8">Choose how you want to explore:</p>
-    <div class="flex flex-col sm:flex-row sm:justify-between gap-3">
+<div class="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-sky-950 px-6 py-20 flex items-center justify-center">
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="animate-float-slow absolute left-8 top-12 h-24 w-24 rounded-full bg-sky-400/20 blur-3xl"></div>
+    <div class="animate-float absolute bottom-10 right-8 h-32 w-32 rounded-full bg-cyan-400/20 blur-3xl"></div>
+  </div>
+
+  <div class="glass-panel relative z-10 w-full max-w-2xl p-8 text-center sm:p-10">
+    <span class="hero-pill">Full-stack developer • creative builder</span>
+    <h2 class="mt-5 text-4xl font-black tracking-[0.25em] text-sky-300 sm:text-5xl">ABONGILE THE DEV</h2>
+    <p class="mt-4 text-base leading-relaxed text-base-content/70">Choose how you want to explore a portfolio crafted to feel polished, modern, and thoughtfully animated.</p>
+
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-between">
       <button routerLink="/developer-mode" class="btn btn-info flex-1 interactive-lift focus-ring" (click)="viewAsDeveloper()">View as Developer</button>
       <button routerLink="/portfolio" class="btn btn-outline btn-info flex-1 interactive-lift focus-ring" (click)="viewAsNonDeveloper()">View as Non-Developer</button>
     </div>

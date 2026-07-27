@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+	:root {
+		color-scheme: dark;
+	}
+
 	html {
 		color-scheme: dark;
+		scroll-behavior: smooth;
 	}
 
 	html,
@@ -13,32 +18,105 @@
 	}
 
 	body {
-		background-color: hsl(var(--b2));
+		background:
+			radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 30%),
+			radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.16), transparent 28%),
+			hsl(var(--b2));
 		color: hsl(var(--bc));
+		font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	}
 
 	::selection {
-		background-color: hsl(var(--p) / 0.3);
+		background-color: rgba(56, 189, 248, 0.3);
+		color: white;
+	}
+}
+
+@layer components {
+	.glass-panel {
+		@apply rounded-[1.75rem] border border-sky-400/20 bg-slate-900/75 backdrop-blur-xl;
+		box-shadow: 0 20px 45px -20px rgba(14, 165, 233, 0.35);
+	}
+
+	.section-shell {
+		@apply relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-900/70 p-6 shadow-[0_25px_60px_-30px_rgba(2,132,199,0.45)] backdrop-blur-xl sm:p-8 lg:p-10;
+	}
+
+	.section-title {
+		@apply text-3xl font-black uppercase tracking-[0.28em] text-sky-300 sm:text-4xl;
+	}
+
+	.hero-pill {
+		@apply inline-flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/10 px-3 py-1 text-sm font-medium text-sky-200;
+	}
+
+	.accent-glow {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 58%);
+		opacity: 0.9;
+	}
+
+	.soft-ring {
+		@apply ring-1 ring-sky-400/20;
 	}
 }
 
 @layer utilities {
 	.interactive {
-		@apply transition duration-200 ease-out;
+		@apply transition-all duration-300 ease-out;
 	}
 
 	.interactive-lift {
-		@apply interactive transform-gpu hover:-translate-y-0.5 hover:scale-[1.01];
+		@apply interactive transform-gpu hover:-translate-y-1 hover:scale-[1.01];
 	}
 
 	.focus-ring {
 		@apply focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
 	}
 
+	.animate-fade-up {
+		animation: fade-up 700ms ease both;
+	}
+
+	.animate-float {
+		animation: float 5s ease-in-out infinite;
+	}
+
+	.animate-float-slow {
+		animation: float 7s ease-in-out infinite;
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.interactive,
-		.interactive-lift {
+		.interactive-lift,
+		.animate-fade-up,
+		.animate-float,
+		.animate-float-slow {
 			transition: none !important;
+			animation: none !important;
 		}
+	}
+}
+
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-10px);
 	}
 }

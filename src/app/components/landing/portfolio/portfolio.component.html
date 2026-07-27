@@ -1,163 +1,73 @@
-<div class="min-h-screen flex flex-col bg-base-200">
-  <!-- Navigation Bar -->
-  <nav class="fixed top-0 w-full bg-base-100/80 backdrop-blur border-b border-base-300/70 z-50 motion-safe:animate-slide-in-left">
-    <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4 sm:px-6">
-      <!-- Logo -->
-      
+<div class="relative min-h-screen flex flex-col overflow-hidden bg-transparent">
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="animate-float-slow absolute left-0 top-16 h-48 w-48 rounded-full bg-sky-400/10 blur-3xl"></div>
+    <div class="animate-float absolute bottom-8 right-0 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl"></div>
+  </div>
 
-      <!-- Hamburger Menu for Mobile -->
-      <div #hamburger class="md:hidden cursor-pointer interactive" (click)="toggleMenu()" aria-label="Toggle navigation">
-        <svg
-          class="h-8 w-8 text-base-content"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          />
+  <nav class="fixed left-1/2 top-4 z-50 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 rounded-full border border-sky-400/20 bg-slate-950/75 px-3 py-2 shadow-[0_20px_50px_-20px_rgba(14,165,233,0.45)] backdrop-blur-xl">
+    <div class="mx-auto flex items-center justify-between px-2 sm:px-4">
+      <div class="hidden sm:flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-sky-200">
+        <span class="h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+        Abongile
+      </div>
+
+      <div #hamburger class="cursor-pointer rounded-full p-2 text-sky-200 md:hidden interactive" (click)="toggleMenu()" aria-label="Toggle navigation">
+        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </div>
 
-      <!-- Navigation Links -->
-      <div class="hidden md:flex items-center justify-center gap-2 w-full">
-        <a
-          routerLink="/"
-          class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          Home
-        </a>
-        <a
-          (click)="scrollToElement('about')"
-          class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          About
-        </a>
-        <a
-          (click)="scrollToElement('skills')"
-          class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          Skills
-        </a>
-        <a
-          (click)="scrollToElement('projects')"
-          class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          Projects
-        </a>
-        <a
-          routerLink="/resume-view"
-          class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          Resume
-        </a>
-        <a
-          (click)="scrollToElement('contact-me')"
-          class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          Contact
-        </a>
-        <a
-          routerLink="/developer-mode"
-          class="btn btn-info btn-sm uppercase interactive-lift focus-ring"
-        >
-          Dev Mode
-        </a>
+      <div class="hidden md:flex items-center justify-center gap-2">
+        <a routerLink="/" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Home</a>
+        <a (click)="scrollToElement('about')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">About</a>
+        <a (click)="scrollToElement('skills')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Skills</a>
+        <a (click)="scrollToElement('projects')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Projects</a>
+        <a routerLink="/resume-view" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Resume</a>
+        <a (click)="scrollToElement('contact-me')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Contact</a>
+        <a routerLink="/developer-mode" class="btn btn-info btn-sm uppercase interactive-lift focus-ring">Dev Mode</a>
       </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div
-      #navLinks
-      class="md:hidden bg-base-100/95 backdrop-blur transition duration-300"
-      [ngClass]="{ hidden: !isMenuOpen, block: isMenuOpen }"
-    >
-      <div class="flex flex-col space-y-4 p-4">
-        <a
-          routerLink="/"
-          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-          (click)="closeMenu()"
-        >
-          Home
-        </a>
-        <a
-          (click)="scrollToElement('about')"
-          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          About
-        </a>
-        <a
-          (click)="scrollToElement('skills')"
-          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          Skills
-        </a>
-        <a
-          (click)="scrollToElement('projects')"
-          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          Projects
-        </a>
-        <a
-          routerLink="/resume-view"
-          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-          (click)="closeMenu()"
-        >
-          Resume
-        </a>
-        <a
-          (click)="scrollToElement('contact-me')"
-          class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300"
-        >
-          Contact
-        </a>
-        <a
-          routerLink="/developer-mode"
-          class="btn btn-info btn-sm justify-start uppercase interactive-lift focus-ring"
-          (click)="closeMenu()"
-        >
-          Dev Mode
-        </a>
+    <div #navLinks class="md:hidden bg-slate-950/95 transition duration-300" [ngClass]="{ hidden: !isMenuOpen, block: isMenuOpen }">
+      <div class="flex flex-col space-y-3 p-4">
+        <a routerLink="/" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" (click)="closeMenu()">Home</a>
+        <a (click)="scrollToElement('about')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">About</a>
+        <a (click)="scrollToElement('skills')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Skills</a>
+        <a (click)="scrollToElement('projects')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Projects</a>
+        <a routerLink="/resume-view" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" (click)="closeMenu()">Resume</a>
+        <a (click)="scrollToElement('contact-me')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Contact</a>
+        <a routerLink="/developer-mode" class="btn btn-info btn-sm justify-start uppercase interactive-lift focus-ring" (click)="closeMenu()">Dev Mode</a>
       </div>
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="flex-grow pt-16">
-    <!-- Profile Section -->
-    <section id="profile" class="min-h-screen flex items-center justify-center bg-base-200 scroll-mt-20 motion-safe:animate-slide-in-right">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <main class="flex-grow pt-20">
+    <section id="profile" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+      <div class="mx-auto max-w-7xl">
         <app-profile></app-profile>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="min-h-screen flex items-center justify-center bg-base-100 scroll-mt-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="about" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+      <div class="mx-auto max-w-7xl">
         <app-about></app-about>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="min-h-screen flex items-center justify-center bg-base-200 scroll-mt-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="skills" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+      <div class="mx-auto max-w-7xl">
         <app-skills></app-skills>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="min-h-screen flex items-center justify-center bg-base-100 scroll-mt-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="projects" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+      <div class="mx-auto max-w-7xl">
         <app-projects></app-projects>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact-me" class="min-h-screen flex items-center justify-center bg-base-200 scroll-mt-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="contact-me" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+      <div class="mx-auto max-w-7xl">
         <app-contact-me></app-contact-me>
       </div>
     </section>
