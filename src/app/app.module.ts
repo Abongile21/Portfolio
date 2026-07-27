@@ -9,12 +9,10 @@ import { EducationComponent } from './components/education/education.component';
 import { ExperienceComponent } from './components/tutoring-experience/experience.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { ThreejsBackgroundComponent } from './components/threejs-backround/threejs-backround.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import * as THREE from 'three';
 import { AboutComponent } from './components/about/about.component';
 import { TerminalComponent } from './components/terminal/terminal.component';
 import { FormsModule } from '@angular/forms';
@@ -38,7 +36,6 @@ import {
     ExperienceComponent,
     SkillsComponent,
     ContactComponent,
-    ThreejsBackgroundComponent,
     ProjectsComponent,
     AboutComponent,
     TerminalComponent,
