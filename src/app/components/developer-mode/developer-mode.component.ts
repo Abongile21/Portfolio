@@ -85,7 +85,7 @@ export class DeveloperModeComponent {
         break;
 
       default:
-        this.output.push(`bash: ${command}: command not found. Please start with 'cd' too.`);
+        this.output.push(`bash: ${command}: command not found. Please start with ls to list all sections then 'cd "[section name]"' to view .`);
         if (this.plays === 1) {
           this.playSound();
           this.plays++;
