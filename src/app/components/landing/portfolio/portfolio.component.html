@@ -1,17 +1,17 @@
-<div class="relative min-h-screen flex flex-col overflow-hidden bg-transparent">
+<div class="portfolio-shell relative min-h-screen flex flex-col overflow-hidden bg-transparent">
   <div class="pointer-events-none absolute inset-0 overflow-hidden">
     <div class="animate-float-slow absolute left-0 top-16 h-48 w-48 rounded-full bg-sky-400/10 blur-3xl"></div>
     <div class="animate-float absolute bottom-8 right-0 h-56 w-56 rounded-full bg-cyan-400/10 blur-3xl"></div>
   </div>
 
-  <nav class="fixed left-1/2 top-4 z-50 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 rounded-full border border-sky-400/20 bg-slate-950/75 px-3 py-2 shadow-[0_20px_50px_-20px_rgba(14,165,233,0.45)] backdrop-blur-xl">
+  <nav class="portfolio-nav fixed left-1/2 top-4 z-50 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 rounded-full border border-sky-400/20 bg-slate-950/75 px-3 py-2 shadow-[0_20px_50px_-20px_rgba(14,165,233,0.45)] backdrop-blur-xl" aria-label="Primary navigation">
     <div class="mx-auto flex items-center justify-between px-2 sm:px-4">
       <div class="hidden sm:flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-sky-200">
-        <span class="h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+        <span class="brand-mark h-2.5 w-2.5 rounded-full bg-sky-400"></span>
         Abongile
       </div>
 
-      <div #hamburger class="cursor-pointer rounded-full p-2 text-sky-200 md:hidden interactive" (click)="toggleMenu()" aria-label="Toggle navigation">
+      <div #hamburger class="cursor-pointer rounded-full p-2 text-sky-200 md:hidden interactive focus-ring" (click)="toggleMenu()" aria-label="Toggle navigation" role="button" tabindex="0">
         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div #navLinks class="md:hidden bg-slate-950/95 transition duration-300" [ngClass]="{ hidden: !isMenuOpen, block: isMenuOpen }">
+    <div #navLinks class="mobile-nav md:hidden bg-slate-950/95 transition duration-300" [ngClass]="{ hidden: !isMenuOpen, block: isMenuOpen }">
       <div class="flex flex-col space-y-3 p-4">
         <a routerLink="/" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" (click)="closeMenu()">Home</a>
         <a (click)="scrollToElement('about')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">About</a>
@@ -42,31 +42,31 @@
   </nav>
 
   <main class="flex-grow pt-20">
-    <section id="profile" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+    <section id="profile" class="portfolio-section flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
       <div class="mx-auto max-w-7xl">
         <app-profile></app-profile>
       </div>
     </section>
 
-    <section id="about" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+    <section id="about" class="portfolio-section flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
       <div class="mx-auto max-w-7xl">
         <app-about></app-about>
       </div>
     </section>
 
-    <section id="skills" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+    <section id="skills" class="portfolio-section flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
       <div class="mx-auto max-w-7xl">
         <app-skills></app-skills>
       </div>
     </section>
 
-    <section id="projects" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+    <section id="projects" class="portfolio-section flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
       <div class="mx-auto max-w-7xl">
         <app-projects></app-projects>
       </div>
     </section>
 
-    <section id="contact-me" class="flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+    <section id="contact-me" class="portfolio-section flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
       <div class="mx-auto max-w-7xl">
         <app-contact-me></app-contact-me>
       </div>

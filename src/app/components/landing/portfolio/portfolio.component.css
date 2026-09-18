@@ -163,3 +163,36 @@
   transform: scale(1.1);
   transition: transform 0.3s ease-out;
 }
+.portfolio-shell {
+  background:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.08), rgba(2, 6, 23, 0.45)),
+    repeating-linear-gradient(90deg, transparent 0, transparent 79px, rgba(125, 211, 252, 0.025) 80px),
+    repeating-linear-gradient(0deg, transparent 0, transparent 79px, rgba(125, 211, 252, 0.025) 80px);
+}
+
+.portfolio-section {
+  position: relative;
+}
+
+.portfolio-section + .portfolio-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: min(42rem, 72vw);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.24), transparent);
+}
+
+.portfolio-nav {
+  box-shadow: 0 20px 50px -20px rgba(14, 165, 233, 0.45), inset 0 1px 0 rgba(186, 230, 253, 0.12);
+}
+
+.brand-mark {
+  box-shadow: 0 0 0.8rem rgba(56, 189, 248, 0.8);
+}
+
+.mobile-nav {
+  margin: 0.5rem -0.25rem -0.25rem;
+  border-top: 1px solid rgba(125, 211, 252, 0.12);
+  border-radius: 0.9rem;
+}
