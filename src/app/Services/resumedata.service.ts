@@ -8,7 +8,7 @@ export class ResumeDataService {
     name: 'ABONGILE',
     title: 'JUNIOR SOFTWARE DEVELOPER',
     contact: {
-      phone: '076-803-4209',
+      phone: '074-915-8949',
       email: 'abongiletheo00@gmail.com',
       github: 'Abongile21',
       linkedin: 'Abongile Nyakatya'
