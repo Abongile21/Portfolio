@@ -83,6 +83,14 @@ export class ResumeDataService {
         link: 'https://gushliferides.netlify.app/',
         technologies: ['HTML', 'JavaScript', 'CSS', 'Tailwind','Formspree']
       },
+      {
+        image: '../../assets/roker-eats.png',
+        title: 'Roker Eats',
+        github: 'https://github.com/Abongile21/roker-eats',
+        description: 'Roker Eats is a restaurant landing page that showcases food items and delivers a clean, modern ordering experience.',
+        link: 'https://roker-eats.vercel.app/roker-eats.html',
+        technologies: ['HTML', 'JavaScript', 'CSS', 'Tailwind']
+      }
     ]
   };
 
