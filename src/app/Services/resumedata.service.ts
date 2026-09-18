@@ -27,6 +27,7 @@ export class ResumeDataService {
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
       
       'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg',
+      'https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/azure/default.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
       'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
       'https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original',
