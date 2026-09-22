@@ -11,9 +11,6 @@
       </div>
 
       <div class="flex flex-col gap-3 sm:items-end">
-        <div class="flex items-center gap-3 rounded-lg border border-sky-400/20 bg-slate-900/80 px-3 py-2" aria-label="Zoom controls">
-          <input type="range" [min]="minZoom" [max]="maxZoom" [step]="zoomStep" [(ngModel)]="zoom" (input)="onZoomChange($event)" aria-label="Document zoom" class="w-28 accent-sky-400 sm:w-36" />
-        </div>
         <div class="flex gap-2">
           <button (click)="downloadResume()" class="viewer-action-button viewer-action-primary"><span class="document-icon" aria-hidden="true">↓</span><span>Download PDF</span></button>
           <button (click)="goBack()" class="viewer-action-button"><span class="document-icon" aria-hidden="true">←</span><span>Back to portfolio</span></button>
