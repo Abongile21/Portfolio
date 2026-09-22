@@ -26,8 +26,8 @@ const routes: Routes = [
   { path:'project', component:ProjectsComponent},
   { path: 'developer-mode', component: DeveloperModeComponent },
   { path: 'portfolio', component: PortfolioComponent },
-  { path: '**', component: PortfolioComponent },
   { path:'terminal',component:TerminalComponent},
+  { path: '**', component: PortfolioComponent },
   
   
 ];

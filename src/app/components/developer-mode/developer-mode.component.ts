@@ -113,7 +113,7 @@ export class DeveloperModeComponent {
     if (this.sections[section]) {
       this.activeTab = section;
       this.output.push(`Changed directory to /${section}`);
-      if (section === 'resume') this.router.navigate(['/resume']);
+      if (section === 'resume') this.router.navigate(['/resume-view']);
     } else {
       this.output.push(`bash: cd: ${section}: No such directory`);
     }

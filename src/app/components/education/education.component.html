@@ -1,13 +1,21 @@
-<div class="min-h-screen bg-base-200 p-4 flex items-center justify-center">
-  <div class="card w-96 bg-base-100 shadow-xl border border-base-300 rounded-xl">
-    <div class="card-body">
-      <h2 class="card-title font-bold text-2xl mb-2 text-primary">Education</h2>
-      <div *ngFor="let edu of education" class="mb-4">
-        <h3 class="text-lg text-base-content/70">{{ edu.degree }}</h3>
-        <p class="mt-2"><strong>School:</strong> {{ edu.school }}</p>
-        <p class="mt-2"><strong>Period:</strong> {{ edu.period }}</p>
-        <p class="mt-2" *ngIf="edu.status"><strong>Status:</strong> {{ edu.status }}</p>
+<main class="mx-auto w-full max-w-6xl py-4">
+  <section class="section-shell relative animate-fade-up">
+    <div class="accent-glow"></div>
+    <div class="relative">
+      <span class="hero-pill">Learning path</span>
+      <h1 class="section-title mt-3">Education</h1>
+      <p class="mt-3 max-w-2xl text-sm leading-relaxed text-base-content/70 sm:text-base">The training and study that shaped my approach to thoughtful software development.</p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-2">
+        <article *ngFor="let edu of education" class="rounded-2xl border border-sky-400/20 bg-sky-400/10 p-5">
+          <h2 class="text-lg font-semibold text-base-content">{{ edu.degree }}</h2>
+          <dl class="mt-4 space-y-2 text-sm text-base-content/70">
+            <div><dt class="font-semibold text-sky-700 dark:text-sky-200">School</dt><dd>{{ edu.school }}</dd></div>
+            <div><dt class="font-semibold text-sky-700 dark:text-sky-200">Period</dt><dd>{{ edu.period }}</dd></div>
+            <div *ngIf="edu.status"><dt class="font-semibold text-sky-700 dark:text-sky-200">Status</dt><dd>{{ edu.status }}</dd></div>
+          </dl>
+        </article>
       </div>
     </div>
-  </div>
-</div>
+  </section>
+</main>
