@@ -5,7 +5,7 @@
 @layer base {
 	:root {
 		color-scheme: dark;
-		--app-bg: #08111f;
+		--app-bg: #050608;
 		--app-text: #e2e8f0;
 	}
 
@@ -21,8 +21,8 @@
 
 	body {
 		background:
-			radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 30%),
-			radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.16), transparent 28%),
+			radial-gradient(circle at top left, rgba(56, 189, 248, 0.09), transparent 30%),
+			radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.08), transparent 28%),
 			var(--app-bg);
 		color: var(--app-text);
 		font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -42,9 +42,10 @@
 
 	html[data-theme='dark'] {
 		color-scheme: dark;
-		--b1: 222 47% 11%;
-		--b2: 222 47% 7%;
-		--b3: 217 33% 17%;
+		--app-bg: #050608;
+		--b1: 0 0% 5%;
+		--b2: 0 0% 3%;
+		--b3: 215 28% 10%;
 		--bc: 210 40% 98%;
 		--p: 199 89% 48%;
 		--s: 221 83% 53%;
@@ -79,12 +80,12 @@ html[data-theme='light'] .resume-view {
 
 @layer components {
 	.glass-panel {
-		@apply rounded-[1.75rem] border border-sky-400/20 bg-slate-900/75 backdrop-blur-xl;
+		@apply rounded-[1.75rem] border border-sky-400/20 bg-black/75 backdrop-blur-xl;
 		box-shadow: 0 20px 45px -20px rgba(14, 165, 233, 0.35);
 	}
 
 	.section-shell {
-		@apply relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-slate-900/70 p-6 shadow-[0_25px_60px_-30px_rgba(2,132,199,0.45)] backdrop-blur-xl sm:p-8 lg:p-10;
+		@apply relative overflow-hidden rounded-[2rem] border border-sky-400/20 bg-black/70 p-6 shadow-[0_25px_60px_-30px_rgba(2,132,199,0.45)] backdrop-blur-xl sm:p-8 lg:p-10;
 	}
 
 	.section-title {

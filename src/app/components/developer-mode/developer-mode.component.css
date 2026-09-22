@@ -15,9 +15,9 @@
 
 .developer-shell {
   background:
-    radial-gradient(circle at 12% 10%, rgba(14, 165, 233, 0.16), transparent 28rem),
-    radial-gradient(circle at 88% 90%, rgba(37, 99, 235, 0.14), transparent 30rem),
-    #07111f;
+    radial-gradient(circle at 12% 10%, rgba(14, 165, 233, 0.1), transparent 28rem),
+    radial-gradient(circle at 88% 90%, rgba(37, 99, 235, 0.08), transparent 30rem),
+    #050608;
 }
 
 .terminal-frame {
@@ -25,7 +25,7 @@
 }
 
 .terminal-header {
-  background: #0b1b2d;
+  background: #080b11;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -54,8 +54,8 @@
 }
 
 .terminal-pane {
-  background-color: #0b1b2d;
-  background-image: linear-gradient(135deg, rgba(14, 165, 233, 0.13), transparent 55%);
+  background-color: #090d14;
+  background-image: linear-gradient(135deg, rgba(14, 165, 233, 0.1), transparent 55%);
 }
 
 .status-readout {
