@@ -1,0 +1,94 @@
+
+.resume-view {
+	background:
+		linear-gradient(135deg, rgba(14, 165, 233, 0.08), transparent 34%),
+		radial-gradient(circle at 82% 8%, rgba(37, 99, 235, 0.16), transparent 28rem),
+		#08111f;
+}
+
+.resume-layout {
+	min-height: calc(100vh - 2.5rem);
+}
+
+.resume-toolbar {
+	font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.status-dot {
+	width: 0.4rem;
+	height: 0.4rem;
+	border-radius: 999px;
+	background: #38bdf8;
+	box-shadow: 0 0 0.7rem rgba(56, 189, 248, 0.9);
+}
+
+.viewer-icon-button,
+.viewer-action-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2rem;
+	border: 1px solid rgba(125, 211, 252, 0.22);
+	color: #bae6fd;
+	transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.viewer-icon-button {
+	width: 2rem;
+	border-radius: 0.375rem;
+	background: rgba(14, 116, 144, 0.16);
+	font-size: 1rem;
+}
+
+.viewer-action-button {
+	gap: 0.5rem;
+	padding: 0.55rem 0.8rem;
+	border-radius: 0.375rem;
+	background: rgba(15, 23, 42, 0.7);
+	font-size: 0.75rem;
+	font-weight: 600;
+}
+
+.viewer-action-primary {
+	border-color: rgba(56, 189, 248, 0.55);
+	background: #0369a1;
+	color: #f0f9ff;
+}
+
+.viewer-icon-button:hover,
+.viewer-action-button:hover {
+	border-color: rgba(125, 211, 252, 0.75);
+	background: rgba(14, 116, 144, 0.32);
+	color: #f0f9ff;
+}
+
+.viewer-action-primary:hover {
+	background: #0284c7;
+}
+
+.document-stage {
+	min-height: 0;
+	border: 1px solid rgba(56, 189, 248, 0.22);
+	border-radius: 0.75rem;
+	background: rgba(15, 23, 42, 0.78);
+	box-shadow: 0 24px 70px -34px rgba(14, 165, 233, 0.65);
+}
+
+.resume-frame {
+	display: block;
+	height: min(78vh, 62rem);
+	min-height: 36rem;
+	background: #fff;
+	box-shadow: 0 12px 30px -20px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 639px) {
+	.resume-layout {
+		min-height: calc(100vh - 2rem);
+	}
+
+	.resume-frame {
+		height: 72vh;
+		min-height: 30rem;
+	}
+}

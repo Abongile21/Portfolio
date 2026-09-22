@@ -15,9 +15,9 @@
 
 .developer-shell {
   background:
-    radial-gradient(circle at 12% 10%, hsl(var(--p) / 0.12), transparent 28rem),
-    radial-gradient(circle at 88% 90%, hsl(var(--s) / 0.1), transparent 30rem),
-    hsl(var(--b2));
+    radial-gradient(circle at 12% 10%, rgba(14, 165, 233, 0.16), transparent 28rem),
+    radial-gradient(circle at 88% 90%, rgba(37, 99, 235, 0.14), transparent 30rem),
+    #07111f;
 }
 
 .terminal-frame {
@@ -25,7 +25,7 @@
 }
 
 .terminal-header {
-  background: hsl(var(--b3));
+  background: #0b1b2d;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
@@ -34,8 +34,8 @@
   width: 2rem;
   height: 2rem;
   place-items: center;
-  border: 1px solid hsl(var(--p) / 0.55);
-  color: hsl(var(--p));
+  border: 1px solid rgba(56, 189, 248, 0.55);
+  color: #38bdf8;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.75rem;
   font-weight: 700;
@@ -54,7 +54,8 @@
 }
 
 .terminal-pane {
-  background-image: linear-gradient(135deg, hsl(var(--b3) / 0.35), transparent 55%);
+  background-color: #0b1b2d;
+  background-image: linear-gradient(135deg, rgba(14, 165, 233, 0.13), transparent 55%);
 }
 
 .status-readout {
@@ -83,12 +84,12 @@
 }
 
 .terminal-line::first-letter {
-  color: hsl(var(--p));
+  color: #38bdf8;
 }
 
 .command-line:focus-within {
-  border-color: hsl(var(--p) / 0.7);
-  box-shadow: 0 0 0 3px hsl(var(--p) / 0.1);
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
 }
 
 .custom-scrollbar::-webkit-scrollbar {

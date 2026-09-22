@@ -1,43 +1,38 @@
-<div class="min-h-screen bg-base-200 p-6 flex flex-col items-center">
-
-  <!-- Header -->
-  <div class="w-full max-w-5xl flex flex-col sm:flex-row justify-between items-center mb-8 bg-slate-900/80 backdrop-blur-lg p-5 rounded-2xl shadow-2xl border border-base-300">
-   
-    <!-- Controls -->
-    <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-
-      <!-- Zoom Controls -->
-      <div class="flex items-center gap-3 bg-slate-800/80 px-4 py-2 rounded-xl shadow-inner w-full sm:w-auto">
-        <button (click)="zoomOut()" class="btn btn-primary btn-circle btn-sm" aria-label="Zoom out">-</button>
-
-        <input type="range" min="0.5" max="2" step="0.1" [(ngModel)]="zoom" class="range range-primary w-32" />
-
-        <button (click)="zoomIn()" class="btn btn-primary btn-circle btn-sm" aria-label="Zoom in">+</button>
+<main class="resume-view min-h-screen px-4 py-5 sm:px-8 lg:px-12">
+  <div class="resume-layout mx-auto flex w-full max-w-7xl flex-col">
+    <header class="resume-toolbar flex flex-col gap-5 border-b border-sky-400/20 pb-5 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <div class="mb-3 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.24em] text-sky-300/70">
+          <span class="status-dot"></span>
+          <span>Document viewer / 01</span>
+        </div>
+        <h1 class="text-2xl font-semibold tracking-tight text-slate-100 sm:text-3xl">Resume</h1>
+        <p class="mt-1 text-sm text-slate-400">Theo Nyakatya · Software developer</p>
       </div>
 
-      <!-- Action Buttons -->
-      <div class="flex gap-3">
-        <button (click)="downloadResume()" class="btn btn-primary">
-          <i class="fas fa-download mr-2"></i> Download
-        </button>
-        <button (click)="goBack()" class="btn btn-error">
-          <i class="fas fa-sign-out-alt mr-2"></i> Exit
-        </button>
+      <div class="flex flex-col gap-3 sm:items-end">
+        <div class="flex items-center gap-3 rounded-lg border border-sky-400/20 bg-slate-900/80 px-3 py-2" aria-label="Zoom controls">
+          <button (click)="zoomOut()" class="viewer-icon-button" aria-label="Zoom out" title="Zoom out">−</button>
+          <input type="range" [min]="minZoom" [max]="maxZoom" [step]="zoomStep" [(ngModel)]="zoom" (input)="onZoomChange($event)" aria-label="Document zoom" class="w-28 accent-sky-400 sm:w-36" />
+          <button (click)="zoomIn()" class="viewer-icon-button" aria-label="Zoom in" title="Zoom in">+</button>
+          <span class="min-w-12 text-right font-mono text-xs text-sky-200">{{ zoomDisplay }}</span>
+          <button (click)="toggleFullscreen()" class="viewer-icon-button" [attr.aria-label]="isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'" [title]="isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'">
+            <i class="fas" [ngClass]="isFullscreen ? 'fa-compress' : 'fa-expand'"></i>
+          </button>
+        </div>
+        <div class="flex gap-2">
+          <button (click)="downloadResume()" class="viewer-action-button viewer-action-primary"><i class="fas fa-download" aria-hidden="true"></i><span>Download PDF</span></button>
+          <button (click)="goBack()" class="viewer-action-button"><i class="fas fa-arrow-left" aria-hidden="true"></i><span>Back to portfolio</span></button>
+        </div>
       </div>
+    </header>
 
-    </div>
+    <section class="document-stage mt-6 flex-1 p-2 sm:p-4" aria-label="Resume preview">
+      <div class="document-meta flex items-center justify-between px-2 pb-3 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500 sm:px-4">
+        <span>preview.pdf</span>
+        <span class="hidden sm:inline">read-only · {{ zoomDisplay }}</span>
+      </div>
+      <iframe [src]="pdfSrc" title="Resume preview" class="resume-frame w-full rounded-sm border-0"></iframe>
+    </section>
   </div>
-
-  <!-- PDF Viewer -->
-  <div class="w-full max-w-5xl flex-grow flex justify-center items-center bg-slate-900/70 backdrop-blur-md rounded-2xl shadow-2xl border border-base-300 p-4">
-    <div class="w-full bg-slate-800/80 rounded-xl p-2 sm:p-4 shadow-inner">
-      <iframe
-        [src]="pdfSrc"
-        title="Resume preview"
-        class="w-full rounded-lg border-0"
-        style="height: 80vh; min-height: 640px;"
-      ></iframe>
-    </div>
-  </div>
-
-</div>
+</main>
