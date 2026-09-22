@@ -138,3 +138,16 @@
     animation: none;
   }
 }
+
+.developer-shell .terminal-frame {
+  border-color: rgba(56, 189, 248, 0.38);
+}
+
+.developer-shell .terminal-header,
+.developer-shell .terminal-pane {
+  color: #dbeafe;
+}
+
+.developer-shell .terminal-header {
+  box-shadow: inset 0 -1px 0 rgba(56, 189, 248, 0.12);
+}

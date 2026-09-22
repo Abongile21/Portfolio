@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
@@ -8,8 +8,8 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  darkMode: boolean = false;
+export class AppComponent implements OnInit {
+  darkMode = true;
 
   constructor(
     private router: Router,
@@ -26,7 +26,22 @@ export class AppComponent {
       }
     });
   }
-  toggleDarkMode() {
+
+  ngOnInit(): void {
+    const storedTheme = localStorage.getItem('portfolio-theme');
+    this.darkMode = storedTheme
+      ? storedTheme === 'dark'
+      : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    this.applyTheme();
+  }
+
+  toggleDarkMode(): void {
     this.darkMode = !this.darkMode;
+    localStorage.setItem('portfolio-theme', this.darkMode ? 'dark' : 'light');
+    this.applyTheme();
+  }
+
+  private applyTheme(): void {
+    document.documentElement.dataset['theme'] = this.darkMode ? 'dark' : 'light';
   }
 }
