@@ -2,7 +2,7 @@
   <div class="resume-layout mx-auto flex w-full max-w-7xl flex-col">
     <header class="resume-toolbar flex flex-col gap-5 border-b border-sky-400/20 pb-5 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <div class="mb-3 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.24em] text-sky-300/70">
+        <div class="document-label mb-3 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.24em]">
           <span class="status-dot"></span>
           <span>Document viewer / 01</span>
         </div>
@@ -15,14 +15,10 @@
           <button (click)="zoomOut()" class="viewer-icon-button" aria-label="Zoom out" title="Zoom out">−</button>
           <input type="range" [min]="minZoom" [max]="maxZoom" [step]="zoomStep" [(ngModel)]="zoom" (input)="onZoomChange($event)" aria-label="Document zoom" class="w-28 accent-sky-400 sm:w-36" />
           <button (click)="zoomIn()" class="viewer-icon-button" aria-label="Zoom in" title="Zoom in">+</button>
-          <span class="min-w-12 text-right font-mono text-xs text-sky-200">{{ zoomDisplay }}</span>
-          <button (click)="toggleFullscreen()" class="viewer-icon-button" [attr.aria-label]="isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'" [title]="isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'">
-            <i class="fas" [ngClass]="isFullscreen ? 'fa-compress' : 'fa-expand'"></i>
-          </button>
         </div>
         <div class="flex gap-2">
-          <button (click)="downloadResume()" class="viewer-action-button viewer-action-primary"><i class="fas fa-download" aria-hidden="true"></i><span>Download PDF</span></button>
-          <button (click)="goBack()" class="viewer-action-button"><i class="fas fa-arrow-left" aria-hidden="true"></i><span>Back to portfolio</span></button>
+          <button (click)="downloadResume()" class="viewer-action-button viewer-action-primary"><span class="document-icon" aria-hidden="true">↓</span><span>Download PDF</span></button>
+          <button (click)="goBack()" class="viewer-action-button"><span class="document-icon" aria-hidden="true">←</span><span>Back to portfolio</span></button>
         </div>
       </div>
     </header>
@@ -30,7 +26,7 @@
     <section class="document-stage mt-6 flex-1 p-2 sm:p-4" aria-label="Resume preview">
       <div class="document-meta flex items-center justify-between px-2 pb-3 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500 sm:px-4">
         <span>preview.pdf</span>
-        <span class="hidden sm:inline">read-only · {{ zoomDisplay }}</span>
+        <span class="hidden sm:inline">read-only</span>
       </div>
       <iframe [src]="pdfSrc" title="Resume preview" class="resume-frame w-full rounded-sm border-0"></iframe>
     </section>

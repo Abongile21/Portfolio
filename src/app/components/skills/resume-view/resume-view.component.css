@@ -1,5 +1,6 @@
 
 .resume-view {
+	padding-bottom: 4.5rem;
 	background:
 		linear-gradient(135deg, rgba(14, 165, 233, 0.08), transparent 34%),
 		radial-gradient(circle at 82% 8%, rgba(37, 99, 235, 0.1), transparent 28rem),
@@ -12,6 +13,10 @@
 
 .resume-toolbar {
 	font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.document-label {
+	color: #38bdf8;
 }
 
 .status-dot {
@@ -31,6 +36,14 @@
 	border: 1px solid rgba(125, 211, 252, 0.22);
 	color: #bae6fd;
 	transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.document-icon {
+	display: inline-block;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.15rem;
+	font-weight: 700;
+	line-height: 1;
 }
 
 .viewer-icon-button {
@@ -82,7 +95,49 @@
 	box-shadow: 0 12px 30px -20px rgba(0, 0, 0, 0.9);
 }
 
+:host-context(html[data-theme='light']) .resume-toolbar h1 {
+	color: #172033;
+}
+
+:host-context(html[data-theme='light']) .document-label {
+	color: #0369a1;
+}
+
+:host-context(html[data-theme='light']) .resume-toolbar p,
+:host-context(html[data-theme='light']) .document-meta {
+	color: #475569;
+}
+
+:host-context(html[data-theme='light']) .viewer-icon-button,
+:host-context(html[data-theme='light']) .viewer-action-button {
+	border-color: rgba(3, 105, 161, 0.35);
+	background: #ffffff;
+	color: #0f3d5e;
+}
+
+:host-context(html[data-theme='light']) .viewer-action-primary {
+	border-color: #0369a1;
+	background: #0369a1;
+	color: #ffffff;
+}
+
+:host-context(html[data-theme='light']) .viewer-icon-button:hover,
+:host-context(html[data-theme='light']) .viewer-action-button:hover {
+	border-color: #0369a1;
+	background: #e0f2fe;
+	color: #082f49;
+}
+
+:host-context(html[data-theme='light']) .viewer-action-primary:hover {
+	background: #0284c7;
+	color: #ffffff;
+}
+
 @media (max-width: 639px) {
+	.resume-view {
+		padding-bottom: 4rem;
+	}
+
 	.resume-layout {
 		min-height: calc(100vh - 2rem);
 	}
