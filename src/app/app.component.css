@@ -24,6 +24,15 @@
   color: #f0f9ff;
 }
 
+.theme-icon {
+  display: block;
+  color: currentColor;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .main-content {
   position: relative;
   z-index: 1;

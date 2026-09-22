@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./resume-view.component.css']
 })
 export class ResumeViewComponent implements OnInit {
-  pdfSrc = 'assets/Resume_ANyakatya.pdf';
+  private readonly pdfUrl = 'assets/Resume_ANyakatya.pdf';
+  readonly pdfSrc: SafeResourceUrl;
   zoom = 1.0;
 
   readonly minZoom = 0.6;
@@ -18,7 +20,12 @@ export class ResumeViewComponent implements OnInit {
   isFullscreen = false;
   zoomDisplay = '100%';
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private sanitizer: DomSanitizer
+  ) {
+    this.pdfSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.pdfUrl);
+  }
 
   ngOnInit(): void {
     this.updateZoomDisplay();
@@ -50,7 +57,7 @@ export class ResumeViewComponent implements OnInit {
 
   downloadResume(): void {
     const link = document.createElement('a');
-    link.href = this.pdfSrc;
+    link.href = this.pdfUrl;
     link.download = 'Theo_Nyakatya_Resume.pdf';
     link.click();
   }
