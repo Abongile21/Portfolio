@@ -88,7 +88,7 @@ export class ResumeDataService {
         title: 'GushLife Rides',
         github: 'https://github.com/Abongile21/GushLife',
         description: 'GushLifeRides a catalog of BMW 325i vehicles that available for hire.',
-        link: 'https://gushliferides.netlify.app/',
+        link: 'https://gush-life.vercel.app/',
         technologies: ['HTML', 'JavaScript', 'CSS', 'Tailwind','Formspree']
       },
 
