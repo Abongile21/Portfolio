@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 export class ResumeDataService {
   private resumeData = {
     name: 'ABONGILE',
-    title: 'JUNIOR SOFTWARE DEVELOPER',
+    title: 'FULL-STACK DEVELOPER',
     contact: {
       phone: '074-915-8949',
       email: 'abongiletheo00@gmail.com',
       github: 'Abongile21',
       linkedin: 'Abongile Nyakatya'
     },
-    profile: 'I am a passionate and versatile full-stack developer with expertise in HTML, CSS, JavaScript, Node.js, Angular, and Tailwind CSS. I specialize in backend API creation, responsive UI/UX design, and seamless integrations, focusing on clean, efficient code and user-centered solutions. With hands-on experience in innovative projects, I continuously seek to learn and apply the latest technologies to deliver impactful, high-quality applications.',
+    profile: 'I am a passionate full-stack developer building web and cross-platform applications with technologies including HTML, CSS, JavaScript, Node.js, Angular, C#, .NET, and .NET MAUI. I specialize in backend APIs, responsive UI/UX, and seamless integrations, with a focus on clean, efficient code and user-centered solutions.',
     techSkills: [
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',

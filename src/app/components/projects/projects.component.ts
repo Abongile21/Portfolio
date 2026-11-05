@@ -4,8 +4,7 @@ import { ResumeDataService } from '../../Services/resumedata.service';
 @Component({
   selector: 'app-projects',
   standalone: false,
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  templateUrl: './projects.component.html'
 })
 export class ProjectsComponent{
   projects: any[] = [];
@@ -17,4 +16,3 @@ export class ProjectsComponent{
     this.projects= data.projects;
   }
 }
-
