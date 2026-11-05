@@ -39,31 +39,41 @@ export class ResumeDataService {
     ],
     experience: [
       {
-        title: 'FULLSTACK DEVELOPMENT PROGRAM',
-        company: 'UCT GSB Solution Space',
-        period: 'March 2024 - November 2024',
-        responsibilities: [
-          'Building websites and web apps for portfolio enhancement',
-          'Learning web development through the MEAN Stack.'
-        ]
+        title: 'SOFTWARE ENGINEER INTERN',
+        company: 'University of the Western Cape',
+        period: 'December 2025 - Present',
+        location: 'City of Cape Town, Western Cape, South Africa',
+        workArrangement: 'Hybrid',
+        responsibilities: []
       }
     ],
     education: [
       {
-        school: 'SOPHUMELELA SEC',
-        degree: 'SECONDARY SCHOOL',
-        period: '2014 - 2018'
+        school: 'University of the Western Cape',
+        degree: 'Certificate in Software Development',
+        period: 'March 2025 - January 2026',
+        status: 'complete'
+      },
+      {
+        school: 'UCT GSB Solution Space',
+        degree: 'Fullstack Development Program',
+        period: 'March 2024 - November 2024',
+        details: [
+          'Built websites and web apps for portfolio enhancement.',
+          'Learned web development through the MEAN Stack.'
+        ]
       },
       {
         school: 'University of Cape Town',
         degree: 'BSC COMPUTER SCIENCE',
         period: '2019 - 2023',
         status: '(incomplete)'
-      },{school: 'University of Western Cape',
-        degree: 'Certificate in Software Development',
-        period:  'March 2026 - December 2026',
-        status: 'complete'
-      }
+      },
+      {
+        school: 'SOPHUMELELA SEC',
+        degree: 'SECONDARY SCHOOL',
+        period: '2014 - 2018'
+      },
     ],
     projects: [
      

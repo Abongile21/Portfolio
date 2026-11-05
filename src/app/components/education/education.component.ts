@@ -2,6 +2,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ResumeDataService } from '../../Services/resumedata.service';
 
+interface Education {
+  school: string;
+  degree: string;
+  period: string;
+  status?: string;
+  details?: string[];
+}
+
 @Component({
   selector: 'app-education',
   standalone: false,
@@ -9,7 +17,7 @@ import { ResumeDataService } from '../../Services/resumedata.service';
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent implements OnInit {
-  education: any;
+  education: Education[] = [];
 
   constructor(private resumeDataService: ResumeDataService) { }
 

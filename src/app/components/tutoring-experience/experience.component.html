@@ -13,7 +13,12 @@
           <div class="mt-2 flex flex-wrap gap-x-2 text-sm text-base-content/70">
             <span>{{ exp.company }}</span><span aria-hidden="true">·</span><span>{{ exp.period }}</span>
           </div>
-          <ul class="mt-5 space-y-3">
+          <div *ngIf="exp.location || exp.workArrangement" class="mt-2 flex flex-wrap gap-x-2 text-sm text-base-content/70">
+            <span *ngIf="exp.location">{{ exp.location }}</span>
+            <span *ngIf="exp.location && exp.workArrangement" aria-hidden="true">·</span>
+            <span *ngIf="exp.workArrangement">{{ exp.workArrangement }}</span>
+          </div>
+          <ul *ngIf="exp.responsibilities.length" class="mt-5 space-y-3">
             <li *ngFor="let responsibility of exp.responsibilities" class="flex items-start gap-2 text-sm leading-relaxed text-base-content/80">
               <span class="mt-1 text-sky-500" aria-hidden="true">→</span>
               <span>{{ responsibility }}</span>
