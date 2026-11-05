@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     const storedTheme = localStorage.getItem('portfolio-theme');
     this.darkMode = storedTheme
       ? storedTheme === 'dark'
-      : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      : true;
     this.applyTheme();
   }
 

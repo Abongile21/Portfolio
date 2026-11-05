@@ -143,11 +143,18 @@ html[data-theme='light'] .border-base-300 {
 	border-color: rgba(15, 23, 42, 0.14);
 }
 
-html[data-theme='light'] .developer-shell .text-base-content\/80,
-html[data-theme='light'] .developer-shell .text-base-content\/60,
+html[data-theme='light'] .developer-shell .text-base-content\/80 {
+	color: #334155 !important;
+}
+
+html[data-theme='light'] .developer-shell .text-base-content\/60 {
+	color: #475569 !important;
+}
+
+html[data-theme='light'] .developer-shell .text-base-content\/50,
 html[data-theme='light'] .developer-shell .text-base-content\/40,
 html[data-theme='light'] .developer-shell .text-base-content\/35 {
-	color: #dbeafe !important;
+	color: #64748b !important;
 }
 
 html[data-theme='light'] .resume-view {
