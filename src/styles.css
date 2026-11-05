@@ -66,6 +66,50 @@ html[data-theme='light'] .text-sky-200 {
 	color: #075985;
 }
 
+html[data-theme='light'] .experience-card {
+	border-color: rgba(2, 132, 199, 0.2);
+	background:
+		radial-gradient(circle at 100% 0, rgba(14, 165, 233, 0.11), transparent 16rem),
+		linear-gradient(145deg, #ffffff, #f0f9ff);
+	box-shadow: 0 18px 45px -34px rgba(2, 132, 199, 0.4);
+}
+
+html[data-theme='light'] .experience-card:hover {
+	border-color: rgba(2, 132, 199, 0.48);
+	box-shadow: 0 22px 50px -32px rgba(2, 132, 199, 0.4);
+}
+
+html[data-theme='light'] .experience-mark {
+	border-color: rgba(2, 132, 199, 0.22);
+	background: linear-gradient(145deg, #e0f2fe, #eff6ff);
+	color: #075985;
+}
+
+html[data-theme='light'] .experience-company,
+html[data-theme='light'] .experience-title,
+html[data-theme='light'] .experience-chip-accent,
+html[data-theme='light'] .experience-status {
+	color: #075985;
+}
+
+html[data-theme='light'] .experience-period {
+	color: #475569;
+}
+
+html[data-theme='light'] .experience-status,
+html[data-theme='light'] .experience-chip {
+	border-color: rgba(2, 132, 199, 0.2);
+	background: rgba(224, 242, 254, 0.78);
+}
+
+html[data-theme='light'] .experience-chip-accent {
+	background: #e0f2fe;
+}
+
+html[data-theme='light'] .experience-meta {
+	border-color: rgba(100, 116, 139, 0.2);
+}
+
 html[data-theme='light'] [class~='text-slate-100'],
 html[data-theme='light'] [class~='text-slate-200'] {
 	color: #172033 !important;

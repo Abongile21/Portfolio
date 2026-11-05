@@ -1,0 +1,120 @@
+.experience-card {
+  border-color: rgba(56, 189, 248, 0.24);
+  background:
+    radial-gradient(circle at 100% 0, rgba(14, 165, 233, 0.13), transparent 16rem),
+    linear-gradient(145deg, #0b1220, #080d17);
+  box-shadow: 0 18px 45px -32px rgba(2, 132, 199, 0.65);
+}
+
+.experience-card:hover {
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 22px 50px -30px rgba(2, 132, 199, 0.55);
+}
+
+.experience-accent {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, #38bdf8, #2563eb 70%, transparent);
+}
+
+.experience-card-content {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.experience-mark {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  border-radius: 1rem;
+  background: linear-gradient(145deg, rgba(14, 165, 233, 0.2), rgba(37, 99, 235, 0.12));
+  color: #bae6fd;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.experience-company {
+  color: #7dd3fc;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.experience-title {
+  color: #e0f2fe;
+}
+
+.experience-period {
+  color: #a7b8cc;
+}
+
+.experience-status,
+.experience-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.72);
+  color: #dbeafe;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.experience-status {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  color: #bae6fd;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.experience-status-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: #38bdf8;
+  box-shadow: 0 0 0.65rem rgba(56, 189, 248, 0.75);
+}
+
+.experience-meta {
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+.experience-chip {
+  padding: 0.55rem 0.75rem;
+}
+
+.experience-chip-accent {
+  border-color: rgba(56, 189, 248, 0.3);
+  background: rgba(14, 165, 233, 0.12);
+  color: #bae6fd;
+  font-weight: 600;
+}
+
+@media (max-width: 420px) {
+  .experience-mark {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .experience-card-content {
+    padding-left: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-card,
+  .experience-card:hover {
+    transition: none;
+    transform: none;
+  }
+}

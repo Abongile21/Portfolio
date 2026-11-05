@@ -21,6 +21,8 @@
         <a routerLink="/" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Home</a>
         <a (click)="scrollToElement('about')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">About</a>
         <a (click)="scrollToElement('skills')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Skills</a>
+        <a (click)="scrollToElement('education')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Education</a>
+        <a (click)="scrollToElement('experience')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Work</a>
         <a (click)="scrollToElement('projects')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Projects</a>
         <a (click)="scrollToElement('contact-me')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Contact</a>
         <a routerLink="/resume-view" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Resume</a>
@@ -28,11 +30,13 @@
       </div>
     </div>
 
-    <div #navLinks class="mobile-nav md:hidden bg-slate-950/95 transition duration-300" [ngClass]="{ hidden: !isMenuOpen, block: isMenuOpen }">
+    <div #navLinks class="mobile-nav md:hidden bg-slate-950/95 transition duration-300" [class.hidden]="!isMenuOpen">
       <div class="flex flex-col space-y-3 p-4">
         <a routerLink="/" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" (click)="closeMenu()">Home</a>
         <a (click)="scrollToElement('about')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">About</a>
         <a (click)="scrollToElement('skills')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Skills</a>
+        <a (click)="scrollToElement('education')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Education</a>
+        <a (click)="scrollToElement('experience')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Work</a>
         <a (click)="scrollToElement('projects')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Projects</a>
         <a (click)="scrollToElement('contact-me')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Contact</a>
         <a routerLink="/resume-view" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" (click)="closeMenu()">Resume</a>
@@ -57,6 +61,18 @@
     <section id="skills" class="portfolio-section flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
       <div class="mx-auto max-w-7xl">
         <app-skills></app-skills>
+      </div>
+    </section>
+
+    <section id="education" class="portfolio-section flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+      <div class="mx-auto w-full max-w-7xl">
+        <app-education></app-education>
+      </div>
+    </section>
+
+    <section id="experience" class="portfolio-section flex min-h-screen items-center justify-center scroll-mt-20 px-4 py-12 sm:px-6">
+      <div class="mx-auto w-full max-w-7xl">
+        <app-experience></app-experience>
       </div>
     </section>
 

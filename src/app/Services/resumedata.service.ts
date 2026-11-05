@@ -39,11 +39,12 @@ export class ResumeDataService {
     ],
     experience: [
       {
-        title: 'SOFTWARE ENGINEER INTERN',
+        title: 'Software Engineering Intern',
         company: 'University of the Western Cape',
         period: 'December 2025 - Present',
         location: 'City of Cape Town, Western Cape, South Africa',
         workArrangement: 'Hybrid',
+        status: 'Current',
         responsibilities: []
       }
     ],
@@ -65,9 +66,9 @@ export class ResumeDataService {
       },
       {
         school: 'University of Cape Town',
-        degree: 'BSC COMPUTER SCIENCE',
+        degree: 'BSc Computer Science',
         period: '2019 - 2023',
-        status: '(incomplete)'
+        status: 'Incomplete'
       },
       {
         school: 'SOPHUMELELA SEC',

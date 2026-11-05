@@ -29,9 +29,11 @@
           <span class="status-readout"><span class="status-dot"></span>link:active</span>
         </div>
         <div class="min-h-0 flex-1 overflow-y-auto pb-4 font-mono text-sm leading-7 custom-scrollbar" aria-live="polite">
-          <p *ngFor="let line of output" class="terminal-line text-base-content/80">
+          @for (line of output; track $index) {
+          <p class="terminal-line text-base-content/80">
             {{ line }}
           </p>
+          }
         </div>
         <div class="command-line mt-4 flex items-center border border-primary/20 bg-base-100/50 px-3 py-2">
           <span class="mr-2 font-mono font-bold text-primary">$</span>
@@ -56,37 +58,36 @@
           'min-h-[25rem] max-h-[42rem] overflow-y-auto': activeTab
         }"
       >
-        <ng-container [ngSwitch]="activeTab">
-
-          <ng-container *ngSwitchCase="'about'">
+        @switch (activeTab) {
+          @case ('about') {
             <app-about class="w-full h-full animate-fade-in"></app-about>
-          </ng-container>
-
-          <ng-container *ngSwitchCase="'skills'">
+          }
+          @case ('education') {
+            <app-education class="w-full h-full animate-fade-in"></app-education>
+          }
+          @case ('experience') {
+            <app-experience class="w-full h-full animate-fade-in"></app-experience>
+          }
+          @case ('skills') {
             <app-skills class="w-full h-full animate-fade-in"></app-skills>
-          </ng-container>
-
-          <ng-container *ngSwitchCase="'projects'">
+          }
+          @case ('projects') {
             <app-projects class="w-full h-full animate-fade-in"></app-projects>
-          </ng-container>
-
-          <ng-container *ngSwitchCase="'contacts'">
+          }
+          @case ('contacts') {
             <app-contact class="w-full h-full animate-fade-in"></app-contact>
-          </ng-container>
-
-          <ng-container *ngSwitchCase="'contact-me'">
+          }
+          @case ('contact-me') {
             <app-contact-me class="w-full h-full animate-fade-in"></app-contact-me>
-          </ng-container>
-
-          <ng-container *ngSwitchDefault>
+          }
+          @default {
             <div class="empty-state text-center">
               <div class="mb-4 font-mono text-4xl text-primary/40">/&gt;_</div>
               <p class="font-mono text-sm text-base-content/50">Type <span class="text-primary">'help'</span> to get started.</p>
               <p class="mt-2 text-xs text-base-content/35">Your selected section will appear here.</p>
             </div>
-          </ng-container>
-
-        </ng-container>
+          }
+        }
       </section>
 
     </div>

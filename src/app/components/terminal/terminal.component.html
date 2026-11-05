@@ -1,12 +1,16 @@
 
   <div class="fixed top-0 left-0 right-0 z-10 text-center">
     <div class="welcome-message text-white">
-      <ng-container *ngFor="let word of welcomeMessage; let wIndex = index">
-        <span class="word" *ngFor="let letter of word.split(''); let lIndex = index" [style.animation-delay]="(wIndex * 0.5 + lIndex * 0.1) + 's'">
+      @for (word of welcomeMessage; track $index; let wordIndex = $index) {
+        @for (letter of word.split(''); track $index; let letterIndex = $index) {
+        <span class="word" [style.animation-delay]="(wordIndex * 0.5 + letterIndex * 0.1) + 's'">
           {{ letter }}
         </span>
-        <span class="space" *ngIf="wIndex < welcomeMessage.length - 1"> </span>
-      </ng-container>
+        }
+        @if (wordIndex < welcomeMessage.length - 1) {
+        <span class="space"> </span>
+        }
+      }
     </div>
   </div>
   

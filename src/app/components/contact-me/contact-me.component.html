@@ -25,7 +25,9 @@
               <span class="label-text">Name</span>
             </label>
             <input type="text" id="name" class="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-sky-400/30" name="name" ngModel required #nameField="ngModel" placeholder="Your Name">
-            <span class="mt-1 text-sm text-red-500" *ngIf="nameField.invalid && nameField.touched">Name is required</span>
+            @if (nameField.invalid && nameField.touched) {
+            <span class="mt-1 text-sm text-red-500">Name is required</span>
+            }
           </div>
 
           <div class="form-control mb-6">
@@ -33,10 +35,16 @@
               <span class="label-text">Email</span>
             </label>
             <input type="email" id="email" class="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-sky-400/30" name="email" ngModel required email #emailField="ngModel" placeholder="Your Email">
-            <span class="mt-1 text-sm text-red-500" *ngIf="emailField.invalid && emailField.touched">
-              <span *ngIf="emailField.errors?.['required']">Email is required</span>
-              <span *ngIf="emailField.errors?.['email']">Please enter a valid email</span>
+            @if (emailField.invalid && emailField.touched) {
+            <span class="mt-1 text-sm text-red-500">
+              @if (emailField.errors?.['required']) {
+              <span>Email is required</span>
+              }
+              @if (emailField.errors?.['email']) {
+              <span>Please enter a valid email</span>
+              }
             </span>
+            }
           </div>
 
           <div class="form-control mb-6">
@@ -44,17 +52,22 @@
               <span class="label-text">Message</span>
             </label>
             <textarea class="textarea textarea-bordered w-full" id="message" name="message" ngModel required #messageField="ngModel" rows="5" placeholder="Your Message"></textarea>
-            <span class="mt-1 text-sm text-red-500" *ngIf="messageField.invalid && messageField.touched">Message is required</span>
+            @if (messageField.invalid && messageField.touched) {
+            <span class="mt-1 text-sm text-red-500">Message is required</span>
+            }
           </div>
 
           <button type="submit" [disabled]="isSubmitting" class="btn btn-info w-full flex items-center justify-center shadow-lg interactive-lift focus-ring disabled:cursor-not-allowed disabled:opacity-50">
-            <svg *ngIf="isSubmitting" class="mr-2 h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            @if (isSubmitting) {
+            <svg class="mr-2 h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <svg *ngIf="!isSubmitting" class="mr-2 inline-block h-6 w-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+            } @else {
+            <svg class="mr-2 inline-block h-6 w-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1M2 5h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
             </svg>
+            }
             {{ isSubmitting ? 'Sending...' : 'Send Message' }}
           </button>
         </form>
@@ -63,7 +76,8 @@
   </div>
 </div>
 
-<div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 transition-opacity duration-300" [ngClass]="{ 'hidden': !showModal }" (click)="closeModal()">
+@if (showModal) {
+<div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 transition-opacity duration-300" (click)="closeModal()">
   <div class="w-full max-w-md rounded-2xl bg-slate-900 p-6 shadow-2xl transition-transform duration-300" (click)="$event.stopPropagation()">
     <div class="mb-4 flex justify-center">
       <svg class="h-16 w-16 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -75,3 +89,4 @@
     <button class="btn btn-info mt-4 w-full interactive-lift focus-ring" (click)="closeModal()">Close</button>
   </div>
 </div>
+}

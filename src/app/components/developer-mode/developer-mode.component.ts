@@ -17,6 +17,8 @@ export class DeveloperModeComponent {
   private sections: { [key: string]: string } = {
     home: 'Main dashboard and navigation area.',
     about: 'Information about Abongile Nyakatya and background.',
+    education: 'Academic background and software development training.',
+    experience: 'Current and previous professional experience.',
     projects: 'List of completed and ongoing projects.',
     skills: 'Technical skills and proficiencies.',
     contacts: 'Contact details and social links.',
@@ -138,7 +140,7 @@ export class DeveloperModeComponent {
     this.output.push('');
     this.output.push('Available commands:');
     this.output.push('ls                - List available sections');
-    this.output.push('cd <section>      - Open a section (like navigating folders)');
+    this.output.push('cd <section>      - Open a section (try education or experience)');
     this.output.push('cat <section>     - View info about a section');
     this.output.push('pwd               - Show current directory');
     this.output.push('echo <text>       - Print text to the terminal');

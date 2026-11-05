@@ -6,6 +6,7 @@ interface Experience {
   period: string;
   location?: string;
   workArrangement?: string;
+  status?: string;
   responsibilities: string[];
 }
 

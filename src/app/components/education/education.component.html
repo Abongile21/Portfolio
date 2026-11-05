@@ -7,7 +7,8 @@
       <p class="mt-3 max-w-2xl text-sm leading-relaxed text-base-content/70 sm:text-base">A record of my formal studies and hands-on software development training.</p>
 
       <div class="mt-8 grid gap-4 lg:grid-cols-2">
-        <article *ngFor="let edu of education" class="group relative overflow-hidden rounded-2xl border border-sky-400/20 bg-base-100 p-5 transition-colors hover:border-sky-300/40 sm:p-6">
+        @for (edu of education; track edu.school + edu.degree) {
+        <article class="group relative overflow-hidden rounded-2xl border border-sky-400/20 bg-base-100 p-5 transition-colors hover:border-sky-300/40 sm:p-6">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div>
               <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sky-300">{{ edu.school }}</p>
@@ -16,17 +17,24 @@
             <span class="shrink-0 rounded-full border border-sky-400/20 bg-sky-400/10 px-3 py-1 text-xs font-medium text-sky-200">{{ edu.period }}</span>
           </div>
 
-          <div *ngIf="edu.status" class="mt-4">
+          @if (edu.status) {
+          <div class="mt-4">
             <span class="inline-flex rounded-full bg-base-200 px-2.5 py-1 text-xs font-medium text-base-content/70">{{ edu.status }}</span>
           </div>
+          }
 
-          <ul *ngIf="edu.details?.length" class="mt-4 space-y-2 border-t border-base-300 pt-4 text-sm leading-relaxed text-base-content/70">
-            <li *ngFor="let detail of edu.details" class="flex gap-2">
+          @if (edu.details?.length) {
+          <ul class="mt-4 space-y-2 border-t border-base-300 pt-4 text-sm leading-relaxed text-base-content/70">
+            @for (detail of edu.details; track detail) {
+            <li class="flex gap-2">
               <span class="text-sky-400" aria-hidden="true">•</span>
               <span>{{ detail }}</span>
             </li>
+            }
           </ul>
+          }
         </article>
+        }
       </div>
     </div>
   </section>
