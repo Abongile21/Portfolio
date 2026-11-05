@@ -5,8 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-contact-me',
   standalone: false,
-  templateUrl: './contact-me.component.html',
-  styleUrls: ['./contact-me.component.css']
+  templateUrl: './contact-me.component.html'
 })
 export class ContactMeComponent {
   showModal = false;

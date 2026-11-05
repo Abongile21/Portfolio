@@ -52,11 +52,12 @@
       </section>
 
       <section
-        class="result-container border border-base-300/80 bg-base-200/70 p-4 transition-all duration-300 ease-in-out sm:p-5"
-        [ngClass]="{
-          'min-h-[25rem] flex items-center justify-center text-base-content/50': !activeTab,
-          'min-h-[25rem] max-h-[42rem] overflow-y-auto': activeTab
-        }"
+        class="result-container min-h-[25rem] border border-base-300/80 bg-base-200/70 p-4 transition-all duration-300 ease-in-out sm:p-5"
+        [class.flex]="!activeTab"
+        [class.items-center]="!activeTab"
+        [class.justify-center]="!activeTab"
+        [style.max-height]="activeTab ? '42rem' : null"
+        [style.overflow-y]="activeTab ? 'auto' : null"
       >
         @switch (activeTab) {
           @case ('about') {

@@ -2,62 +2,89 @@
   <div class="section-shell relative animate-fade-up">
     <div class="accent-glow"></div>
     <div class="relative grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-      <div class="rounded-[1.5rem] border border-sky-400/20 bg-sky-400/10 p-6">
+      <div class="contact-intro rounded-[1.5rem] border p-6 sm:p-8">
         <span class="hero-pill">Get in touch</span>
         <h2 class="section-title mt-3">Contact Me</h2>
-        <p class="mt-4 text-sm leading-relaxed text-base-content/70 sm:text-base">Whether you need a polished web experience, a new product idea, or a thoughtful collaborator, I’m always happy to connect.</p>
+        <p class="mt-4 text-sm leading-relaxed text-base-content/70 sm:text-base">I’m a full-stack software developer, always happy to connect about web development opportunities, collaborations, and project ideas.</p>
         <div class="mt-6 space-y-3">
-          <div class="rounded-2xl border border-sky-400/20 bg-slate-900/70 p-4">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">Email</p>
-            <p class="mt-1 text-sm text-base-content/70">abongiletheo00@gmail.com</p>
-          </div>
-          <div class="rounded-2xl border border-sky-400/20 bg-slate-900/70 p-4">
-            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-sky-200">Location</p>
-            <p class="mt-1 text-sm text-base-content/70">South Africa • Remote-friendly</p>
+          <a href="mailto:abongiletheo00@gmail.com" class="contact-detail interactive">
+            <span class="contact-detail-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="m3 7 9 6 9-6" />
+              </svg>
+            </span>
+            <span>
+              <span class="contact-detail-label">Email</span>
+              <span class="contact-detail-value">abongiletheo00@gmail.com</span>
+            </span>
+          </a>
+          <div class="contact-detail">
+            <span class="contact-detail-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+            </span>
+            <span>
+              <span class="contact-detail-label">Location</span>
+              <span class="contact-detail-value">South Africa · Remote-friendly</span>
+            </span>
           </div>
         </div>
       </div>
 
-      <div class="rounded-[1.5rem] border border-sky-400/20 bg-slate-900/70 p-6 shadow-[0_20px_45px_-24px_rgba(14,165,233,0.35)]">
+      <div class="contact-form-panel rounded-[1.5rem] border p-6 sm:p-8">
+        <div class="mb-7">
+          <p class="contact-eyebrow">Send a message</p>
+          <h3 class="mt-2 text-2xl font-bold tracking-tight text-base-content">Let’s talk about your idea</h3>
+          <p class="mt-2 text-sm leading-relaxed text-base-content/65">Fill in the details below and I’ll get back to you.</p>
+        </div>
         <form (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm" novalidate>
-          <div class="form-control mb-6">
-            <label class="label" for="name">
-              <span class="label-text">Name</span>
+          <div class="contact-field">
+            <label class="contact-label" for="name">
+              Your name <span aria-hidden="true">*</span>
             </label>
-            <input type="text" id="name" class="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-sky-400/30" name="name" ngModel required #nameField="ngModel" placeholder="Your Name">
+            <input type="text" id="name" class="contact-input" name="name" ngModel required #nameField="ngModel" placeholder="e.g. Alex Morgan" autocomplete="name" [attr.aria-invalid]="nameField.invalid && nameField.touched" [attr.aria-describedby]="nameField.invalid && nameField.touched ? 'name-error' : null">
             @if (nameField.invalid && nameField.touched) {
-            <span class="mt-1 text-sm text-red-500">Name is required</span>
+            <p class="contact-error" id="name-error" role="alert">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10A8 8 0 1 1 2 10a8 8 0 0 1 16 0ZM9 6a1 1 0 0 1 2 0v4a1 1 0 1 1-2 0V6Zm1 8a1.25 1.25 0 1 0 0-2.5A1.25 1.25 0 0 0 10 14Z" clip-rule="evenodd" /></svg>
+              Name is required
+            </p>
             }
           </div>
 
-          <div class="form-control mb-6">
-            <label class="label" for="email">
-              <span class="label-text">Email</span>
+          <div class="contact-field">
+            <label class="contact-label" for="email">
+              Email address <span aria-hidden="true">*</span>
             </label>
-            <input type="email" id="email" class="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-sky-400/30" name="email" ngModel required email #emailField="ngModel" placeholder="Your Email">
+            <input type="email" id="email" class="contact-input" name="email" ngModel required email #emailField="ngModel" placeholder="you@example.com" autocomplete="email" [attr.aria-invalid]="emailField.invalid && emailField.touched" [attr.aria-describedby]="emailField.invalid && emailField.touched ? 'email-error' : null">
             @if (emailField.invalid && emailField.touched) {
-            <span class="mt-1 text-sm text-red-500">
+            <p class="contact-error" id="email-error" role="alert">
               @if (emailField.errors?.['required']) {
-              <span>Email is required</span>
+              <span>An email address is required</span>
               }
               @if (emailField.errors?.['email']) {
-              <span>Please enter a valid email</span>
+              <span>Please enter a valid email address</span>
               }
-            </span>
+            </p>
             }
           </div>
 
-          <div class="form-control mb-6">
-            <label class="label" for="message">
-              <span class="label-text">Message</span>
+          <div class="contact-field">
+            <label class="contact-label" for="message">
+              Your message <span aria-hidden="true">*</span>
             </label>
-            <textarea class="textarea textarea-bordered w-full" id="message" name="message" ngModel required #messageField="ngModel" rows="5" placeholder="Your Message"></textarea>
+            <textarea class="contact-input contact-textarea" id="message" name="message" ngModel required #messageField="ngModel" rows="5" placeholder="Tell me a little about what you have in mind..." [attr.aria-invalid]="messageField.invalid && messageField.touched" [attr.aria-describedby]="messageField.invalid && messageField.touched ? 'message-error' : null"></textarea>
             @if (messageField.invalid && messageField.touched) {
-            <span class="mt-1 text-sm text-red-500">Message is required</span>
+            <p class="contact-error" id="message-error" role="alert">
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10A8 8 0 1 1 2 10a8 8 0 0 1 16 0ZM9 6a1 1 0 0 1 2 0v4a1 1 0 1 1-2 0V6Zm1 8a1.25 1.25 0 1 0 0-2.5A1.25 1.25 0 0 0 10 14Z" clip-rule="evenodd" /></svg>
+              Please add a message before sending
+            </p>
             }
           </div>
 
-          <button type="submit" [disabled]="isSubmitting" class="btn btn-info w-full flex items-center justify-center shadow-lg interactive-lift focus-ring disabled:cursor-not-allowed disabled:opacity-50">
+          <button type="submit" [disabled]="isSubmitting" class="contact-submit interactive-lift focus-ring disabled:cursor-not-allowed disabled:opacity-50">
             @if (isSubmitting) {
             <svg class="mr-2 h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -78,7 +105,7 @@
 
 @if (showModal) {
 <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 transition-opacity duration-300" (click)="closeModal()">
-  <div class="w-full max-w-md rounded-2xl bg-slate-900 p-6 shadow-2xl transition-transform duration-300" (click)="$event.stopPropagation()">
+  <div class="contact-success-modal w-full max-w-md rounded-2xl p-6 shadow-2xl transition-transform duration-300" (click)="$event.stopPropagation()">
     <div class="mb-4 flex justify-center">
       <svg class="h-16 w-16 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
