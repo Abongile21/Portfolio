@@ -13,7 +13,12 @@
           <div class="experience-accent" aria-hidden="true"></div>
           <div class="experience-card-content">
             <div class="flex items-start gap-4">
-              <div class="experience-mark" aria-hidden="true">UWC</div>
+              <div class="experience-mark" aria-hidden="true">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m2 9 10-5 10 5-10 5L2 9Z" />
+                  <path d="M5 11v7m4-5v5m6-5v5m4-7v7M3 21h18M21 9v6" />
+                </svg>
+              </div>
               <div class="min-w-0 flex-1">
                 <div class="flex flex-wrap items-center justify-between gap-3">
                   <p class="experience-company">{{ exp.company }}</p>
@@ -55,7 +60,9 @@
           <ul class="mt-5 space-y-3 border-t border-base-300 pt-4">
             @for (responsibility of exp.responsibilities; track responsibility) {
             <li class="flex items-start gap-2 text-sm leading-relaxed text-base-content/80">
-              <span class="mt-1 text-sky-500" aria-hidden="true">→</span>
+              <svg class="mt-1 h-4 w-4 shrink-0 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14m-6-6 6 6-6 6" />
+              </svg>
               <span>{{ responsibility }}</span>
             </li>
             }

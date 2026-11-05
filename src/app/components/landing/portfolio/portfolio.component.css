@@ -23,6 +23,36 @@
   box-shadow: 0 20px 50px -20px rgba(14, 165, 233, 0.45), inset 0 1px 0 rgba(186, 230, 253, 0.12);
 }
 
+.portfolio-nav .nav-link {
+  position: relative;
+}
+
+.portfolio-nav .nav-link::after {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.2rem;
+  left: 0.75rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.portfolio-nav .nav-link-active {
+  color: #7dd3fc;
+}
+
+.portfolio-nav .nav-link-active::after {
+  transform: scaleX(1);
+}
+
+.portfolio-nav .btn-info.nav-link-active {
+  color: #fff;
+}
+
 .brand-mark {
   box-shadow: 0 0 0.8rem rgba(56, 189, 248, 0.8);
 }
@@ -31,4 +61,10 @@
   margin: 0.5rem -0.25rem -0.25rem;
   border-top: 1px solid rgba(125, 211, 252, 0.12);
   border-radius: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-nav .nav-link::after {
+    transition: none;
+  }
 }

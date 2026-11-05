@@ -62,6 +62,77 @@ html[data-theme='light'] .bg-slate-950\/95 {
 	background-color: rgba(255, 255, 255, 0.88);
 }
 
+html[data-theme='light'] .landing-shell {
+	background:
+		radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.22), transparent 28rem),
+		radial-gradient(circle at 85% 85%, rgba(37, 99, 235, 0.12), transparent 30rem),
+		linear-gradient(135deg, #f8fcff, #eaf4fc 55%, #f8fbff);
+	color: #172033;
+}
+
+html[data-theme='light'] .landing-shell .glass-panel {
+	border-color: rgba(2, 132, 199, 0.2);
+	background: rgba(255, 255, 255, 0.86);
+	box-shadow: 0 22px 60px -28px rgba(15, 58, 91, 0.24);
+}
+
+html[data-theme='light'] .landing-shell h2 {
+	color: #075985 !important;
+}
+
+html[data-theme='light'] .landing-shell p {
+	color: #475569;
+}
+
+html[data-theme='light'] .portfolio-shell {
+	background:
+		radial-gradient(circle at 8% 8%, rgba(56, 189, 248, 0.08), transparent 32rem),
+		repeating-linear-gradient(90deg, transparent 0, transparent 79px, rgba(2, 132, 199, 0.035) 80px),
+		repeating-linear-gradient(0deg, transparent 0, transparent 79px, rgba(2, 132, 199, 0.035) 80px);
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav {
+	border-color: rgba(2, 132, 199, 0.22);
+	background-color: rgba(255, 255, 255, 0.94);
+	box-shadow: 0 16px 38px -22px rgba(15, 58, 91, 0.28);
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .nav-link-active {
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .btn-info.nav-link-active {
+	color: #ffffff;
+}
+
+html[data-theme='light'] .portfolio-shell .mobile-nav {
+	border-color: rgba(2, 132, 199, 0.18);
+	background-color: #ffffff;
+}
+
+html[data-theme='light'] .portfolio-shell .brand-mark {
+	background-color: #0284c7;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-section + .portfolio-section::before {
+	background: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.2), transparent);
+}
+
+html[data-theme='light'] .section-shell {
+	border-color: rgba(2, 132, 199, 0.18);
+	box-shadow: 0 25px 60px -36px rgba(15, 58, 91, 0.22);
+}
+
+html[data-theme='light'] .hero-pill {
+	border-color: rgba(2, 132, 199, 0.24);
+	background-color: rgba(224, 242, 254, 0.82);
+	color: #075985;
+}
+
+html[data-theme='light'] .welcome-message {
+	color: #075985;
+}
+
 html[data-theme='light'] .text-sky-200 {
 	color: #075985;
 }
@@ -131,8 +202,13 @@ html[data-theme='light'] .bg-black\/75,
 html[data-theme='light'] .bg-slate-900\/70,
 html[data-theme='light'] .bg-slate-900\/80,
 html[data-theme='light'] .bg-slate-950\/70,
+html[data-theme='light'] .bg-sky-400\/10,
 html[data-theme='light'] .bg-base-100 {
 	background-color: rgba(255, 255, 255, 0.9);
+}
+
+html[data-theme='light'] .bg-sky-400\/10 {
+	background-color: rgba(224, 242, 254, 0.72);
 }
 
 html[data-theme='light'] .bg-base-200 {
@@ -155,6 +231,59 @@ html[data-theme='light'] .developer-shell .text-base-content\/50,
 html[data-theme='light'] .developer-shell .text-base-content\/40,
 html[data-theme='light'] .developer-shell .text-base-content\/35 {
 	color: #64748b !important;
+}
+
+html[data-theme='light'] .developer-shell {
+	background:
+		radial-gradient(circle at 12% 10%, rgba(14, 165, 233, 0.12), transparent 28rem),
+		radial-gradient(circle at 88% 90%, rgba(37, 99, 235, 0.08), transparent 30rem),
+		#edf4fb;
+}
+
+html[data-theme='light'] .developer-shell .terminal-frame {
+	border-color: #b6d6ec;
+	background: #ffffff;
+	box-shadow: 0 24px 60px -35px rgba(15, 58, 91, 0.28);
+}
+
+html[data-theme='light'] .developer-shell .terminal-header {
+	background: #f8fbff;
+	color: #172033;
+	box-shadow: inset 0 -1px 0 rgba(2, 132, 199, 0.14);
+}
+
+html[data-theme='light'] .developer-shell .terminal-sigil {
+	border-color: rgba(2, 132, 199, 0.4);
+	color: #0369a1;
+}
+
+html[data-theme='light'] .developer-shell .terminal-pane {
+	border-color: #cbd9e6;
+	background-color: #f4f8fc;
+	background-image: linear-gradient(135deg, rgba(14, 165, 233, 0.08), transparent 55%);
+	color: #1e293b;
+}
+
+html[data-theme='light'] .developer-shell .result-container {
+	border-color: #cbd9e6;
+	background: rgba(255, 255, 255, 0.9);
+}
+
+html[data-theme='light'] .developer-shell .command-line {
+	border-color: rgba(2, 132, 199, 0.24);
+	background: #ffffff;
+}
+
+html[data-theme='light'] .developer-shell .status-readout {
+	color: #0369a1;
+}
+
+html[data-theme='light'] .developer-shell .terminal-line::first-letter {
+	color: #0369a1;
+}
+
+html[data-theme='light'] .developer-shell .custom-scrollbar::-webkit-scrollbar-thumb {
+	background-color: rgba(2, 132, 199, 0.35);
 }
 
 html[data-theme='light'] .resume-view {

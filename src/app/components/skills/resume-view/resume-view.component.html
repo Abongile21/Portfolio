@@ -12,8 +12,18 @@
 
       <div class="flex flex-col gap-3 sm:items-end">
         <div class="flex gap-2">
-          <button (click)="downloadResume()" class="viewer-action-button viewer-action-primary"><span class="document-icon" aria-hidden="true">↓</span><span>Download PDF</span></button>
-          <button (click)="goBack()" class="viewer-action-button"><span class="document-icon" aria-hidden="true">←</span><span>Back to portfolio</span></button>
+          <button (click)="downloadResume()" class="viewer-action-button viewer-action-primary">
+            <svg class="document-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" />
+            </svg>
+            <span>Download PDF</span>
+          </button>
+          <button (click)="goBack()" class="viewer-action-button">
+            <svg class="document-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m10 19-7-7 7-7M3 12h18" />
+            </svg>
+            <span>Back to portfolio</span>
+          </button>
         </div>
       </div>
     </header>

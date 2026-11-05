@@ -6,41 +6,38 @@
 
   <nav class="portfolio-nav fixed left-1/2 top-4 z-50 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 rounded-full border border-sky-400/20 bg-slate-950/75 px-3 py-2 shadow-[0_20px_50px_-20px_rgba(14,165,233,0.45)] backdrop-blur-xl" aria-label="Primary navigation">
     <div class="mx-auto flex items-center justify-between px-2 sm:px-4">
-      <div class="hidden sm:flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.25em] text-sky-200">
-        <span class="brand-mark h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+      <div class="hidden sm:flex items-center text-sm font-semibold uppercase tracking-[0.25em] text-sky-200">
         Abongile
       </div>
 
-      <div #hamburger class="cursor-pointer rounded-full p-2 text-sky-200 md:hidden interactive focus-ring" (click)="toggleMenu()" aria-label="Toggle navigation" role="button" tabindex="0">
-        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </div>
+      <button #hamburger type="button" class="rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-wider text-sky-200 md:hidden interactive focus-ring" (click)="toggleMenu()" [attr.aria-label]="isMenuOpen ? 'Close navigation' : 'Open navigation'" [attr.aria-expanded]="isMenuOpen" aria-controls="primary-mobile-navigation">
+        {{ isMenuOpen ? 'Close' : 'Menu' }}
+      </button>
 
-      <div class="hidden md:flex items-center justify-center gap-2">
-        <a routerLink="/" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Home</a>
-        <a (click)="scrollToElement('about')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">About</a>
-        <a (click)="scrollToElement('skills')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Skills</a>
-        <a (click)="scrollToElement('education')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Education</a>
-        <a (click)="scrollToElement('experience')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Work</a>
-        <a (click)="scrollToElement('projects')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Projects</a>
-        <a (click)="scrollToElement('contact-me')" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Contact</a>
-        <a routerLink="/resume-view" class="btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Resume</a>
-        <a routerLink="/developer-mode" class="btn btn-info btn-sm uppercase interactive-lift focus-ring">Dev Mode</a>
+      <div class="hidden md:flex items-center justify-center gap-1">
+        <a routerLink="/" class="nav-link btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'profile'" [attr.aria-current]="activeSection === 'profile' ? 'location' : null">Home</a>
+        <a (click)="scrollToElement('about')" class="nav-link btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'about'" [attr.aria-current]="activeSection === 'about' ? 'location' : null">About</a>
+        <a (click)="scrollToElement('skills')" class="nav-link btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'skills'" [attr.aria-current]="activeSection === 'skills' ? 'location' : null">Skills</a>
+        <a (click)="scrollToElement('education')" class="nav-link btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'education'" [attr.aria-current]="activeSection === 'education' ? 'location' : null">Education</a>
+        <a (click)="scrollToElement('experience')" class="nav-link btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'experience'" [attr.aria-current]="activeSection === 'experience' ? 'location' : null">Work</a>
+        <a (click)="scrollToElement('projects')" class="nav-link btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'projects'" [attr.aria-current]="activeSection === 'projects' ? 'location' : null">Projects</a>
+        <a (click)="scrollToElement('contact-me')" class="nav-link btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'contact-me'" [attr.aria-current]="activeSection === 'contact-me' ? 'location' : null">Contact</a>
+        <a routerLink="/resume-view" routerLinkActive="nav-link-active" ariaCurrentWhenActive="page" class="nav-link btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Resume</a>
+        <a routerLink="/developer-mode" routerLinkActive="nav-link-active" ariaCurrentWhenActive="page" class="nav-link btn btn-info btn-sm uppercase interactive-lift focus-ring">Dev Mode</a>
       </div>
     </div>
 
-    <div #navLinks class="mobile-nav md:hidden bg-slate-950/95 transition duration-300" [class.hidden]="!isMenuOpen">
+    <div #navLinks id="primary-mobile-navigation" class="mobile-nav md:hidden bg-slate-950/95 transition duration-300" [class.hidden]="!isMenuOpen">
       <div class="flex flex-col space-y-3 p-4">
-        <a routerLink="/" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" (click)="closeMenu()">Home</a>
-        <a (click)="scrollToElement('about')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">About</a>
-        <a (click)="scrollToElement('skills')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Skills</a>
-        <a (click)="scrollToElement('education')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Education</a>
-        <a (click)="scrollToElement('experience')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Work</a>
-        <a (click)="scrollToElement('projects')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Projects</a>
-        <a (click)="scrollToElement('contact-me')" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300">Contact</a>
-        <a routerLink="/resume-view" class="btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" (click)="closeMenu()">Resume</a>
-        <a routerLink="/developer-mode" class="btn btn-info btn-sm justify-start uppercase interactive-lift focus-ring" (click)="closeMenu()">Dev Mode</a>
+        <a routerLink="/" class="nav-link btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'profile'" [attr.aria-current]="activeSection === 'profile' ? 'location' : null" (click)="closeMenu()">Home</a>
+        <a (click)="scrollToElement('about')" class="nav-link btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'about'" [attr.aria-current]="activeSection === 'about' ? 'location' : null">About</a>
+        <a (click)="scrollToElement('skills')" class="nav-link btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'skills'" [attr.aria-current]="activeSection === 'skills' ? 'location' : null">Skills</a>
+        <a (click)="scrollToElement('education')" class="nav-link btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'education'" [attr.aria-current]="activeSection === 'education' ? 'location' : null">Education</a>
+        <a (click)="scrollToElement('experience')" class="nav-link btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'experience'" [attr.aria-current]="activeSection === 'experience' ? 'location' : null">Work</a>
+        <a (click)="scrollToElement('projects')" class="nav-link btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'projects'" [attr.aria-current]="activeSection === 'projects' ? 'location' : null">Projects</a>
+        <a (click)="scrollToElement('contact-me')" class="nav-link btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'contact-me'" [attr.aria-current]="activeSection === 'contact-me' ? 'location' : null">Contact</a>
+        <a routerLink="/resume-view" routerLinkActive="nav-link-active" ariaCurrentWhenActive="page" class="nav-link btn btn-ghost btn-sm justify-start uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" (click)="closeMenu()">Resume</a>
+        <a routerLink="/developer-mode" routerLinkActive="nav-link-active" ariaCurrentWhenActive="page" class="nav-link btn btn-info btn-sm justify-start uppercase interactive-lift focus-ring" (click)="closeMenu()">Dev Mode</a>
       </div>
     </div>
   </nav>
