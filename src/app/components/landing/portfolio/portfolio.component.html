@@ -9,10 +9,24 @@
       <div class="hidden sm:flex items-center text-sm font-semibold uppercase tracking-[0.25em] text-sky-200">
         Abongile
       </div>
+<button #hamburger type="button" class="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-wider text-sky-200 md:hidden interactive focus-ring" (click)="toggleMenu()" [attr.aria-label]="isMenuOpen ? 'Close navigation' : 'Open navigation'" [attr.aria-expanded]="isMenuOpen" aria-controls="primary-mobile-navigation">
+  <!-- Text Label -->
+  <span>{{ isMenuOpen ? 'Close' : 'Menu' }}</span>
 
-      <button #hamburger type="button" class="rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-wider text-sky-200 md:hidden interactive focus-ring" (click)="toggleMenu()" [attr.aria-label]="isMenuOpen ? 'Close navigation' : 'Open navigation'" [attr.aria-expanded]="isMenuOpen" aria-controls="primary-mobile-navigation">
-        {{ isMenuOpen ? 'Close' : 'Menu' }}
-      </button>
+  <!-- Dynamic SVG Icon Layout -->
+  <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    @if (isMenuOpen) {
+      <!-- "X" Close State Lines -->
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    } @else {
+      <!-- "Hamburger" Open State Lines -->
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    }
+  </svg>
+</button>
 
       <div class="hidden md:flex items-center justify-center gap-1">
         <a routerLink="/" class="nav-link btn btn-ghost btn-sm uppercase interactive hover:bg-sky-500/10 hover:text-sky-300" [class.nav-link-active]="activeSection === 'profile'" [attr.aria-current]="activeSection === 'profile' ? 'location' : null">Home</a>
