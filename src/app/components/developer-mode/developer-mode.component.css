@@ -14,6 +14,12 @@
 }
 
 .developer-shell {
+  display: flex;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
   background:
     radial-gradient(circle at 12% 10%, rgba(14, 165, 233, 0.1), transparent 28rem),
     radial-gradient(circle at 88% 90%, rgba(37, 99, 235, 0.08), transparent 30rem),
@@ -21,10 +27,15 @@
 }
 
 .terminal-frame {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
   box-shadow: 0 24px 0 -12px rgba(0, 0, 0, 0.55), 0 30px 70px -35px rgba(0, 0, 0, 0.85);
 }
 
 .terminal-header {
+  flex: 0 0 auto;
   background: #080b11;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
@@ -43,34 +54,23 @@
 
 .terminal-grid {
   display: grid;
+  min-height: 0;
+  flex: 1;
   grid-template-columns: minmax(0, 1fr);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
-@media (min-width: 1024px) {
-  .developer-shell {
-    height: 100vh;
-    height: 100dvh;
-    min-height: 0;
-    overflow: hidden;
-  }
-
-  .terminal-frame {
-    display: flex;
-    min-height: 0;
-    flex: 1;
-    flex-direction: column;
-  }
-
+@media (min-width: 640px) {
   .terminal-grid {
-    min-height: 0;
-    flex: 1;
-    grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.2fr);
+    grid-template-rows: minmax(0, 1fr);
     align-items: stretch;
     overflow: hidden;
   }
 
-  .terminal-pane,
-  .result-container {
+  .terminal-grid > .terminal-pane,
+  .terminal-grid > .result-container {
     height: 100%;
     min-height: 0;
   }
