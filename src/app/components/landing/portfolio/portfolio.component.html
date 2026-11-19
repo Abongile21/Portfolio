@@ -6,8 +6,9 @@
 
   <nav class="portfolio-nav fixed left-1/2 top-4 z-50 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 rounded-full border border-sky-400/20 bg-slate-950/75 px-3 py-2 shadow-[0_20px_50px_-20px_rgba(14,165,233,0.45)] backdrop-blur-xl" aria-label="Primary navigation">
     <div class="mx-auto flex items-center justify-between px-2 sm:px-4">
-      <div class="hidden sm:flex items-center text-sm font-semibold uppercase tracking-[0.25em] text-sky-200">
-        Abongile
+      <div class="hidden sm:flex items-center font-mono text-xs font-semibold uppercase tracking-[0.18em] text-sky-200">
+        <span class="mr-2 h-1.5 w-1.5 rounded-full bg-sky-400 shadow-[0_0_8px_#38bdf8]" aria-hidden="true"></span>
+        AN://PORTFOLIO
       </div>
 <button #hamburger type="button" class="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-wider text-sky-200 md:hidden interactive focus-ring" (click)="toggleMenu()" [attr.aria-label]="isMenuOpen ? 'Close navigation' : 'Open navigation'" [attr.aria-expanded]="isMenuOpen" aria-controls="primary-mobile-navigation">
   <!-- Text Label -->

@@ -33,8 +33,9 @@ export class DeveloperModeComponent {
   }
 
   printStartup() {
-    this.output.push('Nyakatya v1.0.0 [Developer Terminal]');
-    this.output.push('Type "help" to see available commands.');
+    this.output.push('NYAKATYA-SHELL v1.0.0 // secure session');
+    this.output.push('kernel.portfolio.ready');
+    this.output.push('Type "help" to inspect available commands.');
     this.output.push('');
   }
 
