@@ -23,7 +23,7 @@
       </button>
     </header>
 
-    <div class="terminal-grid gap-6 p-4 sm:p-7 lg:grid-cols-[minmax(0,1.1fr)_minmax(24rem,0.9fr)]">
+    <div class="terminal-grid gap-6 p-4 sm:p-7">
       <section class="terminal-pane flex min-h-[40rem] flex-col border border-base-300/80 bg-base-300/60 p-6 sm:p-8" aria-label="Command terminal">
         <div class="mb-6 flex items-center justify-between border-b border-base-content/10 pb-5">
           <div class="flex items-center gap-3 font-mono text-base text-base-content/60">
@@ -51,7 +51,7 @@
             autofocus>
         </div>
         <div class="mt-5 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm uppercase tracking-wider text-base-content/40">
-          <span>enter run</span><span>help commands</span><span>clear reset</span>
+          <span>enter run</span><span>help commands</span><span>clear reset</span><span>exit leave dev mode</span>
         </div>
       </section>
 
@@ -60,8 +60,6 @@
         [class.flex]="!activeTab"
         [class.items-center]="!activeTab"
         [class.justify-center]="!activeTab"
-        [style.max-height]="activeTab ? '56rem' : null"
-        [style.overflow-y]="activeTab ? 'auto' : null"
       >
         @switch (activeTab) {
           @case ('about') {
