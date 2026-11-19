@@ -13,7 +13,7 @@ export class ResumeDataService {
       github: 'Abongile21',
       linkedin: 'Abongile Nyakatya'
     },
-    profile: 'I am a passionate full-stack developer building web and cross-platform applications with technologies including HTML, CSS, JavaScript, Node.js, Angular, C#, .NET, and .NET MAUI. I specialize in backend APIs, responsive UI/UX, and seamless integrations, with a focus on clean, efficient code and user-centered solutions.',
+    profile: 'I build web and cross-platform applications from responsive Angular interfaces to REST APIs and cloud-connected services. My toolkit includes TypeScript, JavaScript, Node.js, C#/.NET, and .NET MAUI, with MongoDB and MySQL for data. I care about clear application boundaries, maintainable code, and reliable integrations that make features easier to extend and support.',
     techSkills: [
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',

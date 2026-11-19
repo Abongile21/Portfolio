@@ -4,37 +4,47 @@
     <div class="relative">
       <div class="stack-heading">
         <div>
-          <span class="hero-pill">MODULE::02_STACK</span>
+          <span class="hero-pill">ENGINEERING TOOLKIT / 02</span>
           <h2 class="section-title mt-3">Tech Stack</h2>
         </div>
-        <p class="stack-summary">A practical toolkit for building complete products across interface, server, data, and cloud layers.</p>
+        <p class="stack-summary">The tools I use to shape responsive interfaces, build application services, and deliver data-backed products.</p>
       </div>
 
-      <div class="stack-lanes" aria-label="Primary development capabilities">
+      <div class="stack-lanes" aria-label="Development workflow">
         <div class="stack-lane">
-          <span class="lane-number">01</span>
-          <div>
+          <div class="lane-topline"><span class="lane-number">01</span><span class="lane-kind">INTERFACE</span></div>
+          <div class="lane-content">
             <span class="lane-label">Frontend</span>
-            <span class="lane-value">Angular · React · TypeScript</span>
+            <span class="lane-value">Angular · React · TypeScript · CSS</span>
           </div>
+          <span class="lane-connector" aria-hidden="true">→</span>
         </div>
         <div class="stack-lane">
-          <span class="lane-number">02</span>
-          <div>
+          <div class="lane-topline"><span class="lane-number">02</span><span class="lane-kind">APPLICATION</span></div>
+          <div class="lane-content">
             <span class="lane-label">Backend</span>
-            <span class="lane-value">C# · .NET · Node.js · APIs</span>
+            <span class="lane-value">C# · .NET · Node.js · Express</span>
           </div>
+          <span class="lane-connector" aria-hidden="true">→</span>
         </div>
         <div class="stack-lane">
-          <span class="lane-number">03</span>
-          <div>
-            <span class="lane-label">Delivery</span>
-            <span class="lane-value">Git · Azure · AWS · Databases</span>
+          <div class="lane-topline"><span class="lane-number">03</span><span class="lane-kind">DATA + CLOUD</span></div>
+          <div class="lane-content">
+            <span class="lane-label">Infrastructure</span>
+            <span class="lane-value">MongoDB · MySQL · Azure · AWS</span>
           </div>
         </div>
       </div>
 
-      <div class="stack-grid">
+      <div class="tech-index-heading">
+        <div>
+          <span class="index-kicker">STACK.INDEX</span>
+          <h3>Tools in the toolkit</h3>
+        </div>
+        <span class="index-count"><span class="index-dot"></span>{{ skills.length }} technologies</span>
+      </div>
+
+      <div class="stack-grid" aria-label="Technologies and tools">
         @for (skill of skills; track skill.icon) {
         <article class="tech-card interactive-lift">
           <div class="tech-icon-wrap">
