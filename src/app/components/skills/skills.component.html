@@ -1,30 +1,50 @@
 <div class="mx-auto w-full max-w-6xl py-4">
-  <div class="section-shell relative animate-fade-up">
+  <div class="section-shell tech-stack-shell relative animate-fade-up">
     <div class="accent-glow"></div>
     <div class="relative">
-      <span class="hero-pill">MODULE::02_STACK</span>
-      <h2 class="section-title mt-3">Tech Stack</h2>
-      <p class="mt-3 max-w-2xl text-sm leading-relaxed text-base-content/70 sm:text-base">A practical stack for building complete products: typed frontends, scalable APIs, persistent data, cloud services, and cross-platform delivery.</p>
-
-      <div class="mt-5 grid gap-3 sm:grid-cols-3" aria-label="Primary development capabilities">
-        <div class="rounded-xl border border-sky-400/20 bg-sky-400/10 px-4 py-3">
-          <span class="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-sky-300">01 / Frontend</span>
-          <span class="mt-2 block text-sm font-semibold text-base-content/80">Angular · JavaScript · TypeScript</span>
+      <div class="stack-heading">
+        <div>
+          <span class="hero-pill">MODULE::02_STACK</span>
+          <h2 class="section-title mt-3">Tech Stack</h2>
         </div>
-        <div class="rounded-xl border border-sky-400/20 bg-sky-400/10 px-4 py-3">
-          <span class="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-sky-300">02 / Backend</span>
-          <span class="mt-2 block text-sm font-semibold text-base-content/80">C# · .NET · Node.js · REST APIs</span>
-        </div>
-        <div class="rounded-xl border border-sky-400/20 bg-sky-400/10 px-4 py-3">
-          <span class="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-sky-300">03 / Delivery</span>
-          <span class="mt-2 block text-sm font-semibold text-base-content/80">Git · Azure · AWS · MongoDB</span>
+        <p class="stack-summary">A practical toolkit for building complete products across interface, server, data, and cloud layers.</p>
       </div>
 
-      <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        @for (skill of skills; track skill) {
-        <div class="flex flex-col items-center rounded-[1.25rem] border border-sky-400/20 bg-sky-400/10 p-5 text-center interactive-lift">
-          <img class="h-16 w-16 object-contain transition-transform duration-300 hover:scale-110" [src]="skill" [alt]="skill" />
+      <div class="stack-lanes" aria-label="Primary development capabilities">
+        <div class="stack-lane">
+          <span class="lane-number">01</span>
+          <div>
+            <span class="lane-label">Frontend</span>
+            <span class="lane-value">Angular · React · TypeScript</span>
+          </div>
         </div>
+        <div class="stack-lane">
+          <span class="lane-number">02</span>
+          <div>
+            <span class="lane-label">Backend</span>
+            <span class="lane-value">C# · .NET · Node.js · APIs</span>
+          </div>
+        </div>
+        <div class="stack-lane">
+          <span class="lane-number">03</span>
+          <div>
+            <span class="lane-label">Delivery</span>
+            <span class="lane-value">Git · Azure · AWS · Databases</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-grid">
+        @for (skill of skills; track skill.icon) {
+        <article class="tech-card interactive-lift">
+          <div class="tech-icon-wrap">
+            <img [src]="skill.icon" [alt]="skill.name + ' logo'" class="tech-icon" loading="lazy" />
+          </div>
+          <div class="tech-details">
+            <h3>{{ skill.name }}</h3>
+            <span class="tech-category">{{ skill.category }}</span>
+          </div>
+        </article>
         }
       </div>
     </div>
