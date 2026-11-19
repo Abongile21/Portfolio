@@ -23,7 +23,14 @@
       </button>
     </header>
 
-    <div class="terminal-grid gap-6 p-4 sm:p-7">
+    <div #workspaceScroll class="terminal-grid gap-6 p-4 sm:p-7" (scroll)="updateScrollHints()">
+      @if (workspaceNeedsScroll) {
+      <div class="scroll-cue workspace-scroll-cue" role="status" aria-live="polite">
+        <span>Scroll to explore</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+      </div>
+      }
+
       <section class="terminal-pane flex min-h-[40rem] flex-col border border-base-300/80 bg-base-300/60 p-6 sm:p-8" aria-label="Command terminal">
         <div class="mb-6 flex items-center justify-between border-b border-base-content/10 pb-5">
           <div class="flex items-center gap-3 font-mono text-base text-base-content/60">
@@ -32,7 +39,13 @@
           </div>
           <span class="status-readout"><span class="status-dot"></span>link:active</span>
         </div>
-        <div class="terminal-output min-h-0 flex-1 overflow-y-auto pb-5 font-mono text-lg leading-9 custom-scrollbar" aria-live="polite">
+        <div #terminalOutput class="terminal-output min-h-0 flex-1 overflow-y-auto pb-5 font-mono text-lg leading-9 custom-scrollbar" aria-live="polite" (scroll)="updateScrollHints()">
+          @if (terminalOutputNeedsScroll) {
+          <div class="scroll-cue nested-scroll-cue" role="status" aria-live="polite">
+            <span>More output below</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+          </div>
+          }
           @for (line of output; track $index) {
           <p class="terminal-line text-base-content/80">
             {{ line }}
@@ -56,11 +69,19 @@
       </section>
 
       <section
+        #resultPane
         class="result-container min-h-[40rem] border border-base-300/80 bg-base-200/70 p-6 transition-all duration-300 ease-in-out sm:p-8"
         [class.flex]="!activeTab"
         [class.items-center]="!activeTab"
         [class.justify-center]="!activeTab"
+        (scroll)="updateScrollHints()"
       >
+        @if (resultNeedsScroll) {
+        <div class="scroll-cue nested-scroll-cue" role="status" aria-live="polite">
+          <span>Scroll for more</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+        </div>
+        }
         @switch (activeTab) {
           @case ('about') {
             <app-about class="w-full h-full animate-fade-in"></app-about>

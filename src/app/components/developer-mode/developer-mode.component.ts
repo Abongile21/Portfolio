@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,10 +7,16 @@ import { Router } from '@angular/router';
   templateUrl: './developer-mode.component.html',
   styleUrls: ['./developer-mode.component.css']
 })
-export class DeveloperModeComponent {
+export class DeveloperModeComponent implements AfterViewInit {
   command: string = '';
   output: string[] = [];
   activeTab: string = '';
+  workspaceNeedsScroll = false;
+  terminalOutputNeedsScroll = false;
+  resultNeedsScroll = false;
+  @ViewChild('workspaceScroll') private workspaceScroll?: ElementRef<HTMLElement>;
+  @ViewChild('terminalOutput') private terminalOutput?: ElementRef<HTMLElement>;
+  @ViewChild('resultPane') private resultPane?: ElementRef<HTMLElement>;
   private audio: HTMLAudioElement;
   private plays: number = 1;
 
@@ -29,14 +35,21 @@ export class DeveloperModeComponent {
   constructor(private router: Router) {
     this.audio = new Audio('assets/me.mp3');
     this.audio.volume = 0.5;
-    this.printStartup();
   }
 
-  printStartup() {
-    this.output.push('NYAKATYA-SHELL v1.0.0 // secure session');
-    this.output.push('kernel.portfolio.ready');
-    this.output.push('Type "help" to inspect available commands.');
-    this.output.push('');
+  ngAfterViewInit(): void {
+    this.scheduleScrollHintUpdate();
+  }
+
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    this.scheduleScrollHintUpdate();
+  }
+
+  updateScrollHints(): void {
+    this.workspaceNeedsScroll = this.hasMoreContent(this.workspaceScroll?.nativeElement);
+    this.terminalOutputNeedsScroll = this.hasMoreContent(this.terminalOutput?.nativeElement);
+    this.resultNeedsScroll = this.hasMoreContent(this.resultPane?.nativeElement);
   }
 
   playSound(): void {
@@ -97,6 +110,7 @@ export class DeveloperModeComponent {
     }
 
     this.command = '';
+    this.scheduleScrollHintUpdate();
   }
 
   changeDirectory(tab: string) {
@@ -153,5 +167,15 @@ export class DeveloperModeComponent {
 
   clearTerminal() {
     this.output = [];
+  }
+
+  private hasMoreContent(element?: HTMLElement): boolean {
+    return !!element
+      && element.scrollHeight > element.clientHeight + 2
+      && element.scrollTop + element.clientHeight < element.scrollHeight - 2;
+  }
+
+  private scheduleScrollHintUpdate(): void {
+    setTimeout(() => this.updateScrollHints());
   }
 }
