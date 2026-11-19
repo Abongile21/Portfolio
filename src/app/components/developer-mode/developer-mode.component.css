@@ -106,6 +106,10 @@
   border-radius: 0.75rem;
 }
 
+.terminal-prompt {
+  flex: 0 0 auto;
+}
+
 .close-button {
   border-radius: 0.75rem;
 }
