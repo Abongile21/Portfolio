@@ -31,6 +31,8 @@
   min-height: 0;
   flex: 1;
   flex-direction: column;
+  border-color: rgba(56, 189, 248, 0.35);
+  border-radius: 1.25rem;
   box-shadow: 0 24px 0 -12px rgba(0, 0, 0, 0.55), 0 30px 70px -35px rgba(0, 0, 0, 0.85);
 }
 
@@ -46,6 +48,7 @@
   height: 2rem;
   place-items: center;
   border: 1px solid rgba(56, 189, 248, 0.55);
+  border-radius: 0.55rem;
   color: #38bdf8;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.75rem;
@@ -87,6 +90,24 @@
 .terminal-pane {
   background-color: #090d14;
   background-image: linear-gradient(135deg, rgba(14, 165, 233, 0.1), transparent 55%);
+}
+
+.terminal-pane,
+.result-container {
+  border-color: rgba(56, 189, 248, 0.2);
+  border-radius: 0.9rem;
+}
+
+.terminal-hints {
+  color: rgba(125, 211, 252, 0.55);
+}
+
+.command-line {
+  border-radius: 0.75rem;
+}
+
+.close-button {
+  border-radius: 0.75rem;
 }
 
 .status-readout {
@@ -135,6 +156,20 @@
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
+
+.result-container {
+  scrollbar-color: rgba(56, 189, 248, 0.35) transparent;
+  scrollbar-width: thin;
+}
+
+.result-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.result-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(56, 189, 248, 0.35);
+}
 @media (max-width: 639px) {
   .developer-shell {
     padding-top: 1rem;
@@ -171,4 +206,47 @@
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: rgba(56, 189, 248, 0.35);
+}
+
+@media (max-height: 560px) {
+  .developer-shell {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .terminal-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .terminal-grid {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .terminal-grid > .terminal-pane,
+  .terminal-grid > .result-container {
+    padding: 1rem;
+  }
+
+  .terminal-pane > div:first-child {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .terminal-pane .terminal-output {
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+  }
+
+  .command-line {
+    min-height: 2.75rem;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .terminal-hints {
+    margin-top: 0.75rem;
+    gap: 0.75rem;
+    font-size: 0.65rem;
+  }
 }

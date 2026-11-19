@@ -32,7 +32,7 @@
           </div>
           <span class="status-readout"><span class="status-dot"></span>link:active</span>
         </div>
-        <div class="min-h-0 flex-1 overflow-y-auto pb-5 font-mono text-lg leading-9 custom-scrollbar" aria-live="polite">
+        <div class="terminal-output min-h-0 flex-1 overflow-y-auto pb-5 font-mono text-lg leading-9 custom-scrollbar" aria-live="polite">
           @for (line of output; track $index) {
           <p class="terminal-line text-base-content/80">
             {{ line }}
@@ -50,8 +50,8 @@
             class="min-w-0 flex-1 bg-transparent px-1 font-mono text-lg text-base-content placeholder:text-base-content/35 focus:outline-none"
             autofocus>
         </div>
-        <div class="mt-5 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm uppercase tracking-wider text-base-content/40">
-          <span>enter run</span><span>help commands</span><span>clear reset</span><span>exit leave dev mode</span>
+        <div class="terminal-hints mt-5 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm uppercase tracking-wider text-base-content/40" aria-label="Available commands">
+          <span>help</span><span>clear</span><span>exit</span>
         </div>
       </section>
 
