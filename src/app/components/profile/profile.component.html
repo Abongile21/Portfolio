@@ -5,16 +5,29 @@
       <div class="animate-fade-up text-center lg:text-left">
         <span class="hero-pill">PROFILE::AVAILABLE_FOR_BUILD</span>
         <h2 class="mt-5 text-4xl font-black leading-tight text-slate-100 sm:text-5xl">
-          HELLO, I’M <span class="text-sky-300">{{ profile?.name || 'Abongile' }}</span>
+          BUILDING DIGITAL <span class="text-sky-300">PRODUCTS THAT WORK.</span>
         </h2>
-        <h3 class="mt-3 text-lg font-medium text-sky-200/90">{{ profile?.title || 'Software Engineer' }}</h3>
+        <h3 class="mt-3 text-lg font-medium text-sky-200/90">{{ profile?.name || 'Abongile Nyakatya' }} · {{ profile?.title || 'Software Engineer' }}</h3>
         <p class="mt-5 max-w-2xl text-base leading-relaxed text-base-content/80 sm:text-lg">
-          I build polished digital experiences from idea to launch, blending thoughtful UI, reliable engineering, and a strong eye for detail.
+          Full-stack engineer focused on clean architecture, practical problem-solving, and intuitive user experiences. I turn product ideas into maintainable, secure, and production-ready applications.
         </p>
-        <div class="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
-          <span class="rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm text-sky-200">Full-stack web apps</span>
-          <span class="rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm text-sky-200">.NET MAUI & C#</span>
-          <span class="rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-sm text-sky-200">Cross-platform apps</span>
+        <div class="mt-6 grid grid-cols-3 gap-2 sm:gap-3">
+          <div class="profile-stat">
+            <strong>Full-stack</strong>
+            <span>web systems</span>
+          </div>
+          <div class="profile-stat">
+            <strong>.NET / C#</strong>
+            <span>modern apps</span>
+          </div>
+          <div class="profile-stat">
+            <strong>Cloud-ready</strong>
+            <span>deployments</span>
+          </div>
+        </div>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+          <button type="button" class="btn btn-info interactive-lift focus-ring" (click)="scrollToSection('projects')">View selected work</button>
+          <button type="button" class="btn btn-outline btn-info interactive-lift focus-ring" (click)="scrollToSection('contact-me')">Start a conversation</button>
         </div>
       </div>
 
