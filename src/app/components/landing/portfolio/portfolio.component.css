@@ -21,10 +21,67 @@
 
 .portfolio-nav {
   box-shadow: 0 20px 50px -20px rgba(14, 165, 233, 0.45), inset 0 1px 0 rgba(186, 230, 253, 0.12);
+  transition: border-radius 180ms ease, border-color 180ms ease;
+}
+
+.portfolio-nav.menu-open {
+  border-color: rgba(125, 211, 252, 0.3);
+}
+
+.brand {
+  display: inline-flex;
+  min-width: max-content;
+  align-items: center;
+  gap: 0.7rem;
+  border-radius: 0.8rem;
+  color: #f0f9ff;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid rgba(125, 211, 252, 0.38);
+  border-radius: 0.8rem;
+  background: linear-gradient(145deg, rgba(14, 165, 233, 0.3), rgba(15, 23, 42, 0.75));
+  color: #bae6fd;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  line-height: 1.1;
+}
+
+.brand-copy strong {
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+}
+
+.brand-copy small {
+  color: rgba(186, 230, 253, 0.62);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .portfolio-nav .nav-link {
   position: relative;
+  min-height: 2.5rem;
+  padding-right: 0.65rem;
+  padding-left: 0.65rem;
+  color: rgba(226, 232, 240, 0.76);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .portfolio-nav .nav-link::after {
@@ -53,18 +110,121 @@
   color: #fff;
 }
 
-.brand-mark {
-  box-shadow: 0 0 0.8rem rgba(56, 189, 248, 0.8);
+.resume-link {
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.65rem;
+  color: #bae6fd;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.resume-link:hover,
+.resume-link.nav-link-active {
+  background: rgba(56, 189, 248, 0.1);
+  color: #f0f9ff;
+}
+
+.dev-mode-link {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  border-radius: 0.7rem;
+  background: rgba(14, 165, 233, 0.16);
+  color: #bae6fd;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.dev-mode-link:hover,
+.dev-mode-link.nav-link-active {
+  border-color: rgba(56, 189, 248, 0.65);
+  background: #0369a1;
+  color: #f0f9ff;
+}
+
+.menu-toggle {
+  min-height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0 0.85rem;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 0.7rem;
+  background: rgba(15, 23, 42, 0.72);
+  color: #bae6fd;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle.active {
+  border-color: rgba(125, 211, 252, 0.5);
+  background: rgba(14, 165, 233, 0.16);
 }
 
 .mobile-nav {
-  margin: 0.5rem -0.25rem -0.25rem;
+  margin: 0.5rem 0 0;
   border-top: 1px solid rgba(125, 211, 252, 0.12);
-  border-radius: 0.9rem;
+}
+
+.mobile-nav-link {
+  display: flex;
+  min-height: 2.65rem;
+  align-items: center;
+  padding: 0 0.8rem;
+  border: 0;
+  border-radius: 0.7rem;
+  background: transparent;
+  color: rgba(226, 232, 240, 0.78);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 650;
+  text-align: left;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.nav-link-active {
+  background: rgba(56, 189, 248, 0.1);
+  color: #7dd3fc;
+}
+
+.mobile-dev-link {
+  margin-top: 0.25rem;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: #bae6fd;
+}
+
+@media (max-width: 380px) {
+  .brand-copy strong {
+    font-size: 0.7rem;
+  }
+
+  .brand-copy small {
+    font-size: 0.58rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .portfolio-nav .nav-link::after {
+  .portfolio-nav,
+  .portfolio-nav .nav-link::after,
+  .portfolio-nav .resume-link,
+  .portfolio-nav .dev-mode-link,
+  .portfolio-nav .menu-toggle,
+  .portfolio-nav .mobile-nav-link {
     transition: none;
   }
 }
