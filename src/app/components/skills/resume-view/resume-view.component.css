@@ -1,6 +1,5 @@
 
 .resume-view {
-	padding-bottom: 4.5rem;
 	background:
 		linear-gradient(135deg, rgba(14, 165, 233, 0.08), transparent 34%),
 		radial-gradient(circle at 82% 8%, rgba(37, 99, 235, 0.1), transparent 28rem),
@@ -8,11 +7,25 @@
 }
 
 .resume-layout {
-	min-height: calc(100vh - 2.5rem);
+	min-height: calc(100vh - 5rem);
 }
 
 .resume-toolbar {
 	font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.resume-name {
+	color: #f1f5f9;
+	font-size: clamp(2rem, 5vw, 3rem);
+	line-height: 1.1;
+}
+
+.resume-role {
+	color: #94a3b8;
+}
+
+.resume-actions {
+	flex: 0 0 auto;
 }
 
 .document-label {
@@ -54,11 +67,20 @@
 
 .viewer-action-button {
 	gap: 0.5rem;
-	padding: 0.55rem 0.8rem;
-	border-radius: 0.375rem;
+	min-height: 2.75rem;
+	padding: 0.65rem 1rem;
+	border-radius: 0.625rem;
 	background: rgba(15, 23, 42, 0.7);
-	font-size: 0.75rem;
-	font-weight: 600;
+	font-size: 0.8rem;
+	font-weight: 650;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.viewer-download-button {
+	border-color: #0284c7;
+	background: #0284c7;
+	color: #f8fafc;
 }
 
 .viewer-icon-button:hover,
@@ -68,23 +90,47 @@
 	color: #f0f9ff;
 }
 
+.viewer-download-button:hover {
+	border-color: #0369a1;
+	background: #0369a1;
+}
+
 .document-stage {
 	min-height: 0;
 	border: 1px solid rgba(56, 189, 248, 0.22);
-	border-radius: 0.75rem;
+	border-radius: 1rem;
 	background: rgba(15, 23, 42, 0.78);
 	box-shadow: 0 24px 70px -34px rgba(14, 165, 233, 0.65);
 }
 
-.resume-frame {
-	display: block;
-	height: min(78vh, 62rem);
-	min-height: 36rem;
-	background: #fff;
-	box-shadow: 0 12px 30px -20px rgba(0, 0, 0, 0.9);
+.document-meta-title {
+	color: #bae6fd;
 }
 
-:host-context(html[data-theme='light']) .resume-toolbar h1 {
+.document-meta-file {
+	color: #94a3b8;
+}
+
+.document-meta-hint {
+	color: #64748b;
+}
+
+.resume-frame-wrap {
+	display: flex;
+	justify-content: center;
+}
+
+.resume-frame {
+	display: block;
+	width: min(100%, 58rem);
+	height: min(78vh, 68rem);
+	min-height: 36rem;
+	border-radius: 0.5rem;
+	background: #fff;
+	box-shadow: 0 18px 48px -28px rgba(0, 0, 0, 0.85);
+}
+
+:host-context(html[data-theme='light']) .resume-name {
 	color: #172033;
 }
 
@@ -101,6 +147,16 @@
 	color: #475569;
 }
 
+:host-context(html[data-theme='light']) .document-meta-title {
+	color: #0f3d5e;
+}
+
+:host-context(html[data-theme='light']) .document-meta-file,
+:host-context(html[data-theme='light']) .document-meta-hint,
+:host-context(html[data-theme='light']) .resume-role {
+	color: #64748b;
+}
+
 :host-context(html[data-theme='light']) .viewer-icon-button,
 :host-context(html[data-theme='light']) .viewer-action-button {
 	border-color: rgba(3, 105, 161, 0.35);
@@ -115,6 +171,18 @@
 	color: #082f49;
 }
 
+:host-context(html[data-theme='light']) .viewer-download-button {
+	border-color: #0369a1;
+	background: #0369a1;
+	color: #ffffff;
+}
+
+:host-context(html[data-theme='light']) .viewer-download-button:hover {
+	border-color: #075985;
+	background: #075985;
+	color: #ffffff;
+}
+
 :host-context(html[data-theme='light']) .document-stage {
 	border-color: rgba(3, 105, 161, 0.2);
 	background: rgba(255, 255, 255, 0.82);
@@ -127,15 +195,22 @@
 
 @media (max-width: 639px) {
 	.resume-view {
-		padding-bottom: 4rem;
+		padding-top: 1.5rem;
+		padding-bottom: 5rem;
 	}
 
 	.resume-layout {
-		min-height: calc(100vh - 2rem);
+		min-height: calc(100vh - 6.5rem);
 	}
 
 	.resume-frame {
 		height: 72vh;
 		min-height: 30rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.viewer-action-button {
+		transition: none;
 	}
 }

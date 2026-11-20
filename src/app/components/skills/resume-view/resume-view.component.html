@@ -1,33 +1,42 @@
-<main class="resume-view min-h-screen px-4 py-5 sm:px-8 lg:px-12">
-  <div class="resume-layout mx-auto flex w-full max-w-7xl flex-col">
-    <header class="resume-toolbar flex flex-col gap-5 border-b border-sky-400/20 pb-5 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <div class="document-label mb-3 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.24em]">
+<main class="resume-view min-h-screen px-4 py-8 sm:px-8 sm:py-10 lg:px-12">
+  <div class="resume-layout mx-auto flex w-full max-w-6xl flex-col">
+    <header class="resume-toolbar flex flex-col gap-6 border-b border-sky-400/20 pb-7 sm:flex-row sm:items-end sm:justify-between">
+      <div class="resume-intro">
+        <div class="document-label mb-4 inline-flex items-center gap-2 rounded-full border border-sky-400/20 bg-sky-400/5 px-3 py-1.5 font-mono text-[0.65rem] uppercase tracking-[0.2em]">
           <span class="status-dot"></span>
-          <span>Document viewer / 01</span>
+          <span>Professional profile</span>
         </div>
-        <h1 class="text-2xl font-semibold tracking-tight text-slate-100 sm:text-3xl">Resume</h1>
-        <p class="mt-1 text-sm text-slate-400">Theo Nyakatya · Full-stack developer</p>
+        <h1 class="resume-name text-3xl font-semibold tracking-tight text-slate-100 sm:text-4xl">Abongile Nyakatya</h1>
+        <p class="resume-role mt-2 text-sm text-slate-400 sm:text-base">Full-stack developer</p>
       </div>
 
-      <div class="flex flex-col gap-3 sm:items-end">
-        <div class="flex gap-2">
-          <button (click)="goBack()" class="viewer-action-button">
-            <svg class="document-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="m10 19-7-7 7-7M3 12h18" />
-            </svg>
-            <span>Back to portfolio</span>
-          </button>
-        </div>
+      <div class="resume-actions flex flex-col-reverse gap-3 sm:flex-row">
+        <button (click)="goBack()" class="viewer-action-button">
+          <svg class="document-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m10 19-7-7 7-7M3 12h18" />
+          </svg>
+          <span>Back to portfolio</span>
+        </button>
+        <a href="assets/Resume_ANyakatya.pdf" download="Abongile-Nyakatya-Resume.pdf" class="viewer-action-button viewer-download-button">
+          <svg class="document-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" />
+          </svg>
+          <span>Download PDF</span>
+        </a>
       </div>
     </header>
 
-    <section class="document-stage mt-6 flex-1 p-2 sm:p-4" aria-label="Resume preview">
-      <div class="document-meta flex items-center justify-between px-2 pb-3 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500 sm:px-4">
-        <span>preview.pdf</span>
-        <span class="hidden sm:inline">Scroll to browse</span>
+    <section class="document-stage mt-7 flex-1 p-3 sm:p-5" aria-label="Resume preview">
+      <div class="document-meta flex items-center justify-between gap-4 px-1 pb-4 sm:px-2">
+        <div>
+          <div class="document-meta-title font-mono text-xs font-semibold uppercase tracking-[0.16em]">Resume preview</div>
+          <div class="document-meta-file mt-1 text-xs text-slate-500">Resume_ANyakatya.pdf · PDF document</div>
+        </div>
+        <span class="document-meta-hint hidden text-right text-xs text-slate-500 sm:block">Use the PDF controls to zoom or print</span>
       </div>
-      <iframe [src]="pdfSrc" title="Resume preview" class="resume-frame w-full rounded-sm border-0"></iframe>
+      <div class="resume-frame-wrap">
+        <iframe [src]="pdfSrc" title="Abongile Nyakatya resume PDF preview" class="resume-frame w-full rounded-sm border-0"></iframe>
+      </div>
     </section>
   </div>
 </main>
