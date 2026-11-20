@@ -891,6 +891,184 @@ html[data-theme='light'] .contact-success-modal {
 	background: #ffffff;
 }
 
+html[data-theme='light'] [class~='text-base-content'] {
+	color: #172033 !important;
+}
+
+html[data-theme='light'] [class~='text-base-content/80'] {
+	color: #334155 !important;
+}
+
+html[data-theme='light'] [class~='text-base-content/70'],
+html[data-theme='light'] [class~='text-base-content/65'] {
+	color: #475569 !important;
+}
+
+html[data-theme='light'] [class~='text-base-content/60'],
+html[data-theme='light'] [class~='text-base-content/50'],
+html[data-theme='light'] [class~='text-base-content/40'],
+html[data-theme='light'] [class~='text-base-content/35'] {
+	color: #64748b !important;
+}
+
+html[data-theme='light'] [class~='text-sky-100'] {
+	color: #0369a1 !important;
+}
+
+html[data-theme='light'] .portfolio-shell .section-title {
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .brand {
+	color: #172033;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .brand-copy small {
+	color: #64748b;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .brand-mark {
+	border-color: #bfdbfe;
+	background: linear-gradient(145deg, #dbeafe, #eff6ff);
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .nav-link {
+	color: #475569;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .nav-link-active {
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .resume-link {
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .resume-link:hover,
+html[data-theme='light'] .portfolio-shell .portfolio-nav .resume-link.nav-link-active {
+	background: #e0f2fe;
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .dev-mode-link {
+	border-color: #93c5fd;
+	background: #e0f2fe;
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .dev-mode-link:hover,
+html[data-theme='light'] .portfolio-shell .portfolio-nav .dev-mode-link.nav-link-active {
+	border-color: #0369a1;
+	background: #0369a1;
+	color: #ffffff;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .menu-toggle {
+	border-color: #cbd5e1;
+	background: #f8fafc;
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .menu-toggle:hover,
+html[data-theme='light'] .portfolio-shell .portfolio-nav .menu-toggle.active {
+	border-color: #93c5fd;
+	background: #e0f2fe;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .mobile-nav-link {
+	color: #334155;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .mobile-nav-link:hover,
+html[data-theme='light'] .portfolio-shell .portfolio-nav .mobile-nav-link.nav-link-active {
+	background: #e0f2fe;
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .portfolio-nav .mobile-dev-link {
+	border-color: #bfdbfe;
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .stack-summary,
+html[data-theme='light'] .portfolio-shell .lane-value,
+html[data-theme='light'] .portfolio-shell .index-count {
+	color: #475569;
+}
+
+html[data-theme='light'] .portfolio-shell .stack-lanes {
+	border-color: #cbd5e1;
+	background: linear-gradient(110deg, #f0f9ff, #f8fafc);
+}
+
+html[data-theme='light'] .portfolio-shell .stack-lane + .stack-lane {
+	border-color: #dbe4ee;
+}
+
+html[data-theme='light'] .portfolio-shell .lane-kind,
+html[data-theme='light'] .portfolio-shell .index-kicker {
+	color: #0369a1;
+}
+
+html[data-theme='light'] .portfolio-shell .lane-number {
+	border-color: #bfdbfe;
+	background: #eff6ff;
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .lane-connector {
+	border-color: #bfdbfe;
+	background: #ffffff;
+	color: #075985;
+}
+
+html[data-theme='light'] .portfolio-shell .lane-label,
+html[data-theme='light'] .portfolio-shell .tech-index-heading h3,
+html[data-theme='light'] .portfolio-shell .tech-details h3 {
+	color: #172033;
+}
+
+html[data-theme='light'] .portfolio-shell .index-count {
+	border-color: #cbd5e1;
+}
+
+html[data-theme='light'] .portfolio-shell .index-dot {
+	background: #0284c7;
+}
+
+html[data-theme='light'] .portfolio-shell .tech-card {
+	border-color: #dbeafe;
+	background: linear-gradient(145deg, #ffffff, #f0f7ff);
+}
+
+html[data-theme='light'] .portfolio-shell .tech-card:hover {
+	border-color: #93c5fd;
+	background: linear-gradient(145deg, #ffffff, #eaf5ff);
+}
+
+html[data-theme='light'] .portfolio-shell .tech-icon-wrap {
+	border-bottom-color: #dbeafe;
+	background: #f8fbff;
+}
+
+html[data-theme='light'] .portfolio-shell .tech-category {
+	color: #075985;
+}
+
+html[data-theme='light'] .theme-toggle {
+	border-color: #bfdbfe;
+	background: rgba(255, 255, 255, 0.94);
+	color: #075985;
+	box-shadow: 0 10px 28px -16px rgba(2, 132, 199, 0.55);
+}
+
+html[data-theme='light'] .theme-toggle:hover {
+	border-color: #0369a1;
+	background: #0369a1;
+	color: #ffffff;
+}
+
 @layer utilities {
 	.interactive {
 		@apply transition-all duration-300 ease-out;
